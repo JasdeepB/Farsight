@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Farsight.UI_s_and_Controllers;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -284,6 +285,12 @@ namespace Farsight
                 clientStatusLabel.ForeColor = Color.OrangeRed;
                 clientStatusLabel.Text = "Client Offline";
             }
+        }
+
+        private void runePagesButton_Click(object sender, EventArgs e)
+        {
+            RunePageEditor runePageEditor = new RunePageEditor();
+            runePageEditor.Show();
         }
     }
 }

@@ -38,6 +38,7 @@
             this.programNameLabel = new System.Windows.Forms.Label();
             this.clientStatusLabel = new System.Windows.Forms.Label();
             this.clientStatusButton = new System.Windows.Forms.Button();
+            this.runePagesButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // summonerAccountsComboBox
@@ -135,12 +136,24 @@
             this.clientStatusButton.UseVisualStyleBackColor = true;
             this.clientStatusButton.Click += new System.EventHandler(this.clientStatusButton_Click);
             // 
+            // runePagesButton
+            // 
+            this.runePagesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.runePagesButton.Location = new System.Drawing.Point(1, 321);
+            this.runePagesButton.Name = "runePagesButton";
+            this.runePagesButton.Size = new System.Drawing.Size(184, 31);
+            this.runePagesButton.TabIndex = 9;
+            this.runePagesButton.Text = "Rune Page Editor";
+            this.runePagesButton.UseVisualStyleBackColor = true;
+            this.runePagesButton.Click += new System.EventHandler(this.runePagesButton_Click);
+            // 
             // mainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(1372, 688);
+            this.Controls.Add(this.runePagesButton);
             this.Controls.Add(this.clientStatusButton);
             this.Controls.Add(this.clientStatusLabel);
             this.Controls.Add(this.programNameLabel);
@@ -170,5 +183,6 @@
         private System.Windows.Forms.Label programNameLabel;
         public System.Windows.Forms.Label clientStatusLabel;
         public System.Windows.Forms.Button clientStatusButton;
+        private System.Windows.Forms.Button runePagesButton;
     }
 }

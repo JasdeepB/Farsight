@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Farsight.UI_s_and_Controllers;
+using System;
 using System.Windows.Forms;
 
 namespace Farsight
@@ -13,6 +14,7 @@ namespace Farsight
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            JSONParser.Runes();
             mainScreen Parent = new mainScreen();
             LCUInterface.IsLCUActive(Parent);
             LCUInterface lCUInterface = new LCUInterface(Parent);

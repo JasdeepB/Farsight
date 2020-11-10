@@ -60,6 +60,7 @@
     <Compile Include="Deserializable Objects\CompleteMatchHistory.cs" />
     <Compile Include="Deserializable Objects\currentChampMastery.cs" />
     <Compile Include="Deserializable Objects\CurrentGameStats.cs" />
+    <Compile Include="Deserializable Objects\Perks\AllRunes.cs" />
     <Compile Include="Images.cs" />
     <Compile Include="LCU\LCUInterface.cs" />
     <Compile Include="LCU\Plugin lol-summoner\GetLolSummonerV1CurrentSummoner.cs" />
@@ -96,6 +97,12 @@
     <Compile Include="UI%27s and Controllers\RoundPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="UI%27s and Controllers\RunePageEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI%27s and Controllers\RunePageEditor.Designer.cs">
+      <DependentUpon>RunePageEditor.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI%27s and Controllers\summonerInfoControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -125,6 +132,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UI%27s and Controllers\RunePageEditor.resx">
+      <DependentUpon>RunePageEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UI%27s and Controllers\summonerInfoControl.resx">
       <DependentUpon>summonerInfoControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -8588,6 +8598,8 @@
     <Content Include="Images\ranked-positions\Position_Silver-Support.png" />
     <Content Include="Images\ranked-positions\Position_Silver-Top.png" />
     <Content Include="Program Assets\Users.txt" />
+    <None Include="Resources\Webp.net-resizeimage.png" />
+    <None Include="Resources\Summoners-Rift.jpg" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
