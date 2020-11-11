@@ -8598,6 +8598,7 @@
     <Content Include="Images\ranked-positions\Position_Silver-Support.png" />
     <Content Include="Images\ranked-positions\Position_Silver-Top.png" />
     <Content Include="Program Assets\Users.txt" />
+    <None Include="Resources\77894bec5021dca9cfea61e52c492240.png" />
     <None Include="Resources\Webp.net-resizeimage.png" />
     <None Include="Resources\Summoners-Rift.jpg" />
   </ItemGroup>

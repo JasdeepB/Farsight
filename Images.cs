@@ -23,7 +23,7 @@ namespace Farsight
             return Image.FromFile(projectDirectory + @"\Farsight\Images\img\champion\" + championName + ".png");
         }
 
-        public static Image PrimaryRuneTree(int rune)
+        public static Image RuneTree(int rune)
         {
             string ending = "";
 
@@ -73,6 +73,138 @@ namespace Farsight
             }
 
             return Image.FromFile(projectDirectory + @"\Farsight\Images\perk-images\Styles\" + ending + ".png");
+        }
+
+        public static Image PrecisionTree(int rune)
+        {
+            string path = "";
+
+            switch (rune)
+            {
+                case 8005:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\PressTheAttack\PressTheAttack.png";
+                    break;
+                case 8008:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\LethalTempo\LethalTempoTemp.png";
+                    break;
+                case 8021:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\FleetFootwork\FleetFootwork.png";
+                    break;
+                case 8010:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\Conqueror\Conqueror.png";
+                    break;
+                case 9101:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\Overheal.png";
+                    break;
+                case 9111:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\Triumph.png";
+                    break;
+                case 8009:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\PresenceOfMind\PresenceOfMind.png";
+                    break;
+                case 9104:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\LegendAlacrity\LegendAlacrity.png";
+                    break;
+                case 9105:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\LegendTenacity\LegendTenacity.png";
+                    break;
+                case 9103:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\LegendBloodline\LegendBloodline.png";
+                    break;
+                case 8014:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\CoupDeGrace\CoupDeGrace.png";
+                    break;
+                case 8017:
+                    path = @"\Farsight\Images\perk-images\Styles\Precision\CutDown\CutDown.png";
+                    break;
+                case 8229:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\LastStand\LastStand.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
+        }
+
+        public static Image DominationTree(int rune)
+        {
+            string path = "";
+
+            switch (rune)
+            {
+                case 8112:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\Electrocute\Electrocute.png";
+                    break;
+                case 8124:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\Predator\Predator.png";
+                    break;
+                case 8128:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\DarkHarvest\DarkHarvest.png";
+                    break;
+                case 9923:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\HailOfBlades\HailOfBlades.png";
+                    break;
+                case 8126:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\CheapShot\CheapShot.png";
+                    break;
+                case 8139:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\TasteOfBlood\GreenTerror_TasteOfBlood.png";
+                    break;
+                case 8143:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\SuddenImpact\SuddenImpact.png";
+                    break;
+                case 8136:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\ZombieWard\ZombieWard.png";
+                    break;
+                case 8120:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\GhostPoro\GhostPoro.png";
+                    break;
+                case 8138:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\EyeballCollection\EyeballCollection.png";
+                    break;
+                case 8135:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\RavenousHunter\RavenousHunter.png";
+                    break;
+                case 8134:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\IngeniousHunter\IngeniousHunter.png";
+                    break;
+                case 8105:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\RelentlessHunter\RelentlessHunter.png";
+                    break;
+                case 8106:
+                    path = @"\Farsight\Images\perk-images\Styles\Domination\UltimateHunter\UltimateHunter.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
+        }
+
+        public static Image StatMods(string modeType)
+        {
+            string path = "";
+
+            switch (modeType)
+            {
+                case "AdaptiveForce":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsAdaptiveForceIcon.png";
+                    break;
+                case "AttackSpeed":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsAttackSpeedIcon.png";
+                    break;
+                case "CDR":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsCDRScalingIcon.png";
+                    break;
+                case "Armor":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsArmorIcon.png";
+                    break;
+                case "MagicResist":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsMagicResIcon.png";
+                    break;
+                case "Health":
+                    path = @"\Farsight\Images\perk-images\StatMods\StatModsHealthScalingIcon.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
         }
 
         public static Image Item(int itemId)

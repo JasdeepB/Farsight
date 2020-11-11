@@ -28,468 +28,806 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.primaryRuneLabel = new System.Windows.Forms.Label();
-            this.primaryNextButton = new System.Windows.Forms.Button();
-            this.primaryPreviousButton = new System.Windows.Forms.Button();
-            this.secondaryPreviosButton = new System.Windows.Forms.Button();
-            this.secondaryNextButton = new System.Windows.Forms.Button();
-            this.secondaryRuneLabel = new System.Windows.Forms.Label();
-            this.keystoneComboBox = new System.Windows.Forms.ComboBox();
-            this.keystoneCheckBox = new System.Windows.Forms.CheckBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.primaryRune1CheckBox = new System.Windows.Forms.CheckBox();
-            this.primaryRune1ComboBox = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.primaryRune2CheckBox = new System.Windows.Forms.CheckBox();
-            this.primaryRune2ComboBox = new System.Windows.Forms.ComboBox();
-            this.primaryRune3CheckBox = new System.Windows.Forms.CheckBox();
-            this.primaryRune3ComboBox = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.secondaryRune1CheckBox = new System.Windows.Forms.CheckBox();
-            this.secondaryRune1ComboBox = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.secondaryRune2CheckBox = new System.Windows.Forms.CheckBox();
-            this.secondaryRune2ComboBox = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.offenseRuneCheckBox = new System.Windows.Forms.CheckBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.flexRunePageCheckBox = new System.Windows.Forms.CheckBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.defenseRunePageCheckBox = new System.Windows.Forms.CheckBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
-            this.secondaryRune3CheckBox = new System.Windows.Forms.CheckBox();
-            this.secondaryRune3ComboBox = new System.Windows.Forms.ComboBox();
-            this.runePageNameTextBox = new System.Windows.Forms.TextBox();
-            this.primaryRunePictureBox = new System.Windows.Forms.PictureBox();
-            this.secondaryRunePictureBox = new System.Windows.Forms.PictureBox();
-            this.playingChampPictureBox = new System.Windows.Forms.PictureBox();
-            this.againstChampPictureBox = new System.Windows.Forms.PictureBox();
-            this.VSLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).BeginInit();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.primaryRuneSelectionLine = new System.Windows.Forms.PictureBox();
+            this.secondaryRuneSelectionLine = new System.Windows.Forms.PictureBox();
+            this.statmodRuneSelectionLine = new System.Windows.Forms.PictureBox();
+            this.primaryRunesTier3PictureBox4 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier3PictureBox4 = new Farsight.RoundPictureBox();
+            this.primaryRuneKeystone4PictureBox = new Farsight.RoundPictureBox();
+            this.primaryRunesTier3PictureBox2 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier3PictureBox3 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier3PictureBox1 = new Farsight.RoundPictureBox();
+            this.secondaryRunePictureBox = new Farsight.RoundPictureBox();
+            this.primaryRunePictureBox = new Farsight.RoundPictureBox();
+            this.inspirationPictureBox = new Farsight.RoundPictureBox();
+            this.statModFlexArmorForcePictureBox = new Farsight.RoundPictureBox();
+            this.statModFlexMagicResistPictureBox = new Farsight.RoundPictureBox();
+            this.statModFlexAdaptiveForcePictureBox = new Farsight.RoundPictureBox();
+            this.statModDefenseArmorPictureBox = new Farsight.RoundPictureBox();
+            this.statModDefenseMagicResistPictureBox = new Farsight.RoundPictureBox();
+            this.statModDefenseHealthPictureBox = new Farsight.RoundPictureBox();
+            this.statModOffenseAttackSpeedPictureBox = new Farsight.RoundPictureBox();
+            this.statModOffenseCDRPictureBox = new Farsight.RoundPictureBox();
+            this.statModOffenseAdaptiveForcePictureBox = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier2PictureBox2 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier2PictureBox3 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier2PictureBox1 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier3PictureBox2 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier3PictureBox3 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier3PictureBox1 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier1PictureBox2 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier1PictureBox3 = new Farsight.RoundPictureBox();
+            this.secondaryRunesTier1PictureBox1 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier1PictureBox2 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier1PictureBox3 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier1PictureBox1 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier2PictureBox2 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier2PictureBox3 = new Farsight.RoundPictureBox();
+            this.primaryRunesTier2PictureBox1 = new Farsight.RoundPictureBox();
+            this.secondaryRune4PictureBox = new Farsight.RoundPictureBox();
+            this.secondaryRune3PictureBox = new Farsight.RoundPictureBox();
+            this.secondaryRune2PictureBox = new Farsight.RoundPictureBox();
+            this.secondaryRune1PictureBox = new Farsight.RoundPictureBox();
+            this.primaryRuneKeystone2PictureBox = new Farsight.RoundPictureBox();
+            this.primaryRuneKeystone3PictureBox = new Farsight.RoundPictureBox();
+            this.resolvePictureBox = new Farsight.RoundPictureBox();
+            this.sorceryPictureBox = new Farsight.RoundPictureBox();
+            this.dominationPictureBox = new Farsight.RoundPictureBox();
+            this.precisionPictureBox = new Farsight.RoundPictureBox();
+            this.primaryRuneKeystone1PictureBox = new Farsight.RoundPictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneSelectionLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRuneSelectionLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statmodRuneSelectionLine)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone4PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondaryRunePictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playingChampPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.againstChampPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspirationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorForcePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexMagicResistPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexAdaptiveForcePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseArmorPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseMagicResistPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseHealthPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseAttackSpeedPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseCDRPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseAdaptiveForcePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune4PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune3PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune2PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune1PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone2PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone3PictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resolvePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sorceryPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dominationPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.precisionPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone1PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // primaryRuneLabel
-            // 
-            this.primaryRuneLabel.AutoSize = true;
-            this.primaryRuneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryRuneLabel.ForeColor = System.Drawing.Color.White;
-            this.primaryRuneLabel.Location = new System.Drawing.Point(104, 16);
-            this.primaryRuneLabel.Name = "primaryRuneLabel";
-            this.primaryRuneLabel.Size = new System.Drawing.Size(68, 29);
-            this.primaryRuneLabel.TabIndex = 0;
-            this.primaryRuneLabel.Text = "Type";
-            // 
-            // primaryNextButton
-            // 
-            this.primaryNextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryNextButton.Location = new System.Drawing.Point(160, 48);
-            this.primaryNextButton.Name = "primaryNextButton";
-            this.primaryNextButton.Size = new System.Drawing.Size(40, 32);
-            this.primaryNextButton.TabIndex = 1;
-            this.primaryNextButton.Text = ">";
-            this.primaryNextButton.UseVisualStyleBackColor = true;
-            // 
-            // primaryPreviousButton
-            // 
-            this.primaryPreviousButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryPreviousButton.Location = new System.Drawing.Point(104, 48);
-            this.primaryPreviousButton.Name = "primaryPreviousButton";
-            this.primaryPreviousButton.Size = new System.Drawing.Size(40, 32);
-            this.primaryPreviousButton.TabIndex = 2;
-            this.primaryPreviousButton.Text = "<";
-            this.primaryPreviousButton.UseVisualStyleBackColor = true;
-            // 
-            // secondaryPreviosButton
-            // 
-            this.secondaryPreviosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryPreviosButton.Location = new System.Drawing.Point(344, 48);
-            this.secondaryPreviosButton.Name = "secondaryPreviosButton";
-            this.secondaryPreviosButton.Size = new System.Drawing.Size(40, 32);
-            this.secondaryPreviosButton.TabIndex = 6;
-            this.secondaryPreviosButton.Text = "<";
-            this.secondaryPreviosButton.UseVisualStyleBackColor = true;
-            // 
-            // secondaryNextButton
-            // 
-            this.secondaryNextButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryNextButton.Location = new System.Drawing.Point(400, 48);
-            this.secondaryNextButton.Name = "secondaryNextButton";
-            this.secondaryNextButton.Size = new System.Drawing.Size(40, 32);
-            this.secondaryNextButton.TabIndex = 5;
-            this.secondaryNextButton.Text = ">";
-            this.secondaryNextButton.UseVisualStyleBackColor = true;
-            // 
-            // secondaryRuneLabel
-            // 
-            this.secondaryRuneLabel.AutoSize = true;
-            this.secondaryRuneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryRuneLabel.ForeColor = System.Drawing.Color.White;
-            this.secondaryRuneLabel.Location = new System.Drawing.Point(344, 16);
-            this.secondaryRuneLabel.Name = "secondaryRuneLabel";
-            this.secondaryRuneLabel.Size = new System.Drawing.Size(68, 29);
-            this.secondaryRuneLabel.TabIndex = 4;
-            this.secondaryRuneLabel.Text = "Type";
-            this.secondaryRuneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // keystoneComboBox
-            // 
-            this.keystoneComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.keystoneComboBox.FormattingEnabled = true;
-            this.keystoneComboBox.Location = new System.Drawing.Point(88, 104);
-            this.keystoneComboBox.Name = "keystoneComboBox";
-            this.keystoneComboBox.Size = new System.Drawing.Size(128, 24);
-            this.keystoneComboBox.TabIndex = 8;
-            // 
-            // keystoneCheckBox
-            // 
-            this.keystoneCheckBox.AutoSize = true;
-            this.keystoneCheckBox.Location = new System.Drawing.Point(64, 108);
-            this.keystoneCheckBox.Name = "keystoneCheckBox";
-            this.keystoneCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.keystoneCheckBox.TabIndex = 9;
-            this.keystoneCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(24, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 2);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "label1";
-            // 
-            // label2
-            // 
-            this.label2.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(24, 216);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(200, 2);
-            this.label2.TabIndex = 13;
-            this.label2.Text = "label2";
-            // 
-            // primaryRune1CheckBox
-            // 
-            this.primaryRune1CheckBox.AutoSize = true;
-            this.primaryRune1CheckBox.Location = new System.Drawing.Point(64, 180);
-            this.primaryRune1CheckBox.Name = "primaryRune1CheckBox";
-            this.primaryRune1CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.primaryRune1CheckBox.TabIndex = 12;
-            this.primaryRune1CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // primaryRune1ComboBox
-            // 
-            this.primaryRune1ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryRune1ComboBox.FormattingEnabled = true;
-            this.primaryRune1ComboBox.Location = new System.Drawing.Point(88, 176);
-            this.primaryRune1ComboBox.Name = "primaryRune1ComboBox";
-            this.primaryRune1ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.primaryRune1ComboBox.TabIndex = 11;
-            // 
-            // label3
-            // 
-            this.label3.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(24, 288);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(200, 2);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "label3";
-            // 
-            // primaryRune2CheckBox
-            // 
-            this.primaryRune2CheckBox.AutoSize = true;
-            this.primaryRune2CheckBox.Location = new System.Drawing.Point(64, 252);
-            this.primaryRune2CheckBox.Name = "primaryRune2CheckBox";
-            this.primaryRune2CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.primaryRune2CheckBox.TabIndex = 15;
-            this.primaryRune2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // primaryRune2ComboBox
-            // 
-            this.primaryRune2ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryRune2ComboBox.FormattingEnabled = true;
-            this.primaryRune2ComboBox.Location = new System.Drawing.Point(88, 248);
-            this.primaryRune2ComboBox.Name = "primaryRune2ComboBox";
-            this.primaryRune2ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.primaryRune2ComboBox.TabIndex = 14;
-            // 
-            // primaryRune3CheckBox
-            // 
-            this.primaryRune3CheckBox.AutoSize = true;
-            this.primaryRune3CheckBox.Location = new System.Drawing.Point(64, 316);
-            this.primaryRune3CheckBox.Name = "primaryRune3CheckBox";
-            this.primaryRune3CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.primaryRune3CheckBox.TabIndex = 18;
-            this.primaryRune3CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // primaryRune3ComboBox
-            // 
-            this.primaryRune3ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.primaryRune3ComboBox.FormattingEnabled = true;
-            this.primaryRune3ComboBox.Location = new System.Drawing.Point(88, 312);
-            this.primaryRune3ComboBox.Name = "primaryRune3ComboBox";
-            this.primaryRune3ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.primaryRune3ComboBox.TabIndex = 17;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(264, 144);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(200, 2);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "label5";
-            // 
-            // secondaryRune1CheckBox
-            // 
-            this.secondaryRune1CheckBox.AutoSize = true;
-            this.secondaryRune1CheckBox.Location = new System.Drawing.Point(304, 108);
-            this.secondaryRune1CheckBox.Name = "secondaryRune1CheckBox";
-            this.secondaryRune1CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.secondaryRune1CheckBox.TabIndex = 21;
-            this.secondaryRune1CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // secondaryRune1ComboBox
-            // 
-            this.secondaryRune1ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryRune1ComboBox.FormattingEnabled = true;
-            this.secondaryRune1ComboBox.Location = new System.Drawing.Point(328, 104);
-            this.secondaryRune1ComboBox.Name = "secondaryRune1ComboBox";
-            this.secondaryRune1ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.secondaryRune1ComboBox.TabIndex = 20;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(264, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(200, 2);
-            this.label6.TabIndex = 25;
-            this.label6.Text = "label6";
-            // 
-            // secondaryRune2CheckBox
-            // 
-            this.secondaryRune2CheckBox.AutoSize = true;
-            this.secondaryRune2CheckBox.Location = new System.Drawing.Point(304, 180);
-            this.secondaryRune2CheckBox.Name = "secondaryRune2CheckBox";
-            this.secondaryRune2CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.secondaryRune2CheckBox.TabIndex = 24;
-            this.secondaryRune2CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // secondaryRune2ComboBox
-            // 
-            this.secondaryRune2ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryRune2ComboBox.FormattingEnabled = true;
-            this.secondaryRune2ComboBox.Location = new System.Drawing.Point(328, 176);
-            this.secondaryRune2ComboBox.Name = "secondaryRune2ComboBox";
-            this.secondaryRune2ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.secondaryRune2ComboBox.TabIndex = 23;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(512, 104);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(175, 2);
-            this.label7.TabIndex = 28;
-            this.label7.Text = "label7";
-            // 
-            // offenseRuneCheckBox
-            // 
-            this.offenseRuneCheckBox.AutoSize = true;
-            this.offenseRuneCheckBox.Location = new System.Drawing.Point(536, 76);
-            this.offenseRuneCheckBox.Name = "offenseRuneCheckBox";
-            this.offenseRuneCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.offenseRuneCheckBox.TabIndex = 27;
-            this.offenseRuneCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(560, 72);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(120, 24);
-            this.comboBox6.TabIndex = 26;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(512, 168);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(175, 2);
-            this.label8.TabIndex = 31;
-            this.label8.Text = "label8";
-            // 
-            // flexRunePageCheckBox
-            // 
-            this.flexRunePageCheckBox.AutoSize = true;
-            this.flexRunePageCheckBox.Location = new System.Drawing.Point(536, 140);
-            this.flexRunePageCheckBox.Name = "flexRunePageCheckBox";
-            this.flexRunePageCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.flexRunePageCheckBox.TabIndex = 30;
-            this.flexRunePageCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // comboBox7
-            // 
-            this.comboBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(560, 136);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(120, 24);
-            this.comboBox7.TabIndex = 29;
-            // 
-            // defenseRunePageCheckBox
-            // 
-            this.defenseRunePageCheckBox.AutoSize = true;
-            this.defenseRunePageCheckBox.Location = new System.Drawing.Point(536, 196);
-            this.defenseRunePageCheckBox.Name = "defenseRunePageCheckBox";
-            this.defenseRunePageCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.defenseRunePageCheckBox.TabIndex = 33;
-            this.defenseRunePageCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // comboBox8
-            // 
-            this.comboBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(560, 192);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(120, 24);
-            this.comboBox8.TabIndex = 32;
-            // 
-            // secondaryRune3CheckBox
-            // 
-            this.secondaryRune3CheckBox.AutoSize = true;
-            this.secondaryRune3CheckBox.Location = new System.Drawing.Point(304, 252);
-            this.secondaryRune3CheckBox.Name = "secondaryRune3CheckBox";
-            this.secondaryRune3CheckBox.Size = new System.Drawing.Size(15, 14);
-            this.secondaryRune3CheckBox.TabIndex = 36;
-            this.secondaryRune3CheckBox.UseVisualStyleBackColor = true;
-            // 
-            // secondaryRune3ComboBox
-            // 
-            this.secondaryRune3ComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.secondaryRune3ComboBox.FormattingEnabled = true;
-            this.secondaryRune3ComboBox.Location = new System.Drawing.Point(328, 248);
-            this.secondaryRune3ComboBox.Name = "secondaryRune3ComboBox";
-            this.secondaryRune3ComboBox.Size = new System.Drawing.Size(128, 24);
-            this.secondaryRune3ComboBox.TabIndex = 35;
-            // 
-            // runePageNameTextBox
-            // 
-            this.runePageNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.runePageNameTextBox.ForeColor = System.Drawing.Color.Black;
-            this.runePageNameTextBox.Location = new System.Drawing.Point(496, 312);
-            this.runePageNameTextBox.Name = "runePageNameTextBox";
-            this.runePageNameTextBox.Size = new System.Drawing.Size(184, 26);
-            this.runePageNameTextBox.TabIndex = 38;
-            // 
-            // primaryRunePictureBox
-            // 
-            this.primaryRunePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.primaryRunePictureBox.Location = new System.Drawing.Point(40, 24);
-            this.primaryRunePictureBox.Name = "primaryRunePictureBox";
-            this.primaryRunePictureBox.Size = new System.Drawing.Size(48, 48);
-            this.primaryRunePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.primaryRunePictureBox.TabIndex = 39;
-            this.primaryRunePictureBox.TabStop = false;
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(82, 128);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(15, 14);
+            this.checkBox1.TabIndex = 45;
+            this.checkBox1.UseVisualStyleBackColor = false;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox2.Location = new System.Drawing.Point(82, 216);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(15, 14);
+            this.checkBox2.TabIndex = 46;
+            this.checkBox2.UseVisualStyleBackColor = false;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox3.Location = new System.Drawing.Point(82, 288);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(15, 14);
+            this.checkBox3.TabIndex = 47;
+            this.checkBox3.UseVisualStyleBackColor = false;
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox4.Location = new System.Drawing.Point(82, 360);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(15, 14);
+            this.checkBox4.TabIndex = 48;
+            this.checkBox4.UseVisualStyleBackColor = false;
+            // 
+            // checkBox5
+            // 
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(536, 104);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(15, 14);
+            this.checkBox5.TabIndex = 49;
+            this.checkBox5.UseVisualStyleBackColor = false;
+            // 
+            // checkBox6
+            // 
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(536, 168);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(15, 14);
+            this.checkBox6.TabIndex = 50;
+            this.checkBox6.UseVisualStyleBackColor = false;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(536, 232);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(15, 14);
+            this.checkBox7.TabIndex = 51;
+            this.checkBox7.UseVisualStyleBackColor = false;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox8.Location = new System.Drawing.Point(536, 296);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(15, 14);
+            this.checkBox8.TabIndex = 52;
+            this.checkBox8.UseVisualStyleBackColor = false;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox9.Location = new System.Drawing.Point(536, 376);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(15, 14);
+            this.checkBox9.TabIndex = 53;
+            this.checkBox9.UseVisualStyleBackColor = false;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox10.Location = new System.Drawing.Point(536, 336);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(15, 14);
+            this.checkBox10.TabIndex = 54;
+            this.checkBox10.UseVisualStyleBackColor = false;
+            // 
+            // primaryRuneSelectionLine
+            // 
+            this.primaryRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.primaryRuneSelectionLine.Location = new System.Drawing.Point(82, 72);
+            this.primaryRuneSelectionLine.Name = "primaryRuneSelectionLine";
+            this.primaryRuneSelectionLine.Size = new System.Drawing.Size(12, 302);
+            this.primaryRuneSelectionLine.TabIndex = 55;
+            this.primaryRuneSelectionLine.TabStop = false;
+            // 
+            // secondaryRuneSelectionLine
+            // 
+            this.secondaryRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.secondaryRuneSelectionLine.Location = new System.Drawing.Point(537, 72);
+            this.secondaryRuneSelectionLine.Name = "secondaryRuneSelectionLine";
+            this.secondaryRuneSelectionLine.Size = new System.Drawing.Size(12, 174);
+            this.secondaryRuneSelectionLine.TabIndex = 56;
+            this.secondaryRuneSelectionLine.TabStop = false;
+            // 
+            // statmodRuneSelectionLine
+            // 
+            this.statmodRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.statmodRuneSelectionLine.Location = new System.Drawing.Point(537, 296);
+            this.statmodRuneSelectionLine.Name = "statmodRuneSelectionLine";
+            this.statmodRuneSelectionLine.Size = new System.Drawing.Size(12, 94);
+            this.statmodRuneSelectionLine.TabIndex = 57;
+            this.statmodRuneSelectionLine.TabStop = false;
+            // 
+            // primaryRunesTier3PictureBox4
+            // 
+            this.primaryRunesTier3PictureBox4.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier3PictureBox4.Location = new System.Drawing.Point(408, 344);
+            this.primaryRunesTier3PictureBox4.Name = "primaryRunesTier3PictureBox4";
+            this.primaryRunesTier3PictureBox4.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier3PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier3PictureBox4.TabIndex = 44;
+            this.primaryRunesTier3PictureBox4.TabStop = false;
+            // 
+            // secondaryRunesTier3PictureBox4
+            // 
+            this.secondaryRunesTier3PictureBox4.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier3PictureBox4.Location = new System.Drawing.Point(800, 216);
+            this.secondaryRunesTier3PictureBox4.Name = "secondaryRunesTier3PictureBox4";
+            this.secondaryRunesTier3PictureBox4.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier3PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier3PictureBox4.TabIndex = 43;
+            this.secondaryRunesTier3PictureBox4.TabStop = false;
+            // 
+            // primaryRuneKeystone4PictureBox
+            // 
+            this.primaryRuneKeystone4PictureBox.BackColor = System.Drawing.Color.Black;
+            this.primaryRuneKeystone4PictureBox.Location = new System.Drawing.Point(368, 112);
+            this.primaryRuneKeystone4PictureBox.Name = "primaryRuneKeystone4PictureBox";
+            this.primaryRuneKeystone4PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.primaryRuneKeystone4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRuneKeystone4PictureBox.TabIndex = 42;
+            this.primaryRuneKeystone4PictureBox.TabStop = false;
+            // 
+            // primaryRunesTier3PictureBox2
+            // 
+            this.primaryRunesTier3PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier3PictureBox2.Location = new System.Drawing.Point(272, 344);
+            this.primaryRunesTier3PictureBox2.Name = "primaryRunesTier3PictureBox2";
+            this.primaryRunesTier3PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier3PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier3PictureBox2.TabIndex = 41;
+            this.primaryRunesTier3PictureBox2.TabStop = false;
+            // 
+            // primaryRunesTier3PictureBox3
+            // 
+            this.primaryRunesTier3PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier3PictureBox3.Location = new System.Drawing.Point(344, 344);
+            this.primaryRunesTier3PictureBox3.Name = "primaryRunesTier3PictureBox3";
+            this.primaryRunesTier3PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier3PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier3PictureBox3.TabIndex = 40;
+            this.primaryRunesTier3PictureBox3.TabStop = false;
+            // 
+            // primaryRunesTier3PictureBox1
+            // 
+            this.primaryRunesTier3PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier3PictureBox1.Location = new System.Drawing.Point(200, 344);
+            this.primaryRunesTier3PictureBox1.Name = "primaryRunesTier3PictureBox1";
+            this.primaryRunesTier3PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier3PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier3PictureBox1.TabIndex = 39;
+            this.primaryRunesTier3PictureBox1.TabStop = false;
             // 
             // secondaryRunePictureBox
             // 
-            this.secondaryRunePictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.secondaryRunePictureBox.Location = new System.Drawing.Point(280, 24);
+            this.secondaryRunePictureBox.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunePictureBox.Location = new System.Drawing.Point(512, 8);
             this.secondaryRunePictureBox.Name = "secondaryRunePictureBox";
-            this.secondaryRunePictureBox.Size = new System.Drawing.Size(48, 48);
-            this.secondaryRunePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.secondaryRunePictureBox.TabIndex = 40;
+            this.secondaryRunePictureBox.Size = new System.Drawing.Size(64, 64);
+            this.secondaryRunePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.secondaryRunePictureBox.TabIndex = 38;
             this.secondaryRunePictureBox.TabStop = false;
             // 
-            // playingChampPictureBox
+            // primaryRunePictureBox
             // 
-            this.playingChampPictureBox.Location = new System.Drawing.Point(496, 248);
-            this.playingChampPictureBox.Name = "playingChampPictureBox";
-            this.playingChampPictureBox.Size = new System.Drawing.Size(55, 55);
-            this.playingChampPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.playingChampPictureBox.TabIndex = 41;
-            this.playingChampPictureBox.TabStop = false;
+            this.primaryRunePictureBox.BackColor = System.Drawing.Color.Black;
+            this.primaryRunePictureBox.Location = new System.Drawing.Point(56, 8);
+            this.primaryRunePictureBox.Name = "primaryRunePictureBox";
+            this.primaryRunePictureBox.Size = new System.Drawing.Size(64, 64);
+            this.primaryRunePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.primaryRunePictureBox.TabIndex = 37;
+            this.primaryRunePictureBox.TabStop = false;
             // 
-            // againstChampPictureBox
+            // inspirationPictureBox
             // 
-            this.againstChampPictureBox.Location = new System.Drawing.Point(624, 248);
-            this.againstChampPictureBox.Name = "againstChampPictureBox";
-            this.againstChampPictureBox.Size = new System.Drawing.Size(55, 55);
-            this.againstChampPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.againstChampPictureBox.TabIndex = 42;
-            this.againstChampPictureBox.TabStop = false;
+            this.inspirationPictureBox.BackColor = System.Drawing.Color.Black;
+            this.inspirationPictureBox.Location = new System.Drawing.Point(400, 16);
+            this.inspirationPictureBox.Name = "inspirationPictureBox";
+            this.inspirationPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.inspirationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.inspirationPictureBox.TabIndex = 36;
+            this.inspirationPictureBox.TabStop = false;
             // 
-            // VSLabel
+            // statModFlexArmorForcePictureBox
             // 
-            this.VSLabel.AutoSize = true;
-            this.VSLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VSLabel.ForeColor = System.Drawing.Color.White;
-            this.VSLabel.Location = new System.Drawing.Point(568, 264);
-            this.VSLabel.Name = "VSLabel";
-            this.VSLabel.Size = new System.Drawing.Size(37, 24);
-            this.VSLabel.TabIndex = 43;
-            this.VSLabel.Text = "VS";
-            this.VSLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.statModFlexArmorForcePictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModFlexArmorForcePictureBox.Location = new System.Drawing.Point(696, 328);
+            this.statModFlexArmorForcePictureBox.Name = "statModFlexArmorForcePictureBox";
+            this.statModFlexArmorForcePictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModFlexArmorForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModFlexArmorForcePictureBox.TabIndex = 35;
+            this.statModFlexArmorForcePictureBox.TabStop = false;
+            // 
+            // statModFlexMagicResistPictureBox
+            // 
+            this.statModFlexMagicResistPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModFlexMagicResistPictureBox.Location = new System.Drawing.Point(752, 328);
+            this.statModFlexMagicResistPictureBox.Name = "statModFlexMagicResistPictureBox";
+            this.statModFlexMagicResistPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModFlexMagicResistPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModFlexMagicResistPictureBox.TabIndex = 34;
+            this.statModFlexMagicResistPictureBox.TabStop = false;
+            // 
+            // statModFlexAdaptiveForcePictureBox
+            // 
+            this.statModFlexAdaptiveForcePictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModFlexAdaptiveForcePictureBox.Location = new System.Drawing.Point(640, 328);
+            this.statModFlexAdaptiveForcePictureBox.Name = "statModFlexAdaptiveForcePictureBox";
+            this.statModFlexAdaptiveForcePictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModFlexAdaptiveForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModFlexAdaptiveForcePictureBox.TabIndex = 33;
+            this.statModFlexAdaptiveForcePictureBox.TabStop = false;
+            // 
+            // statModDefenseArmorPictureBox
+            // 
+            this.statModDefenseArmorPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModDefenseArmorPictureBox.Location = new System.Drawing.Point(696, 368);
+            this.statModDefenseArmorPictureBox.Name = "statModDefenseArmorPictureBox";
+            this.statModDefenseArmorPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModDefenseArmorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModDefenseArmorPictureBox.TabIndex = 32;
+            this.statModDefenseArmorPictureBox.TabStop = false;
+            // 
+            // statModDefenseMagicResistPictureBox
+            // 
+            this.statModDefenseMagicResistPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModDefenseMagicResistPictureBox.Location = new System.Drawing.Point(752, 368);
+            this.statModDefenseMagicResistPictureBox.Name = "statModDefenseMagicResistPictureBox";
+            this.statModDefenseMagicResistPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModDefenseMagicResistPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModDefenseMagicResistPictureBox.TabIndex = 31;
+            this.statModDefenseMagicResistPictureBox.TabStop = false;
+            // 
+            // statModDefenseHealthPictureBox
+            // 
+            this.statModDefenseHealthPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModDefenseHealthPictureBox.Location = new System.Drawing.Point(640, 368);
+            this.statModDefenseHealthPictureBox.Name = "statModDefenseHealthPictureBox";
+            this.statModDefenseHealthPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModDefenseHealthPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModDefenseHealthPictureBox.TabIndex = 30;
+            this.statModDefenseHealthPictureBox.TabStop = false;
+            // 
+            // statModOffenseAttackSpeedPictureBox
+            // 
+            this.statModOffenseAttackSpeedPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModOffenseAttackSpeedPictureBox.Location = new System.Drawing.Point(696, 288);
+            this.statModOffenseAttackSpeedPictureBox.Name = "statModOffenseAttackSpeedPictureBox";
+            this.statModOffenseAttackSpeedPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModOffenseAttackSpeedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModOffenseAttackSpeedPictureBox.TabIndex = 29;
+            this.statModOffenseAttackSpeedPictureBox.TabStop = false;
+            // 
+            // statModOffenseCDRPictureBox
+            // 
+            this.statModOffenseCDRPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModOffenseCDRPictureBox.Location = new System.Drawing.Point(752, 288);
+            this.statModOffenseCDRPictureBox.Name = "statModOffenseCDRPictureBox";
+            this.statModOffenseCDRPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModOffenseCDRPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModOffenseCDRPictureBox.TabIndex = 28;
+            this.statModOffenseCDRPictureBox.TabStop = false;
+            // 
+            // statModOffenseAdaptiveForcePictureBox
+            // 
+            this.statModOffenseAdaptiveForcePictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModOffenseAdaptiveForcePictureBox.Location = new System.Drawing.Point(640, 288);
+            this.statModOffenseAdaptiveForcePictureBox.Name = "statModOffenseAdaptiveForcePictureBox";
+            this.statModOffenseAdaptiveForcePictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModOffenseAdaptiveForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModOffenseAdaptiveForcePictureBox.TabIndex = 27;
+            this.statModOffenseAdaptiveForcePictureBox.TabStop = false;
+            // 
+            // secondaryRunesTier2PictureBox2
+            // 
+            this.secondaryRunesTier2PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier2PictureBox2.Location = new System.Drawing.Point(688, 152);
+            this.secondaryRunesTier2PictureBox2.Name = "secondaryRunesTier2PictureBox2";
+            this.secondaryRunesTier2PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier2PictureBox2.TabIndex = 26;
+            this.secondaryRunesTier2PictureBox2.TabStop = false;
+            // 
+            // secondaryRunesTier2PictureBox3
+            // 
+            this.secondaryRunesTier2PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier2PictureBox3.Location = new System.Drawing.Point(744, 152);
+            this.secondaryRunesTier2PictureBox3.Name = "secondaryRunesTier2PictureBox3";
+            this.secondaryRunesTier2PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier2PictureBox3.TabIndex = 25;
+            this.secondaryRunesTier2PictureBox3.TabStop = false;
+            // 
+            // secondaryRunesTier2PictureBox1
+            // 
+            this.secondaryRunesTier2PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier2PictureBox1.Location = new System.Drawing.Point(632, 152);
+            this.secondaryRunesTier2PictureBox1.Name = "secondaryRunesTier2PictureBox1";
+            this.secondaryRunesTier2PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier2PictureBox1.TabIndex = 24;
+            this.secondaryRunesTier2PictureBox1.TabStop = false;
+            // 
+            // secondaryRunesTier3PictureBox2
+            // 
+            this.secondaryRunesTier3PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier3PictureBox2.Location = new System.Drawing.Point(688, 216);
+            this.secondaryRunesTier3PictureBox2.Name = "secondaryRunesTier3PictureBox2";
+            this.secondaryRunesTier3PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier3PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier3PictureBox2.TabIndex = 23;
+            this.secondaryRunesTier3PictureBox2.TabStop = false;
+            // 
+            // secondaryRunesTier3PictureBox3
+            // 
+            this.secondaryRunesTier3PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier3PictureBox3.Location = new System.Drawing.Point(744, 216);
+            this.secondaryRunesTier3PictureBox3.Name = "secondaryRunesTier3PictureBox3";
+            this.secondaryRunesTier3PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier3PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier3PictureBox3.TabIndex = 22;
+            this.secondaryRunesTier3PictureBox3.TabStop = false;
+            // 
+            // secondaryRunesTier3PictureBox1
+            // 
+            this.secondaryRunesTier3PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier3PictureBox1.Location = new System.Drawing.Point(632, 216);
+            this.secondaryRunesTier3PictureBox1.Name = "secondaryRunesTier3PictureBox1";
+            this.secondaryRunesTier3PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier3PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier3PictureBox1.TabIndex = 21;
+            this.secondaryRunesTier3PictureBox1.TabStop = false;
+            // 
+            // secondaryRunesTier1PictureBox2
+            // 
+            this.secondaryRunesTier1PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier1PictureBox2.Location = new System.Drawing.Point(688, 88);
+            this.secondaryRunesTier1PictureBox2.Name = "secondaryRunesTier1PictureBox2";
+            this.secondaryRunesTier1PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier1PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier1PictureBox2.TabIndex = 20;
+            this.secondaryRunesTier1PictureBox2.TabStop = false;
+            // 
+            // secondaryRunesTier1PictureBox3
+            // 
+            this.secondaryRunesTier1PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier1PictureBox3.Location = new System.Drawing.Point(744, 88);
+            this.secondaryRunesTier1PictureBox3.Name = "secondaryRunesTier1PictureBox3";
+            this.secondaryRunesTier1PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier1PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier1PictureBox3.TabIndex = 19;
+            this.secondaryRunesTier1PictureBox3.TabStop = false;
+            // 
+            // secondaryRunesTier1PictureBox1
+            // 
+            this.secondaryRunesTier1PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.secondaryRunesTier1PictureBox1.Location = new System.Drawing.Point(632, 88);
+            this.secondaryRunesTier1PictureBox1.Name = "secondaryRunesTier1PictureBox1";
+            this.secondaryRunesTier1PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.secondaryRunesTier1PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.secondaryRunesTier1PictureBox1.TabIndex = 18;
+            this.secondaryRunesTier1PictureBox1.TabStop = false;
+            // 
+            // primaryRunesTier1PictureBox2
+            // 
+            this.primaryRunesTier1PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier1PictureBox2.Location = new System.Drawing.Point(272, 200);
+            this.primaryRunesTier1PictureBox2.Name = "primaryRunesTier1PictureBox2";
+            this.primaryRunesTier1PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier1PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier1PictureBox2.TabIndex = 17;
+            this.primaryRunesTier1PictureBox2.TabStop = false;
+            // 
+            // primaryRunesTier1PictureBox3
+            // 
+            this.primaryRunesTier1PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier1PictureBox3.Location = new System.Drawing.Point(344, 200);
+            this.primaryRunesTier1PictureBox3.Name = "primaryRunesTier1PictureBox3";
+            this.primaryRunesTier1PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier1PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier1PictureBox3.TabIndex = 16;
+            this.primaryRunesTier1PictureBox3.TabStop = false;
+            // 
+            // primaryRunesTier1PictureBox1
+            // 
+            this.primaryRunesTier1PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier1PictureBox1.Location = new System.Drawing.Point(200, 200);
+            this.primaryRunesTier1PictureBox1.Name = "primaryRunesTier1PictureBox1";
+            this.primaryRunesTier1PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier1PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier1PictureBox1.TabIndex = 15;
+            this.primaryRunesTier1PictureBox1.TabStop = false;
+            // 
+            // primaryRunesTier2PictureBox2
+            // 
+            this.primaryRunesTier2PictureBox2.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier2PictureBox2.Location = new System.Drawing.Point(272, 272);
+            this.primaryRunesTier2PictureBox2.Name = "primaryRunesTier2PictureBox2";
+            this.primaryRunesTier2PictureBox2.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier2PictureBox2.TabIndex = 14;
+            this.primaryRunesTier2PictureBox2.TabStop = false;
+            // 
+            // primaryRunesTier2PictureBox3
+            // 
+            this.primaryRunesTier2PictureBox3.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier2PictureBox3.Location = new System.Drawing.Point(344, 272);
+            this.primaryRunesTier2PictureBox3.Name = "primaryRunesTier2PictureBox3";
+            this.primaryRunesTier2PictureBox3.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier2PictureBox3.TabIndex = 13;
+            this.primaryRunesTier2PictureBox3.TabStop = false;
+            // 
+            // primaryRunesTier2PictureBox1
+            // 
+            this.primaryRunesTier2PictureBox1.BackColor = System.Drawing.Color.Black;
+            this.primaryRunesTier2PictureBox1.Location = new System.Drawing.Point(200, 272);
+            this.primaryRunesTier2PictureBox1.Name = "primaryRunesTier2PictureBox1";
+            this.primaryRunesTier2PictureBox1.Size = new System.Drawing.Size(44, 44);
+            this.primaryRunesTier2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRunesTier2PictureBox1.TabIndex = 12;
+            this.primaryRunesTier2PictureBox1.TabStop = false;
+            // 
+            // secondaryRune4PictureBox
+            // 
+            this.secondaryRune4PictureBox.BackColor = System.Drawing.Color.Black;
+            this.secondaryRune4PictureBox.Location = new System.Drawing.Point(784, 16);
+            this.secondaryRune4PictureBox.Name = "secondaryRune4PictureBox";
+            this.secondaryRune4PictureBox.Size = new System.Drawing.Size(48, 48);
+            this.secondaryRune4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.secondaryRune4PictureBox.TabIndex = 11;
+            this.secondaryRune4PictureBox.TabStop = false;
+            this.secondaryRune4PictureBox.Click += new System.EventHandler(this.secondaryRune4PictureBox_Click);
+            // 
+            // secondaryRune3PictureBox
+            // 
+            this.secondaryRune3PictureBox.BackColor = System.Drawing.Color.Black;
+            this.secondaryRune3PictureBox.Location = new System.Drawing.Point(720, 16);
+            this.secondaryRune3PictureBox.Name = "secondaryRune3PictureBox";
+            this.secondaryRune3PictureBox.Size = new System.Drawing.Size(48, 48);
+            this.secondaryRune3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.secondaryRune3PictureBox.TabIndex = 10;
+            this.secondaryRune3PictureBox.TabStop = false;
+            this.secondaryRune3PictureBox.Click += new System.EventHandler(this.secondaryRune3PictureBox_Click);
+            // 
+            // secondaryRune2PictureBox
+            // 
+            this.secondaryRune2PictureBox.BackColor = System.Drawing.Color.Black;
+            this.secondaryRune2PictureBox.Location = new System.Drawing.Point(664, 16);
+            this.secondaryRune2PictureBox.Name = "secondaryRune2PictureBox";
+            this.secondaryRune2PictureBox.Size = new System.Drawing.Size(48, 48);
+            this.secondaryRune2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.secondaryRune2PictureBox.TabIndex = 9;
+            this.secondaryRune2PictureBox.TabStop = false;
+            this.secondaryRune2PictureBox.Click += new System.EventHandler(this.secondaryRune2PictureBox_Click);
+            // 
+            // secondaryRune1PictureBox
+            // 
+            this.secondaryRune1PictureBox.BackColor = System.Drawing.Color.Black;
+            this.secondaryRune1PictureBox.Location = new System.Drawing.Point(600, 16);
+            this.secondaryRune1PictureBox.Name = "secondaryRune1PictureBox";
+            this.secondaryRune1PictureBox.Size = new System.Drawing.Size(48, 48);
+            this.secondaryRune1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.secondaryRune1PictureBox.TabIndex = 8;
+            this.secondaryRune1PictureBox.TabStop = false;
+            this.secondaryRune1PictureBox.Click += new System.EventHandler(this.secondaryRune1PictureBox_Click);
+            // 
+            // primaryRuneKeystone2PictureBox
+            // 
+            this.primaryRuneKeystone2PictureBox.BackColor = System.Drawing.Color.Black;
+            this.primaryRuneKeystone2PictureBox.Location = new System.Drawing.Point(224, 112);
+            this.primaryRuneKeystone2PictureBox.Name = "primaryRuneKeystone2PictureBox";
+            this.primaryRuneKeystone2PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.primaryRuneKeystone2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRuneKeystone2PictureBox.TabIndex = 7;
+            this.primaryRuneKeystone2PictureBox.TabStop = false;
+            // 
+            // primaryRuneKeystone3PictureBox
+            // 
+            this.primaryRuneKeystone3PictureBox.BackColor = System.Drawing.Color.Black;
+            this.primaryRuneKeystone3PictureBox.Location = new System.Drawing.Point(296, 112);
+            this.primaryRuneKeystone3PictureBox.Name = "primaryRuneKeystone3PictureBox";
+            this.primaryRuneKeystone3PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.primaryRuneKeystone3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRuneKeystone3PictureBox.TabIndex = 6;
+            this.primaryRuneKeystone3PictureBox.TabStop = false;
+            // 
+            // resolvePictureBox
+            // 
+            this.resolvePictureBox.BackColor = System.Drawing.Color.Black;
+            this.resolvePictureBox.Location = new System.Drawing.Point(336, 16);
+            this.resolvePictureBox.Name = "resolvePictureBox";
+            this.resolvePictureBox.Size = new System.Drawing.Size(48, 48);
+            this.resolvePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.resolvePictureBox.TabIndex = 4;
+            this.resolvePictureBox.TabStop = false;
+            // 
+            // sorceryPictureBox
+            // 
+            this.sorceryPictureBox.BackColor = System.Drawing.Color.Black;
+            this.sorceryPictureBox.Location = new System.Drawing.Point(272, 16);
+            this.sorceryPictureBox.Name = "sorceryPictureBox";
+            this.sorceryPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.sorceryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.sorceryPictureBox.TabIndex = 3;
+            this.sorceryPictureBox.TabStop = false;
+            // 
+            // dominationPictureBox
+            // 
+            this.dominationPictureBox.BackColor = System.Drawing.Color.Black;
+            this.dominationPictureBox.Location = new System.Drawing.Point(208, 16);
+            this.dominationPictureBox.Name = "dominationPictureBox";
+            this.dominationPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.dominationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.dominationPictureBox.TabIndex = 2;
+            this.dominationPictureBox.TabStop = false;
+            // 
+            // precisionPictureBox
+            // 
+            this.precisionPictureBox.BackColor = System.Drawing.Color.Black;
+            this.precisionPictureBox.Location = new System.Drawing.Point(144, 16);
+            this.precisionPictureBox.Name = "precisionPictureBox";
+            this.precisionPictureBox.Size = new System.Drawing.Size(48, 48);
+            this.precisionPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.precisionPictureBox.TabIndex = 1;
+            this.precisionPictureBox.TabStop = false;
+            this.precisionPictureBox.Click += new System.EventHandler(this.precisionPictureBox_Click);
+            // 
+            // primaryRuneKeystone1PictureBox
+            // 
+            this.primaryRuneKeystone1PictureBox.BackColor = System.Drawing.Color.Black;
+            this.primaryRuneKeystone1PictureBox.Location = new System.Drawing.Point(152, 112);
+            this.primaryRuneKeystone1PictureBox.Name = "primaryRuneKeystone1PictureBox";
+            this.primaryRuneKeystone1PictureBox.Size = new System.Drawing.Size(64, 64);
+            this.primaryRuneKeystone1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.primaryRuneKeystone1PictureBox.TabIndex = 0;
+            this.primaryRuneKeystone1PictureBox.TabStop = false;
             // 
             // RunePageEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Farsight.Properties.Resources.Webp_net_resizeimage;
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(701, 363);
-            this.Controls.Add(this.VSLabel);
-            this.Controls.Add(this.againstChampPictureBox);
-            this.Controls.Add(this.playingChampPictureBox);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
+            this.ClientSize = new System.Drawing.Size(902, 410);
+            this.Controls.Add(this.checkBox10);
+            this.Controls.Add(this.checkBox9);
+            this.Controls.Add(this.checkBox8);
+            this.Controls.Add(this.checkBox7);
+            this.Controls.Add(this.checkBox6);
+            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.checkBox4);
+            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.checkBox2);
+            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.primaryRunesTier3PictureBox4);
+            this.Controls.Add(this.secondaryRunesTier3PictureBox4);
+            this.Controls.Add(this.primaryRuneKeystone4PictureBox);
+            this.Controls.Add(this.primaryRunesTier3PictureBox2);
+            this.Controls.Add(this.primaryRunesTier3PictureBox3);
+            this.Controls.Add(this.primaryRunesTier3PictureBox1);
             this.Controls.Add(this.secondaryRunePictureBox);
             this.Controls.Add(this.primaryRunePictureBox);
-            this.Controls.Add(this.runePageNameTextBox);
-            this.Controls.Add(this.secondaryRune3CheckBox);
-            this.Controls.Add(this.secondaryRune3ComboBox);
-            this.Controls.Add(this.defenseRunePageCheckBox);
-            this.Controls.Add(this.comboBox8);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.flexRunePageCheckBox);
-            this.Controls.Add(this.comboBox7);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.offenseRuneCheckBox);
-            this.Controls.Add(this.comboBox6);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.secondaryRune2CheckBox);
-            this.Controls.Add(this.secondaryRune2ComboBox);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.secondaryRune1CheckBox);
-            this.Controls.Add(this.secondaryRune1ComboBox);
-            this.Controls.Add(this.primaryRune3CheckBox);
-            this.Controls.Add(this.primaryRune3ComboBox);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.primaryRune2CheckBox);
-            this.Controls.Add(this.primaryRune2ComboBox);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.primaryRune1CheckBox);
-            this.Controls.Add(this.primaryRune1ComboBox);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.keystoneCheckBox);
-            this.Controls.Add(this.keystoneComboBox);
-            this.Controls.Add(this.secondaryPreviosButton);
-            this.Controls.Add(this.secondaryNextButton);
-            this.Controls.Add(this.secondaryRuneLabel);
-            this.Controls.Add(this.primaryPreviousButton);
-            this.Controls.Add(this.primaryNextButton);
-            this.Controls.Add(this.primaryRuneLabel);
+            this.Controls.Add(this.inspirationPictureBox);
+            this.Controls.Add(this.statModFlexArmorForcePictureBox);
+            this.Controls.Add(this.statModFlexMagicResistPictureBox);
+            this.Controls.Add(this.statModFlexAdaptiveForcePictureBox);
+            this.Controls.Add(this.statModDefenseArmorPictureBox);
+            this.Controls.Add(this.statModDefenseMagicResistPictureBox);
+            this.Controls.Add(this.statModDefenseHealthPictureBox);
+            this.Controls.Add(this.statModOffenseAttackSpeedPictureBox);
+            this.Controls.Add(this.statModOffenseCDRPictureBox);
+            this.Controls.Add(this.statModOffenseAdaptiveForcePictureBox);
+            this.Controls.Add(this.secondaryRunesTier2PictureBox2);
+            this.Controls.Add(this.secondaryRunesTier2PictureBox3);
+            this.Controls.Add(this.secondaryRunesTier2PictureBox1);
+            this.Controls.Add(this.secondaryRunesTier3PictureBox2);
+            this.Controls.Add(this.secondaryRunesTier3PictureBox3);
+            this.Controls.Add(this.secondaryRunesTier3PictureBox1);
+            this.Controls.Add(this.secondaryRunesTier1PictureBox2);
+            this.Controls.Add(this.secondaryRunesTier1PictureBox3);
+            this.Controls.Add(this.secondaryRunesTier1PictureBox1);
+            this.Controls.Add(this.primaryRunesTier1PictureBox2);
+            this.Controls.Add(this.primaryRunesTier1PictureBox3);
+            this.Controls.Add(this.primaryRunesTier1PictureBox1);
+            this.Controls.Add(this.primaryRunesTier2PictureBox2);
+            this.Controls.Add(this.primaryRunesTier2PictureBox3);
+            this.Controls.Add(this.primaryRunesTier2PictureBox1);
+            this.Controls.Add(this.secondaryRune4PictureBox);
+            this.Controls.Add(this.secondaryRune3PictureBox);
+            this.Controls.Add(this.secondaryRune2PictureBox);
+            this.Controls.Add(this.secondaryRune1PictureBox);
+            this.Controls.Add(this.primaryRuneKeystone2PictureBox);
+            this.Controls.Add(this.primaryRuneKeystone3PictureBox);
+            this.Controls.Add(this.resolvePictureBox);
+            this.Controls.Add(this.sorceryPictureBox);
+            this.Controls.Add(this.dominationPictureBox);
+            this.Controls.Add(this.precisionPictureBox);
+            this.Controls.Add(this.primaryRuneKeystone1PictureBox);
+            this.Controls.Add(this.primaryRuneSelectionLine);
+            this.Controls.Add(this.secondaryRuneSelectionLine);
+            this.Controls.Add(this.statmodRuneSelectionLine);
             this.Name = "RunePageEditor";
-            this.Text = "RunePageEditor";
-            ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).EndInit();
+            this.Text = "Rune Page Editor";
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneSelectionLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRuneSelectionLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statmodRuneSelectionLine)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone4PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier3PictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.secondaryRunePictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.playingChampPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.againstChampPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.inspirationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorForcePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexMagicResistPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexAdaptiveForcePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseArmorPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseMagicResistPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModDefenseHealthPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseAttackSpeedPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseCDRPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModOffenseAdaptiveForcePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier3PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRunesTier1PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier1PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRunesTier2PictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune4PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune3PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune2PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.secondaryRune1PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone2PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone3PictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resolvePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sorceryPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dominationPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.precisionPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone1PictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -497,44 +835,62 @@
 
         #endregion
 
-        public System.Windows.Forms.Label primaryRuneLabel;
-        public System.Windows.Forms.Button primaryNextButton;
-        public System.Windows.Forms.Button primaryPreviousButton;
-        public System.Windows.Forms.Button secondaryPreviosButton;
-        public System.Windows.Forms.Button secondaryNextButton;
-        public System.Windows.Forms.Label secondaryRuneLabel;
-        public System.Windows.Forms.ComboBox keystoneComboBox;
-        public System.Windows.Forms.CheckBox keystoneCheckBox;
-        public System.Windows.Forms.Label label1;
-        public System.Windows.Forms.Label label2;
-        public System.Windows.Forms.CheckBox primaryRune1CheckBox;
-        public System.Windows.Forms.ComboBox primaryRune1ComboBox;
-        public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.CheckBox primaryRune2CheckBox;
-        public System.Windows.Forms.ComboBox primaryRune2ComboBox;
-        public System.Windows.Forms.CheckBox primaryRune3CheckBox;
-        public System.Windows.Forms.ComboBox primaryRune3ComboBox;
-        public System.Windows.Forms.Label label5;
-        public System.Windows.Forms.CheckBox secondaryRune1CheckBox;
-        public System.Windows.Forms.ComboBox secondaryRune1ComboBox;
-        public System.Windows.Forms.Label label6;
-        public System.Windows.Forms.CheckBox secondaryRune2CheckBox;
-        public System.Windows.Forms.ComboBox secondaryRune2ComboBox;
-        public System.Windows.Forms.Label label7;
-        public System.Windows.Forms.CheckBox offenseRuneCheckBox;
-        public System.Windows.Forms.ComboBox comboBox6;
-        public System.Windows.Forms.Label label8;
-        public System.Windows.Forms.CheckBox flexRunePageCheckBox;
-        public System.Windows.Forms.ComboBox comboBox7;
-        public System.Windows.Forms.CheckBox defenseRunePageCheckBox;
-        public System.Windows.Forms.ComboBox comboBox8;
-        public System.Windows.Forms.CheckBox secondaryRune3CheckBox;
-        public System.Windows.Forms.ComboBox secondaryRune3ComboBox;
-        public System.Windows.Forms.TextBox runePageNameTextBox;
-        private System.Windows.Forms.PictureBox primaryRunePictureBox;
-        private System.Windows.Forms.PictureBox secondaryRunePictureBox;
-        private System.Windows.Forms.PictureBox playingChampPictureBox;
-        private System.Windows.Forms.PictureBox againstChampPictureBox;
-        private System.Windows.Forms.Label VSLabel;
+        private RoundPictureBox primaryRuneKeystone1PictureBox;
+        private RoundPictureBox precisionPictureBox;
+        private RoundPictureBox dominationPictureBox;
+        private RoundPictureBox sorceryPictureBox;
+        private RoundPictureBox resolvePictureBox;
+        private RoundPictureBox primaryRuneKeystone3PictureBox;
+        private RoundPictureBox primaryRuneKeystone2PictureBox;
+        private RoundPictureBox secondaryRune4PictureBox;
+        private RoundPictureBox secondaryRune3PictureBox;
+        private RoundPictureBox secondaryRune2PictureBox;
+        private RoundPictureBox secondaryRune1PictureBox;
+        private RoundPictureBox primaryRunesTier2PictureBox2;
+        private RoundPictureBox primaryRunesTier2PictureBox3;
+        private RoundPictureBox primaryRunesTier2PictureBox1;
+        private RoundPictureBox primaryRunesTier1PictureBox2;
+        private RoundPictureBox primaryRunesTier1PictureBox3;
+        private RoundPictureBox primaryRunesTier1PictureBox1;
+        private RoundPictureBox secondaryRunesTier2PictureBox2;
+        private RoundPictureBox secondaryRunesTier2PictureBox3;
+        private RoundPictureBox secondaryRunesTier2PictureBox1;
+        private RoundPictureBox secondaryRunesTier3PictureBox2;
+        private RoundPictureBox secondaryRunesTier3PictureBox3;
+        private RoundPictureBox secondaryRunesTier3PictureBox1;
+        private RoundPictureBox secondaryRunesTier1PictureBox2;
+        private RoundPictureBox secondaryRunesTier1PictureBox3;
+        private RoundPictureBox secondaryRunesTier1PictureBox1;
+        private RoundPictureBox statModFlexArmorForcePictureBox;
+        private RoundPictureBox statModFlexMagicResistPictureBox;
+        private RoundPictureBox statModFlexAdaptiveForcePictureBox;
+        private RoundPictureBox statModDefenseArmorPictureBox;
+        private RoundPictureBox statModDefenseMagicResistPictureBox;
+        private RoundPictureBox statModDefenseHealthPictureBox;
+        private RoundPictureBox statModOffenseAttackSpeedPictureBox;
+        private RoundPictureBox statModOffenseCDRPictureBox;
+        private RoundPictureBox statModOffenseAdaptiveForcePictureBox;
+        private RoundPictureBox inspirationPictureBox;
+        private RoundPictureBox primaryRunePictureBox;
+        private RoundPictureBox secondaryRunePictureBox;
+        private RoundPictureBox primaryRunesTier3PictureBox2;
+        private RoundPictureBox primaryRunesTier3PictureBox3;
+        private RoundPictureBox primaryRunesTier3PictureBox1;
+        private RoundPictureBox primaryRuneKeystone4PictureBox;
+        private RoundPictureBox secondaryRunesTier3PictureBox4;
+        private RoundPictureBox primaryRunesTier3PictureBox4;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.PictureBox primaryRuneSelectionLine;
+        private System.Windows.Forms.PictureBox secondaryRuneSelectionLine;
+        private System.Windows.Forms.PictureBox statmodRuneSelectionLine;
     }
 }

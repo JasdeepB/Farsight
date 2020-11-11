@@ -189,7 +189,7 @@ namespace Farsight
 
                 matchUserControl.championPictureBox.Image = Images.ChampionImage(matchHistory.matches[i].championName);
 
-                matchUserControl.primaryRunePictureBox.Image = Images.PrimaryRuneTree(allMatchData[i].participants[userIndex].stats.perkPrimaryStyle);
+                matchUserControl.primaryRunePictureBox.Image = Images.RuneTree(allMatchData[i].participants[userIndex].stats.perkPrimaryStyle);
                 matchUserControl.secondaryRunePictureBox.Image = Images.SecondaryRuneTree(allMatchData[i].participants[userIndex].stats.perkSubStyle);
 
                 matchUserControl.spell1PictureBox.Image = Images.SummonerSpell(allMatchData[i].participants[userIndex].spell1Id);
@@ -289,8 +289,10 @@ namespace Farsight
 
         private void runePagesButton_Click(object sender, EventArgs e)
         {
-            RunePageEditor runePageEditor = new RunePageEditor();
-            runePageEditor.Show();
+            //RunePageEditor runePageEditor = new RunePageEditor();
+            //runePageEditor.Show();
+            RunePageEditor runePage = new RunePageEditor();
+            runePage.Show();
         }
     }
 }

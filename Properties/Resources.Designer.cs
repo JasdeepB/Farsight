@@ -63,6 +63,16 @@ namespace Farsight.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _77894bec5021dca9cfea61e52c492240 {
+            get {
+                object obj = ResourceManager.GetObject("77894bec5021dca9cfea61e52c492240", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Summoners_Rift {
             get {
                 object obj = ResourceManager.GetObject("Summoners-Rift", resourceCulture);
