@@ -10,6 +10,8 @@ namespace Farsight.UI_s_and_Controllers
         List<AllRunes> runes = JSONParser.Runes();
         int[] runesTrees = { 8000, 8100, 8200, 8400, 8300 }; //Pricision, Domination, Sorcery, Resolve, Inspiration
         List<int> secondaryRuneTree = new List<int>();
+        int currentSecondaryTree = 0;
+        bool primaryTreeIsDomination = false;
 
         public RunePageEditor()
         {
@@ -38,8 +40,24 @@ namespace Farsight.UI_s_and_Controllers
 
         private void precisionPictureBox_Click(object sender, System.EventArgs e)
         {
+            if (currentSecondaryTree == 8000)
+            {
+                ResetSecondaryTree();//If the user selects the same primary tree as the secondary tree, reset the secondary tree
+                secondaryRunePictureBox.Image = null;
+            }
+
+            if (primaryTreeIsDomination == true)
+            {
+                primaryRunesTier3PictureBox1.Location = new Point(200, 344);
+                primaryRunesTier3PictureBox2.Location = new Point(272, 344);
+                primaryRunesTier3PictureBox3.Location = new Point(344, 344);
+                primaryRunesTier3PictureBox4.Location = new Point(408, 344);
+                primaryRunesTier3PictureBox4.Visible = false;
+            }
+
             primaryRunePictureBox.Image = Images.RuneTree(8000);
-            primaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+
+            SetRuneSelectionLineColor(8000, true);
 
             primaryRuneKeystone1PictureBox.Image = Images.PrecisionTree(8005);
             primaryRuneKeystone2PictureBox.Image = Images.PrecisionTree(8008);
@@ -61,10 +79,51 @@ namespace Farsight.UI_s_and_Controllers
             LoadSecondaryTree(8000);
         }
 
+        private void dominationPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (currentSecondaryTree == 8100)
+            {
+                ResetSecondaryTree();
+                secondaryRunePictureBox.Image = null;
+            }
+
+            primaryTreeIsDomination = true;
+
+            primaryRunePictureBox.Image = Images.RuneTree(8100);
+
+            SetRuneSelectionLineColor(8100, true);
+
+            primaryRuneKeystone1PictureBox.Image = Images.DominationTree(8112);
+            primaryRuneKeystone2PictureBox.Image = Images.DominationTree(8124);
+            primaryRuneKeystone3PictureBox.Image = Images.DominationTree(8128);
+            primaryRuneKeystone4PictureBox.Image = Images.DominationTree(9923);
+
+            primaryRunesTier1PictureBox1.Image = Images.DominationTree(8126);
+            primaryRunesTier1PictureBox2.Image = Images.DominationTree(8139);
+            primaryRunesTier1PictureBox3.Image = Images.DominationTree(8143);
+
+            primaryRunesTier2PictureBox1.Image = Images.DominationTree(8136);
+            primaryRunesTier2PictureBox2.Image = Images.DominationTree(8120);
+            primaryRunesTier2PictureBox3.Image = Images.DominationTree(8138);
+
+            primaryRunesTier3PictureBox1.Location = new Point(160, 344);
+            primaryRunesTier3PictureBox2.Location = new Point(232, 344);
+            primaryRunesTier3PictureBox3.Location = new Point(304, 344);
+            primaryRunesTier3PictureBox4.Location = new Point(376, 344);
+            primaryRunesTier3PictureBox4.Visible = true;
+
+            primaryRunesTier3PictureBox1.Image = Images.DominationTree(8135);
+            primaryRunesTier3PictureBox2.Image = Images.DominationTree(8134);
+            primaryRunesTier3PictureBox3.Image = Images.DominationTree(8105);
+            primaryRunesTier3PictureBox4.Image = Images.DominationTree(8106);
+
+            LoadSecondaryTree(8100);
+        }
+
         private void SetSecondaryTreeRunes(int runeTree)
         {
-            //secondaryRunePictureBox.Image = Images.RuneTree(runeTree);
-            SetSecodaryRuneSelectionLineColor(runeTree);
+            currentSecondaryTree = runeTree;
+            SetRuneSelectionLineColor(runeTree, false);
 
             if (runeTree == 8100) //Checks if the rune tree is the Domination tree
             {
@@ -76,18 +135,43 @@ namespace Farsight.UI_s_and_Controllers
             }
 
             //The secondary rune trees don't use keystones
-            secondaryRunesTier1PictureBox1.Image = GetRuneImage(runeTree, 8126);
-            secondaryRunesTier1PictureBox2.Image = GetRuneImage(runeTree, 8139);
-            secondaryRunesTier1PictureBox3.Image = GetRuneImage(runeTree, 8143);
+            PopualateSecondaryRuneTree(runeTree);
+        }
 
-            secondaryRunesTier2PictureBox1.Image = GetRuneImage(runeTree, 8136);
-            secondaryRunesTier2PictureBox2.Image = GetRuneImage(runeTree, 8120);
-            secondaryRunesTier2PictureBox3.Image = GetRuneImage(runeTree, 8138);
+        private void PopualateSecondaryRuneTree(int runTree) //Maybe use the JSON file for this?
+        {
+            switch(runTree)
+            {
+                case 8000:
+                    secondaryRunesTier1PictureBox1.Image = Images.PrecisionTree(9101);
+                    secondaryRunesTier1PictureBox2.Image = Images.PrecisionTree(9111);
+                    secondaryRunesTier1PictureBox3.Image = Images.PrecisionTree(8009);
 
-            secondaryRunesTier3PictureBox1.Image = GetRuneImage(runeTree, 8135);
-            secondaryRunesTier3PictureBox2.Image = GetRuneImage(runeTree, 8134);
-            secondaryRunesTier3PictureBox3.Image = GetRuneImage(runeTree, 8105);
-            secondaryRunesTier3PictureBox4.Image = GetRuneImage(runeTree, 8106);
+                    secondaryRunesTier2PictureBox1.Image = Images.PrecisionTree(9104);
+                    secondaryRunesTier2PictureBox2.Image = Images.PrecisionTree(9105);
+                    secondaryRunesTier2PictureBox3.Image = Images.PrecisionTree(9103);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.PrecisionTree(8014);
+                    secondaryRunesTier3PictureBox2.Image = Images.PrecisionTree(8017);
+                    secondaryRunesTier3PictureBox3.Image = Images.PrecisionTree(8229);
+                    secondaryRunesTier3PictureBox4.Image = null;
+                    break;
+
+                case 8100:
+                    secondaryRunesTier1PictureBox1.Image = Images.DominationTree(8126);
+                    secondaryRunesTier1PictureBox2.Image = Images.DominationTree(8139);
+                    secondaryRunesTier1PictureBox3.Image = Images.DominationTree(8143);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.DominationTree(8136);
+                    secondaryRunesTier2PictureBox2.Image = Images.DominationTree(8120);
+                    secondaryRunesTier2PictureBox3.Image = Images.DominationTree(8138);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.DominationTree(8135);
+                    secondaryRunesTier3PictureBox2.Image = Images.DominationTree(8134);
+                    secondaryRunesTier3PictureBox3.Image = Images.DominationTree(8105);
+                    secondaryRunesTier3PictureBox4.Image = Images.DominationTree(8106);
+                    break;
+            }
         }
 
         private Image GetRuneImage(int runeTree, int runeId)
@@ -118,6 +202,12 @@ namespace Farsight.UI_s_and_Controllers
 
         private void LoadSecondaryTree(int primaryTreeChoice) //Loads secondary tree based on the first tree's choice
         {
+            if  (secondaryRuneTree != null)
+            {
+                secondaryRuneTree = null;
+                secondaryRuneTree = new List<int>();
+            }
+
             for (int i = 0; i < runesTrees.Length; i++)
             {
                 if (runesTrees[i] != primaryTreeChoice)
@@ -135,7 +225,6 @@ namespace Farsight.UI_s_and_Controllers
         private void secondaryRune1PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
-            secondaryRune1PictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
             SetSecondaryTreeRunes(secondaryRuneTree[0]);
         }
 
@@ -157,25 +246,86 @@ namespace Farsight.UI_s_and_Controllers
             SetSecondaryTreeRunes(secondaryRuneTree[3]);
         }
 
-        private void SetSecodaryRuneSelectionLineColor(int runeTree)
+        private void SetRuneSelectionLineColor(int runeTree, bool isPrimaryTree)
         {
             switch (runeTree)
             {
                 case 8000:
-                    secondaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+                    }
                     break;
                 case 8100:
-                    secondaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
+                    }
                     break;
                 case 8200:
-                    secondaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(159,170, 252);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
+                    }
                     break;
                 case 8400:
-                    secondaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
+                    }
                     break;
                 case 8300:
-                    secondaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
+                    }
                     break;
+            }
+        }
+
+        private void ResetSecondaryTree()
+        {
+            secondaryRunesTier1PictureBox1.Image = null;
+            secondaryRunesTier1PictureBox2.Image = null;
+            secondaryRunesTier1PictureBox3.Image = null;
+
+            secondaryRunesTier2PictureBox1.Image = null;
+            secondaryRunesTier2PictureBox2.Image = null;
+            secondaryRunesTier2PictureBox3.Image = null;
+
+            secondaryRunesTier3PictureBox1.Image = null;
+            secondaryRunesTier3PictureBox2.Image = null;
+            secondaryRunesTier3PictureBox3.Image = null;
+            secondaryRunesTier3PictureBox4.Image = null;
+
+            if (secondaryRunesTier3PictureBox4.Visible)
+            {
+
+                secondaryRunesTier3PictureBox4.Visible = false;
+                secondaryRunesTier3PictureBox1.Location = new Point(632, 216);
+                secondaryRunesTier3PictureBox2.Location = new Point(688, 216);
+                secondaryRunesTier3PictureBox3.Location = new Point(744, 216);
+                secondaryRunesTier3PictureBox4.Location = new Point(800, 216);
             }
         }
     }
