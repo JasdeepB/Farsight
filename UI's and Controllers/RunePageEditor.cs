@@ -67,7 +67,7 @@ namespace Farsight.UI_s_and_Controllers
             primaryRunesTier1PictureBox1.Image = Images.PrecisionTree(9101);
             primaryRunesTier1PictureBox2.Image = Images.PrecisionTree(9111);
             primaryRunesTier1PictureBox3.Image = Images.PrecisionTree(8009);
-            
+
             primaryRunesTier2PictureBox1.Image = Images.PrecisionTree(9104);
             primaryRunesTier2PictureBox2.Image = Images.PrecisionTree(9105);
             primaryRunesTier2PictureBox3.Image = Images.PrecisionTree(9103);
@@ -140,7 +140,7 @@ namespace Farsight.UI_s_and_Controllers
 
         private void PopualateSecondaryRuneTree(int runTree) //Maybe use the JSON file for this?
         {
-            switch(runTree)
+            switch (runTree)
             {
                 case 8000:
                     secondaryRunesTier1PictureBox1.Image = Images.PrecisionTree(9101);
@@ -174,35 +174,9 @@ namespace Farsight.UI_s_and_Controllers
             }
         }
 
-        private Image GetRuneImage(int runeTree, int runeId)
-        {
-            if (runeTree == 8000)
-            {
-                return Images.PrecisionTree(runeId);
-            }
-            else if (runeTree == 8100)
-            {
-                return Images.DominationTree(runeId);
-            }
-            else if (runeTree == 8200)
-            {
-
-            }
-            else if (runeTree == 8400)
-            {
-
-            }
-            else if (runeTree == 8300)
-            {
-
-            }
-
-            return null;
-        }
-
         private void LoadSecondaryTree(int primaryTreeChoice) //Loads secondary tree based on the first tree's choice
         {
-            if  (secondaryRuneTree != null)
+            if (secondaryRuneTree != null)
             {
                 secondaryRuneTree = null;
                 secondaryRuneTree = new List<int>();
@@ -273,7 +247,7 @@ namespace Farsight.UI_s_and_Controllers
                 case 8200:
                     if (isPrimaryTree)
                     {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(159,170, 252);
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
                     }
                     else
                     {
