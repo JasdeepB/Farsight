@@ -9,7 +9,7 @@ namespace Farsight
 {
     class JSONParser
     {
-        public static string APIKEY = "RGAPI-e073faea-60ff-4bd7-a961-f797bc273912";
+        public static string APIKEY = "RGAPI-ca6f062a-8c94-48f4-8740-0461b60a918f";
 
         static string workingDirectory = Environment.CurrentDirectory;
         static string projectDirectory = Directory.GetParent(workingDirectory).Parent.Parent.FullName;
