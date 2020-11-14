@@ -342,7 +342,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.primaryRuneKeystone4PictureBox.BackColor = System.Drawing.Color.Black;
-            this.primaryRuneKeystone4PictureBox.Location = new System.Drawing.Point(368, 112);
+            this.primaryRuneKeystone4PictureBox.Location = new System.Drawing.Point(408, 112);
             this.primaryRuneKeystone4PictureBox.Name = "primaryRuneKeystone4PictureBox";
             this.primaryRuneKeystone4PictureBox.Size = new System.Drawing.Size(64, 64);
             this.primaryRuneKeystone4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -426,6 +426,7 @@
             this.inspirationPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.inspirationPictureBox.TabIndex = 36;
             this.inspirationPictureBox.TabStop = false;
+            this.inspirationPictureBox.Click += new System.EventHandler(this.inspirationPictureBox_Click);
             // 
             // statModFlexArmorForcePictureBox
             // 
@@ -801,7 +802,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.primaryRuneKeystone2PictureBox.BackColor = System.Drawing.Color.Black;
-            this.primaryRuneKeystone2PictureBox.Location = new System.Drawing.Point(224, 112);
+            this.primaryRuneKeystone2PictureBox.Location = new System.Drawing.Point(264, 112);
             this.primaryRuneKeystone2PictureBox.Name = "primaryRuneKeystone2PictureBox";
             this.primaryRuneKeystone2PictureBox.Size = new System.Drawing.Size(64, 64);
             this.primaryRuneKeystone2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -814,7 +815,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.primaryRuneKeystone3PictureBox.BackColor = System.Drawing.Color.Black;
-            this.primaryRuneKeystone3PictureBox.Location = new System.Drawing.Point(296, 112);
+            this.primaryRuneKeystone3PictureBox.Location = new System.Drawing.Point(336, 112);
             this.primaryRuneKeystone3PictureBox.Name = "primaryRuneKeystone3PictureBox";
             this.primaryRuneKeystone3PictureBox.Size = new System.Drawing.Size(64, 64);
             this.primaryRuneKeystone3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -833,6 +834,7 @@
             this.resolvePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.resolvePictureBox.TabIndex = 4;
             this.resolvePictureBox.TabStop = false;
+            this.resolvePictureBox.Click += new System.EventHandler(this.resolvePictureBox_Click);
             // 
             // sorceryPictureBox
             // 
@@ -846,6 +848,7 @@
             this.sorceryPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.sorceryPictureBox.TabIndex = 3;
             this.sorceryPictureBox.TabStop = false;
+            this.sorceryPictureBox.Click += new System.EventHandler(this.sorceryPictureBox_Click);
             // 
             // dominationPictureBox
             // 
@@ -881,7 +884,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.primaryRuneKeystone1PictureBox.BackColor = System.Drawing.Color.Black;
-            this.primaryRuneKeystone1PictureBox.Location = new System.Drawing.Point(152, 112);
+            this.primaryRuneKeystone1PictureBox.Location = new System.Drawing.Point(192, 112);
             this.primaryRuneKeystone1PictureBox.Name = "primaryRuneKeystone1PictureBox";
             this.primaryRuneKeystone1PictureBox.Size = new System.Drawing.Size(64, 64);
             this.primaryRuneKeystone1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

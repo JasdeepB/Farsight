@@ -16,7 +16,8 @@ namespace Farsight
 
         public static Image ChampionImage(string championName)
         {
-            if (championName == "Wukong") {
+            if (championName == "Wukong")
+            {
                 championName = "MonkeyKing";
             }
 
@@ -27,7 +28,7 @@ namespace Farsight
         {
             string ending = "";
 
-            switch (rune) 
+            switch (rune)
             {
                 case 8100:
                     ending = "7200_Domination";
@@ -117,7 +118,7 @@ namespace Farsight
                 case 8017:
                     path = @"\Farsight\Images\perk-images\Styles\Precision\CutDown\CutDown.png";
                     break;
-                case 8229:
+                case 8299:
                     path = @"\Farsight\Images\perk-images\Styles\Sorcery\LastStand\LastStand.png";
                     break;
             }
@@ -178,6 +179,147 @@ namespace Farsight
             return Image.FromFile(projectDirectory + path);
         }
 
+        public static Image SorceryTree(int rune)
+        {
+            string path = "";
+
+            switch (rune)
+            {
+                case 8214:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\SummonAery\SummonAery.png";
+                    break;
+                case 8229:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\ArcaneComet\ArcaneComet.png";
+                    break;
+                case 8230:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\PhaseRush\PhaseRush.png";
+                    break;
+                case 8224:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\NullifyingOrb\Pokeshield.png";
+                    break;
+                case 8226:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\ManaflowBand\ManaflowBand.png";
+                    break;
+                case 8275:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\NimbusCloak\6361.png";
+                    break;
+                case 8210:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\Transcendence\Transcendence.png";
+                    break;
+                case 8234:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\Celerity\CelerityTemp.png";
+                    break;
+                case 8233:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\AbsoluteFocus\AbsoluteFocus.png";
+                    break;
+                case 8237:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\Scorch\Scorch.png";
+                    break;
+                case 8232:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\Waterwalking\Waterwalking.png";
+                    break;
+                case 8236:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\GatheringStorm\GatheringStorm.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
+        }
+
+        public static Image ResolveTree(int rune)
+        {
+            string path = "";
+
+            switch (rune)
+            {
+                case 8437:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\GraspOfTheUndying\GraspOfTheUndying.png";
+                    break;
+                case 8439:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\VeteranAftershock\VeteranAftershock.png";
+                    break;
+                case 8465:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\Guardian\Guardian.png";
+                    break;
+                case 8446:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\Demolish\Demolish.png";
+                    break;
+                case 8463:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\FontOfLife\FontOfLife.png";
+                    break;
+                case 8401:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\MirrorShell\MirrorShell.png";
+                    break;
+                case 8429:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\Conditioning\Conditioning.png";
+                    break;
+                case 8444:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\SecondWind\SecondWind.png";
+                    break;
+                case 8473:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\BonePlating\BonePlating.png";
+                    break;
+                case 8451:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\Overgrowth\Overgrowth.png";
+                    break;
+                case 8453:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\Revitalize\Revitalize.png";
+                    break;
+                case 8242:
+                    path = @"\Farsight\Images\perk-images\Styles\Sorcery\Unflinching\Unflinching.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
+        }
+
+        public static Image InspirationTree(int rune)
+        {
+            string path = "";
+
+            switch (rune)
+            {
+                case 8351:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\GlacialAugment\GlacialAugment.png";
+                    break;
+                case 8360:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\UnsealedSpellbook\UnsealedSpellbook.png";
+                    break;
+                case 8358:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\MasterKey\MasterKey.png";
+                    break;
+                case 8306:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\HextechFlashtraption\HextechFlashtraption.png";
+                    break;
+                case 8304:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\MagicalFootwear\MagicalFootwear.png";
+                    break;
+                case 8313:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\PerfectTiming\PerfectTiming.png";
+                    break;
+                case 8321:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\FuturesMarket\FuturesMarket.png";
+                    break;
+                case 8316:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\MinionDematerializer\MinionDematerializer.png";
+                    break;
+                case 8345:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\BiscuitDelivery\BiscuitDelivery.png";
+                    break;
+                case 8347:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\CosmicInsight\CosmicInsight.png";
+                    break;
+                case 8410:
+                    path = @"\Farsight\Images\perk-images\Styles\Resolve\ApproachVelocity\ApproachVelocity.png";
+                    break;
+                case 8352:
+                    path = @"\Farsight\Images\perk-images\Styles\Inspiration\TimeWarpTonic\TimeWarpTonic.png";
+                    break;
+            }
+
+            return Image.FromFile(projectDirectory + path);
+        }
+
         public static Image StatMods(string modeType)
         {
             string path = "";
@@ -210,7 +352,8 @@ namespace Farsight
         public static Image Item(int itemId)
         {
 
-            if(itemId == 0){
+            if (itemId == 0)
+            {
                 return Image.FromFile(projectDirectory + @"\Farsight\Images\img\item\" + 4403 + ".png");
             }
 
@@ -220,7 +363,7 @@ namespace Farsight
         public static Image SummonerSpell(int spellId)
         {
             string spellName = "";
-            switch (spellId) 
+            switch (spellId)
             {
 
                 case (21):
@@ -276,7 +419,7 @@ namespace Farsight
         public static Image SummonerProfileIcon(int iconId)
         {
             return Image.FromFile(projectDirectory + @"\Farsight\Images\img\profileicon\" + iconId.ToString() + ".png");
-            
+
         }
     }
 }

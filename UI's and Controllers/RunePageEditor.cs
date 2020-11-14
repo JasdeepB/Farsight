@@ -7,11 +7,14 @@ namespace Farsight.UI_s_and_Controllers
 {
     public partial class RunePageEditor : Form
     {
-        List<AllRunes> runes = JSONParser.Runes();
+        List<AllRunes> allRuneTrees = JSONParser.Runes();
         int[] runesTrees = { 8000, 8100, 8200, 8400, 8300 }; //Pricision, Domination, Sorcery, Resolve, Inspiration
         List<int> secondaryRuneTree = new List<int>();
         int currentSecondaryTree = 0;
         bool primaryTreeIsDomination = false;
+
+        //Maybe create a builder object to store user selections
+        //Create a button programatically to show what rune has been selected, doing it this way means you can generate multiple ones from a single source
 
         public RunePageEditor()
         {
@@ -46,6 +49,15 @@ namespace Farsight.UI_s_and_Controllers
                 secondaryRunePictureBox.Image = null;
             }
 
+            if (primaryRuneKeystone4PictureBox.Visible == false)
+            {
+                primaryRuneKeystone1PictureBox.Location = new Point(152, 112);
+                primaryRuneKeystone2PictureBox.Location = new Point(224, 112);
+                primaryRuneKeystone3PictureBox.Location = new Point(296, 112);
+                primaryRuneKeystone4PictureBox.Location = new Point(368, 112);
+                primaryRuneKeystone4PictureBox.Visible = true;
+            }
+
             if (primaryTreeIsDomination == true)
             {
                 primaryRunesTier3PictureBox1.Location = new Point(200, 344);
@@ -76,7 +88,7 @@ namespace Farsight.UI_s_and_Controllers
             primaryRunesTier3PictureBox2.Image = Images.PrecisionTree(8017);
             primaryRunesTier3PictureBox3.Image = Images.PrecisionTree(8229);
 
-            LoadSecondaryTree(8000);
+            LoadSecondaryTreeOptions(8000);
         }
 
         private void dominationPictureBox_Click(object sender, System.EventArgs e)
@@ -92,6 +104,15 @@ namespace Farsight.UI_s_and_Controllers
             primaryRunePictureBox.Image = Images.RuneTree(8100);
 
             SetRuneSelectionLineColor(8100, true);
+
+            if (primaryRuneKeystone4PictureBox.Visible == false)
+            {
+                primaryRuneKeystone1PictureBox.Location = new Point(152, 112);
+                primaryRuneKeystone2PictureBox.Location = new Point(224, 112);
+                primaryRuneKeystone3PictureBox.Location = new Point(296, 112);
+                primaryRuneKeystone4PictureBox.Location = new Point(368, 112);
+                primaryRuneKeystone4PictureBox.Visible = true;
+            }
 
             primaryRuneKeystone1PictureBox.Image = Images.DominationTree(8112);
             primaryRuneKeystone2PictureBox.Image = Images.DominationTree(8124);
@@ -117,64 +138,169 @@ namespace Farsight.UI_s_and_Controllers
             primaryRunesTier3PictureBox3.Image = Images.DominationTree(8105);
             primaryRunesTier3PictureBox4.Image = Images.DominationTree(8106);
 
-            LoadSecondaryTree(8100);
+            LoadSecondaryTreeOptions(8100);
         }
 
-        private void SetSecondaryTreeRunes(int runeTree)
+        private void sorceryPictureBox_Click(object sender, System.EventArgs e)
         {
-            currentSecondaryTree = runeTree;
-            SetRuneSelectionLineColor(runeTree, false);
-
-            if (runeTree == 8100) //Checks if the rune tree is the Domination tree
+            if (currentSecondaryTree == 8200)
             {
-                secondaryRunesTier3PictureBox4.Visible = true;
-                secondaryRunesTier3PictureBox1.Location = new Point(608, 216);
-                secondaryRunesTier3PictureBox2.Location = new Point(664, 216);
-                secondaryRunesTier3PictureBox3.Location = new Point(720, 216);
-                secondaryRunesTier3PictureBox4.Location = new Point(776, 216);
+                ResetSecondaryTree();
+                secondaryRunePictureBox.Image = null;
             }
 
-            //The secondary rune trees don't use keystones
-            PopualateSecondaryRuneTree(runeTree);
-        }
-
-        private void PopualateSecondaryRuneTree(int runTree) //Maybe use the JSON file for this?
-        {
-            switch (runTree)
+            if (primaryRuneKeystone4PictureBox.Visible)
             {
-                case 8000:
-                    secondaryRunesTier1PictureBox1.Image = Images.PrecisionTree(9101);
-                    secondaryRunesTier1PictureBox2.Image = Images.PrecisionTree(9111);
-                    secondaryRunesTier1PictureBox3.Image = Images.PrecisionTree(8009);
-
-                    secondaryRunesTier2PictureBox1.Image = Images.PrecisionTree(9104);
-                    secondaryRunesTier2PictureBox2.Image = Images.PrecisionTree(9105);
-                    secondaryRunesTier2PictureBox3.Image = Images.PrecisionTree(9103);
-
-                    secondaryRunesTier3PictureBox1.Image = Images.PrecisionTree(8014);
-                    secondaryRunesTier3PictureBox2.Image = Images.PrecisionTree(8017);
-                    secondaryRunesTier3PictureBox3.Image = Images.PrecisionTree(8229);
-                    secondaryRunesTier3PictureBox4.Image = null;
-                    break;
-
-                case 8100:
-                    secondaryRunesTier1PictureBox1.Image = Images.DominationTree(8126);
-                    secondaryRunesTier1PictureBox2.Image = Images.DominationTree(8139);
-                    secondaryRunesTier1PictureBox3.Image = Images.DominationTree(8143);
-
-                    secondaryRunesTier2PictureBox1.Image = Images.DominationTree(8136);
-                    secondaryRunesTier2PictureBox2.Image = Images.DominationTree(8120);
-                    secondaryRunesTier2PictureBox3.Image = Images.DominationTree(8138);
-
-                    secondaryRunesTier3PictureBox1.Image = Images.DominationTree(8135);
-                    secondaryRunesTier3PictureBox2.Image = Images.DominationTree(8134);
-                    secondaryRunesTier3PictureBox3.Image = Images.DominationTree(8105);
-                    secondaryRunesTier3PictureBox4.Image = Images.DominationTree(8106);
-                    break;
+                primaryRuneKeystone1PictureBox.Location = new Point(192, 112);
+                primaryRuneKeystone2PictureBox.Location = new Point(264, 112);
+                primaryRuneKeystone3PictureBox.Location = new Point(336, 112);
+                primaryRuneKeystone4PictureBox.Location = new Point(408, 112);
+                primaryRuneKeystone4PictureBox.Visible = false;
             }
+
+            if (primaryTreeIsDomination == true)
+            {
+                primaryRunesTier3PictureBox1.Location = new Point(200, 344);
+                primaryRunesTier3PictureBox2.Location = new Point(272, 344);
+                primaryRunesTier3PictureBox3.Location = new Point(344, 344);
+                primaryRunesTier3PictureBox4.Location = new Point(408, 344);
+                primaryRunesTier3PictureBox4.Visible = false;
+            }
+
+            primaryTreeIsDomination = false;
+
+            primaryRunePictureBox.Image = Images.RuneTree(8200);
+
+            SetRuneSelectionLineColor(8200, true);
+
+            primaryRuneKeystone1PictureBox.Image = Images.SorceryTree(8214);
+            primaryRuneKeystone2PictureBox.Image = Images.SorceryTree(8229);
+            primaryRuneKeystone3PictureBox.Image = Images.SorceryTree(8230);
+            primaryRuneKeystone4PictureBox.Image = null;
+
+            primaryRunesTier1PictureBox1.Image = Images.SorceryTree(8224);
+            primaryRunesTier1PictureBox2.Image = Images.SorceryTree(8226);
+            primaryRunesTier1PictureBox3.Image = Images.SorceryTree(8275);
+
+            primaryRunesTier2PictureBox1.Image = Images.SorceryTree(8210);
+            primaryRunesTier2PictureBox2.Image = Images.SorceryTree(8234);
+            primaryRunesTier2PictureBox3.Image = Images.SorceryTree(8233);
+
+            primaryRunesTier3PictureBox1.Image = Images.SorceryTree(8237);
+            primaryRunesTier3PictureBox2.Image = Images.SorceryTree(8232);
+            primaryRunesTier3PictureBox3.Image = Images.SorceryTree(8236);
+            primaryRunesTier3PictureBox4.Image = null;
+
+            LoadSecondaryTreeOptions(8200);
         }
 
-        private void LoadSecondaryTree(int primaryTreeChoice) //Loads secondary tree based on the first tree's choice
+        private void resolvePictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (currentSecondaryTree == 8400)
+            {
+                ResetSecondaryTree();
+                secondaryRunePictureBox.Image = null;
+            }
+
+            if (primaryRuneKeystone4PictureBox.Visible)
+            {
+                primaryRuneKeystone1PictureBox.Location = new Point(192, 112);
+                primaryRuneKeystone2PictureBox.Location = new Point(264, 112);
+                primaryRuneKeystone3PictureBox.Location = new Point(336, 112);
+                primaryRuneKeystone4PictureBox.Location = new Point(408, 112);
+                primaryRuneKeystone4PictureBox.Visible = false;
+            }
+
+            if (primaryTreeIsDomination == true)
+            {
+                primaryRunesTier3PictureBox1.Location = new Point(200, 344);
+                primaryRunesTier3PictureBox2.Location = new Point(272, 344);
+                primaryRunesTier3PictureBox3.Location = new Point(344, 344);
+                primaryRunesTier3PictureBox4.Location = new Point(408, 344);
+                primaryRunesTier3PictureBox4.Visible = false;
+            }
+
+            primaryTreeIsDomination = false;
+
+            primaryRunePictureBox.Image = Images.RuneTree(8400);
+
+            SetRuneSelectionLineColor(8400, true);
+
+            primaryRuneKeystone1PictureBox.Image = Images.ResolveTree(8437);
+            primaryRuneKeystone2PictureBox.Image = Images.ResolveTree(8439);
+            primaryRuneKeystone3PictureBox.Image = Images.ResolveTree(8465);
+            primaryRuneKeystone4PictureBox.Image = null;
+
+            primaryRunesTier1PictureBox1.Image = Images.ResolveTree(8446);
+            primaryRunesTier1PictureBox2.Image = Images.ResolveTree(8463);
+            primaryRunesTier1PictureBox3.Image = Images.ResolveTree(8401);
+
+            primaryRunesTier2PictureBox1.Image = Images.ResolveTree(8429);
+            primaryRunesTier2PictureBox2.Image = Images.ResolveTree(8444);
+            primaryRunesTier2PictureBox3.Image = Images.ResolveTree(8473);
+
+            primaryRunesTier3PictureBox1.Image = Images.ResolveTree(8451);
+            primaryRunesTier3PictureBox2.Image = Images.ResolveTree(8453);
+            primaryRunesTier3PictureBox3.Image = Images.ResolveTree(8242);
+            primaryRunesTier3PictureBox4.Image = null;
+
+            LoadSecondaryTreeOptions(8400);
+        }
+
+        private void inspirationPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (currentSecondaryTree == 8300)
+            {
+                ResetSecondaryTree();
+                secondaryRunePictureBox.Image = null;
+            }
+
+            if (primaryRuneKeystone4PictureBox.Visible)
+            {
+                primaryRuneKeystone1PictureBox.Location = new Point(192, 112);
+                primaryRuneKeystone2PictureBox.Location = new Point(264, 112);
+                primaryRuneKeystone3PictureBox.Location = new Point(336, 112);
+                primaryRuneKeystone4PictureBox.Location = new Point(408, 112);
+                primaryRuneKeystone4PictureBox.Visible = false;
+            }
+
+            if (primaryTreeIsDomination == true)
+            {
+                primaryRunesTier3PictureBox1.Location = new Point(200, 344);
+                primaryRunesTier3PictureBox2.Location = new Point(272, 344);
+                primaryRunesTier3PictureBox3.Location = new Point(344, 344);
+                primaryRunesTier3PictureBox4.Location = new Point(408, 344);
+                primaryRunesTier3PictureBox4.Visible = false;
+            }
+
+            primaryTreeIsDomination = false;
+
+            primaryRunePictureBox.Image = Images.RuneTree(8300);
+
+            SetRuneSelectionLineColor(8300, true);
+
+            primaryRuneKeystone1PictureBox.Image = Images.InspirationTree(8351);
+            primaryRuneKeystone2PictureBox.Image = Images.InspirationTree(8360);
+            primaryRuneKeystone3PictureBox.Image = Images.InspirationTree(8358);
+            primaryRuneKeystone4PictureBox.Image = null;
+
+            primaryRunesTier1PictureBox1.Image = Images.InspirationTree(8306);
+            primaryRunesTier1PictureBox2.Image = Images.InspirationTree(8304);
+            primaryRunesTier1PictureBox3.Image = Images.InspirationTree(8313);
+
+            primaryRunesTier2PictureBox1.Image = Images.InspirationTree(8321);
+            primaryRunesTier2PictureBox2.Image = Images.InspirationTree(8316);
+            primaryRunesTier2PictureBox3.Image = Images.InspirationTree(8345);
+
+            primaryRunesTier3PictureBox1.Image = Images.InspirationTree(8347);
+            primaryRunesTier3PictureBox2.Image = Images.InspirationTree(8410);
+            primaryRunesTier3PictureBox3.Image = Images.InspirationTree(8352);
+            primaryRunesTier3PictureBox4.Image = null;
+
+            LoadSecondaryTreeOptions(8300);
+        }
+
+        private void LoadSecondaryTreeOptions(int primaryTreeChoice) //Loads secondary tree selection based on the first tree's choice
         {
             if (secondaryRuneTree != null)
             {
@@ -218,6 +344,113 @@ namespace Farsight.UI_s_and_Controllers
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
             SetSecondaryTreeRunes(secondaryRuneTree[3]);
+        }
+
+        private void SetSecondaryTreeRunes(int runeTree)
+        {
+            currentSecondaryTree = runeTree;
+            SetRuneSelectionLineColor(runeTree, false);
+
+            if (runeTree == 8100) //Checks if the rune tree is the Domination tree
+            {
+                secondaryRunesTier3PictureBox4.Visible = true;
+                secondaryRunesTier3PictureBox1.Location = new Point(608, 216);
+                secondaryRunesTier3PictureBox2.Location = new Point(664, 216);
+                secondaryRunesTier3PictureBox3.Location = new Point(720, 216);
+                secondaryRunesTier3PictureBox4.Location = new Point(776, 216);
+            }
+            else
+            {
+                secondaryRunesTier3PictureBox4.Visible = false;
+                secondaryRunesTier3PictureBox1.Location = new Point(632, 216);
+                secondaryRunesTier3PictureBox2.Location = new Point(688, 216);
+                secondaryRunesTier3PictureBox3.Location = new Point(744, 216);
+                secondaryRunesTier3PictureBox4.Location = new Point(800, 216);
+            }
+
+            //The secondary rune trees don't use keystones
+            SetSecondaryRuneTreeImages(runeTree);
+        }
+
+        private void SetSecondaryRuneTreeImages(int runeTree)
+        {
+            switch (runeTree)
+            {
+                case 8000:
+                    secondaryRunesTier1PictureBox1.Image = Images.PrecisionTree(allRuneTrees[2].slots[1].runes[0].id);
+                    secondaryRunesTier1PictureBox2.Image = Images.PrecisionTree(allRuneTrees[2].slots[1].runes[1].id);
+                    secondaryRunesTier1PictureBox3.Image = Images.PrecisionTree(allRuneTrees[2].slots[1].runes[2].id);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.PrecisionTree(allRuneTrees[2].slots[2].runes[0].id);
+                    secondaryRunesTier2PictureBox2.Image = Images.PrecisionTree(allRuneTrees[2].slots[2].runes[1].id);
+                    secondaryRunesTier2PictureBox3.Image = Images.PrecisionTree(allRuneTrees[2].slots[2].runes[2].id);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.PrecisionTree(allRuneTrees[2].slots[3].runes[0].id);
+                    secondaryRunesTier3PictureBox2.Image = Images.PrecisionTree(allRuneTrees[2].slots[3].runes[1].id);
+                    secondaryRunesTier3PictureBox3.Image = Images.PrecisionTree(allRuneTrees[2].slots[3].runes[2].id);
+                    secondaryRunesTier3PictureBox4.Image = null;
+                    break;
+
+                case 8100:
+                    secondaryRunesTier1PictureBox1.Image = Images.DominationTree(allRuneTrees[0].slots[1].runes[0].id);
+                    secondaryRunesTier1PictureBox2.Image = Images.DominationTree(allRuneTrees[0].slots[1].runes[1].id);
+                    secondaryRunesTier1PictureBox3.Image = Images.DominationTree(allRuneTrees[0].slots[1].runes[2].id);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.DominationTree(allRuneTrees[0].slots[2].runes[0].id);
+                    secondaryRunesTier2PictureBox2.Image = Images.DominationTree(allRuneTrees[0].slots[2].runes[1].id);
+                    secondaryRunesTier2PictureBox3.Image = Images.DominationTree(allRuneTrees[0].slots[2].runes[2].id);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.DominationTree(allRuneTrees[0].slots[3].runes[0].id);
+                    secondaryRunesTier3PictureBox2.Image = Images.DominationTree(allRuneTrees[0].slots[3].runes[1].id);
+                    secondaryRunesTier3PictureBox3.Image = Images.DominationTree(allRuneTrees[0].slots[3].runes[2].id);
+                    secondaryRunesTier3PictureBox4.Image = Images.DominationTree(allRuneTrees[0].slots[3].runes[3].id);
+                    break;
+
+                case 8200:
+                    secondaryRunesTier1PictureBox1.Image = Images.SorceryTree(allRuneTrees[4].slots[1].runes[0].id);
+                    secondaryRunesTier1PictureBox2.Image = Images.SorceryTree(allRuneTrees[4].slots[1].runes[1].id);
+                    secondaryRunesTier1PictureBox3.Image = Images.SorceryTree(allRuneTrees[4].slots[1].runes[2].id);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.SorceryTree(allRuneTrees[4].slots[2].runes[0].id);
+                    secondaryRunesTier2PictureBox2.Image = Images.SorceryTree(allRuneTrees[4].slots[2].runes[1].id);
+                    secondaryRunesTier2PictureBox3.Image = Images.SorceryTree(allRuneTrees[4].slots[2].runes[2].id);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.SorceryTree(allRuneTrees[4].slots[3].runes[0].id);
+                    secondaryRunesTier3PictureBox2.Image = Images.SorceryTree(allRuneTrees[4].slots[3].runes[1].id);
+                    secondaryRunesTier3PictureBox3.Image = Images.SorceryTree(allRuneTrees[4].slots[3].runes[2].id);
+                    secondaryRunesTier3PictureBox4.Image = null;
+                    break;
+
+                case 8400:
+                    secondaryRunesTier1PictureBox1.Image = Images.ResolveTree(allRuneTrees[3].slots[1].runes[0].id);
+                    secondaryRunesTier1PictureBox2.Image = Images.ResolveTree(allRuneTrees[3].slots[1].runes[1].id);
+                    secondaryRunesTier1PictureBox3.Image = Images.ResolveTree(allRuneTrees[3].slots[1].runes[2].id);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.ResolveTree(allRuneTrees[3].slots[2].runes[0].id);
+                    secondaryRunesTier2PictureBox2.Image = Images.ResolveTree(allRuneTrees[3].slots[2].runes[1].id);
+                    secondaryRunesTier2PictureBox3.Image = Images.ResolveTree(allRuneTrees[3].slots[2].runes[2].id);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.ResolveTree(allRuneTrees[3].slots[3].runes[0].id);
+                    secondaryRunesTier3PictureBox2.Image = Images.ResolveTree(allRuneTrees[3].slots[3].runes[1].id);
+                    secondaryRunesTier3PictureBox3.Image = Images.ResolveTree(allRuneTrees[3].slots[3].runes[2].id);
+                    secondaryRunesTier3PictureBox4.Image = null;
+                    break;
+
+                case 8300:
+                    secondaryRunesTier1PictureBox1.Image = Images.InspirationTree(allRuneTrees[1].slots[1].runes[0].id);
+                    secondaryRunesTier1PictureBox2.Image = Images.InspirationTree(allRuneTrees[1].slots[1].runes[1].id);
+                    secondaryRunesTier1PictureBox3.Image = Images.InspirationTree(allRuneTrees[1].slots[1].runes[2].id);
+
+                    secondaryRunesTier2PictureBox1.Image = Images.InspirationTree(allRuneTrees[1].slots[2].runes[0].id);
+                    secondaryRunesTier2PictureBox2.Image = Images.InspirationTree(allRuneTrees[1].slots[2].runes[1].id);
+                    secondaryRunesTier2PictureBox3.Image = Images.InspirationTree(allRuneTrees[1].slots[2].runes[2].id);
+
+                    secondaryRunesTier3PictureBox1.Image = Images.InspirationTree(allRuneTrees[1].slots[3].runes[0].id);
+                    secondaryRunesTier3PictureBox2.Image = Images.InspirationTree(allRuneTrees[1].slots[3].runes[1].id);
+                    secondaryRunesTier3PictureBox3.Image = Images.InspirationTree(allRuneTrees[1].slots[3].runes[2].id);
+                    secondaryRunesTier3PictureBox4.Image = null;
+                    break;
+            }
         }
 
         private void SetRuneSelectionLineColor(int runeTree, bool isPrimaryTree)
