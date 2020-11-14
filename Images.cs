@@ -118,7 +118,7 @@ namespace Farsight
                 case 8017:
                     path = @"\Farsight\Images\perk-images\Styles\Precision\CutDown\CutDown.png";
                     break;
-                case 8299:
+                case 8229:
                     path = @"\Farsight\Images\perk-images\Styles\Sorcery\LastStand\LastStand.png";
                     break;
             }
