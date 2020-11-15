@@ -12,6 +12,16 @@ namespace Farsight.UI_s_and_Controllers
         List<int> secondaryRuneTree = new List<int>();
         int currentSecondaryTree = 0;
         bool primaryTreeIsDomination = false;
+        Button primaryTreeKeystoneSelection = new Button();
+        Button primaryTreeRowOneSelection = new Button();
+        Button primaryTreeRowTwoSelection = new Button();
+        Button primaryTreeRowThreeSelection = new Button();
+        Button secondaryTreeRowOneSelection = new Button();
+        Button secondaryTreeRowTwoSelection = new Button();
+        Button secondaryTreeRowThreeSelection = new Button();
+        Button statModOffenseSelection = new Button();
+        Button statModFlexSelection = new Button();
+        Button statModDefenseSelection = new Button();
 
         //Maybe create a builder object to store user selections
         //Create a button programatically to show what rune has been selected, doing it this way means you can generate multiple ones from a single source
@@ -27,13 +37,14 @@ namespace Farsight.UI_s_and_Controllers
             statmodRuneSelectionLine.BackColor = Color.FromArgb(233, 225, 198);
             primaryRunesTier3PictureBox4.Visible = false;
             secondaryRunesTier3PictureBox4.Visible = false;
+            primaryRuneKeystone4PictureBox.Visible = false;
 
             statModOffenseAdaptiveForcePictureBox.Image = Images.StatMods("AdaptiveForce");
             statModOffenseAttackSpeedPictureBox.Image = Images.StatMods("AttackSpeed");
             statModOffenseCDRPictureBox.Image = Images.StatMods("CDR");
 
             statModFlexAdaptiveForcePictureBox.Image = Images.StatMods("AdaptiveForce");
-            statModFlexArmorForcePictureBox.Image = Images.StatMods("Armor");
+            statModFlexArmorPictureBox.Image = Images.StatMods("Armor");
             statModFlexMagicResistPictureBox.Image = Images.StatMods("MagicResist");
 
             statModDefenseHealthPictureBox.Image = Images.StatMods("Health");
@@ -43,6 +54,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void precisionPictureBox_Click(object sender, System.EventArgs e)
         {
+            ClearPrimaryRuneSelections();
+
             if (currentSecondaryTree == 8000)
             {
                 ResetSecondaryTree();//If the user selects the same primary tree as the secondary tree, reset the secondary tree
@@ -86,7 +99,7 @@ namespace Farsight.UI_s_and_Controllers
 
             primaryRunesTier3PictureBox1.Image = Images.PrecisionTree(8014);
             primaryRunesTier3PictureBox2.Image = Images.PrecisionTree(8017);
-            primaryRunesTier3PictureBox3.Image = Images.PrecisionTree(8229);
+            primaryRunesTier3PictureBox3.Image = Images.PrecisionTree(8299);
 
             LoadSecondaryTreeOptions(8000);
         }
@@ -139,10 +152,13 @@ namespace Farsight.UI_s_and_Controllers
             primaryRunesTier3PictureBox4.Image = Images.DominationTree(8106);
 
             LoadSecondaryTreeOptions(8100);
+            ClearPrimaryRuneSelections();
         }
 
         private void sorceryPictureBox_Click(object sender, System.EventArgs e)
         {
+            ClearPrimaryRuneSelections();
+
             if (currentSecondaryTree == 8200)
             {
                 ResetSecondaryTree();
@@ -196,6 +212,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void resolvePictureBox_Click(object sender, System.EventArgs e)
         {
+            ClearPrimaryRuneSelections();
+
             if (currentSecondaryTree == 8400)
             {
                 ResetSecondaryTree();
@@ -249,6 +267,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void inspirationPictureBox_Click(object sender, System.EventArgs e)
         {
+            ClearPrimaryRuneSelections();
+
             if (currentSecondaryTree == 8300)
             {
                 ResetSecondaryTree();
@@ -300,6 +320,21 @@ namespace Farsight.UI_s_and_Controllers
             LoadSecondaryTreeOptions(8300);
         }
 
+        private void ClearPrimaryRuneSelections()
+        {
+            this.Controls.Remove(primaryTreeKeystoneSelection);
+            this.Controls.Remove(primaryTreeRowOneSelection);
+            this.Controls.Remove(primaryTreeRowTwoSelection);
+            this.Controls.Remove(primaryTreeRowThreeSelection);
+        }
+
+        private void ClearSecondaryRuneSelections()
+        {
+            this.Controls.Remove(secondaryTreeRowOneSelection);
+            this.Controls.Remove(secondaryTreeRowTwoSelection);
+            this.Controls.Remove(secondaryTreeRowThreeSelection);
+        }
+
         private void LoadSecondaryTreeOptions(int primaryTreeChoice) //Loads secondary tree selection based on the first tree's choice
         {
             if (secondaryRuneTree != null)
@@ -326,24 +361,28 @@ namespace Farsight.UI_s_and_Controllers
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
             SetSecondaryTreeRunes(secondaryRuneTree[0]);
+            ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune2PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[1]);
             SetSecondaryTreeRunes(secondaryRuneTree[1]);
+            ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune3PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[2]);
             SetSecondaryTreeRunes(secondaryRuneTree[2]);
+            ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune4PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
             SetSecondaryTreeRunes(secondaryRuneTree[3]);
+            ClearSecondaryRuneSelections();
         }
 
         private void SetSecondaryTreeRunes(int runeTree)
@@ -534,6 +573,513 @@ namespace Farsight.UI_s_and_Controllers
                 secondaryRunesTier3PictureBox3.Location = new Point(744, 216);
                 secondaryRunesTier3PictureBox4.Location = new Point(800, 216);
             }
+        }
+
+        private void primaryRuneKeystone1PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone1PictureBox")
+            {
+                return;
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone1PictureBox.Location.X, primaryRuneKeystone1PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone1PictureBox.Size.Width, primaryRuneKeystone1PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone2PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone2PictureBox")
+            {
+                return;
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone2PictureBox.Location.X, primaryRuneKeystone2PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone2PictureBox.Size.Width, primaryRuneKeystone2PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone3PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone3PictureBox")
+            {
+                return;
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone3PictureBox.Location.X, primaryRuneKeystone3PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone3PictureBox.Size.Width, primaryRuneKeystone3PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone4PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone4PictureBox")
+            {
+                return;
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone4PictureBox.Location.X, primaryRuneKeystone4PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone4PictureBox.Size.Width, primaryRuneKeystone4PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox1")
+            {
+                return;
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox1.Location.X, primaryRunesTier1PictureBox1.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox1.Size.Width, primaryRunesTier1PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox2_Click(sender, e);
+            primaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox2")
+            {
+                return;
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox2.Location.X, primaryRunesTier1PictureBox2.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox2.Size.Width, primaryRunesTier1PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox1_Click(sender, e);
+            primaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox3")
+            {
+                return;
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox3.Location.X, primaryRunesTier1PictureBox3.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox3.Size.Width, primaryRunesTier1PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox1_Click(sender, e);
+            primaryRunesTier1PictureBox2_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox1")
+            {
+                return;
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox1.Location.X, primaryRunesTier2PictureBox1.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox1.Size.Width, primaryRunesTier2PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox2_Click(sender, e);
+            primaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox2")
+            {
+                return;
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox2.Location.X, primaryRunesTier2PictureBox2.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox2.Size.Width, primaryRunesTier2PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox1_Click(sender, e);
+            primaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox3")
+            {
+                return;
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox3.Location.X, primaryRunesTier2PictureBox3.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox3.Size.Width, primaryRunesTier2PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox1_Click(sender, e);
+            primaryRunesTier2PictureBox2_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox1")
+            {
+                return;
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox1.Location.X, primaryRunesTier3PictureBox1.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox1.Size.Width, primaryRunesTier3PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox2")
+            {
+                return;
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox2.Location.X, primaryRunesTier3PictureBox2.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox2.Size.Width, primaryRunesTier3PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox3")
+            {
+                return;
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox3.Location.X, primaryRunesTier3PictureBox3.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox3.Size.Width, primaryRunesTier3PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox4")
+            {
+                return;
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox4.Location.X, primaryRunesTier3PictureBox4.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox4.Size.Width, primaryRunesTier3PictureBox4.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox1")
+            {
+                return;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox1.Location.X, secondaryRunesTier1PictureBox1.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox1.Size.Width, secondaryRunesTier1PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox2_Click(sender, e);
+            secondaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox2")
+            {
+                return;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox2.Location.X, secondaryRunesTier1PictureBox2.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox2.Size.Width, secondaryRunesTier1PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox1_Click(sender, e);
+            secondaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox3")
+            {
+                return;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox3.Location.X, secondaryRunesTier1PictureBox3.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox3.Size.Width, secondaryRunesTier1PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox1_Click(sender, e);
+            secondaryRunesTier1PictureBox2_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox1")
+            {
+                return;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox1.Location.X, secondaryRunesTier2PictureBox1.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox1.Size.Width, secondaryRunesTier2PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox2_Click(sender, e);
+            secondaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox2")
+            {
+                return;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox2.Location.X, secondaryRunesTier2PictureBox2.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox2.Size.Width, secondaryRunesTier2PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox1_Click(sender, e);
+            secondaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox3")
+            {
+                return;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox3.Location.X, secondaryRunesTier2PictureBox3.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox3.Size.Width, secondaryRunesTier2PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox1_Click(sender, e);
+            secondaryRunesTier2PictureBox2_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox1")
+            {
+                return;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox1.Location.X, secondaryRunesTier3PictureBox1.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox1.Size.Width, secondaryRunesTier3PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox2")
+            {
+                return;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox2.Location.X, secondaryRunesTier3PictureBox2.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox2.Size.Width, secondaryRunesTier3PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox3")
+            {
+                return;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox3.Location.X, secondaryRunesTier3PictureBox3.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox3.Size.Width, secondaryRunesTier3PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox4")
+            {
+                return;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox4.Location.X, secondaryRunesTier3PictureBox4.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox4.Size.Width, secondaryRunesTier3PictureBox4.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
+        }
+
+        private void statModOffenseAdaptiveForcePictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModOffenseAdaptiveForcePictureBox")
+            {
+                return;
+            }
+
+            statModOffenseSelection.Location = new Point(statModOffenseAdaptiveForcePictureBox.Location.X, statModOffenseAdaptiveForcePictureBox.Location.Y);
+            statModOffenseSelection.Size = new Size(statModOffenseAdaptiveForcePictureBox.Size.Width, statModOffenseAdaptiveForcePictureBox.Size.Height);
+            this.Controls.Add(statModOffenseSelection);
+
+            statModOffenseAttackSpeedPictureBox_Click(sender, e);
+            statModOffenseCDRPictureBox_Click(sender, e);
+        }
+
+        private void statModOffenseAttackSpeedPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModOffenseAttackSpeedPictureBox")
+            {
+                return;
+            }
+
+            statModOffenseSelection.Location = new Point(statModOffenseAttackSpeedPictureBox.Location.X, statModOffenseAttackSpeedPictureBox.Location.Y);
+            statModOffenseSelection.Size = new Size(statModOffenseAttackSpeedPictureBox.Size.Width, statModOffenseAttackSpeedPictureBox.Size.Height);
+            this.Controls.Add(statModOffenseSelection);
+
+            statModOffenseAdaptiveForcePictureBox_Click(sender, e);
+            statModOffenseCDRPictureBox_Click(sender, e);
+        }
+
+        private void statModOffenseCDRPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModOffenseCDRPictureBox")
+            {
+                return;
+            }
+
+            statModOffenseSelection.Location = new Point(statModOffenseCDRPictureBox.Location.X, statModOffenseCDRPictureBox.Location.Y);
+            statModOffenseSelection.Size = new Size(statModOffenseCDRPictureBox.Size.Width, statModOffenseCDRPictureBox.Size.Height);
+            this.Controls.Add(statModOffenseSelection);
+
+            statModOffenseAdaptiveForcePictureBox_Click(sender, e);
+            statModOffenseAttackSpeedPictureBox_Click(sender, e);
+        }
+
+        private void statModFlexAdaptiveForcePictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModFlexAdaptiveForcePictureBox")
+            {
+                return;
+            }
+
+            statModFlexSelection.Location = new Point(statModFlexAdaptiveForcePictureBox.Location.X, statModFlexAdaptiveForcePictureBox.Location.Y);
+            statModFlexSelection.Size = new Size(statModFlexAdaptiveForcePictureBox.Size.Width, statModFlexAdaptiveForcePictureBox.Size.Height);
+            this.Controls.Add(statModFlexSelection);
+
+            statModFlexArmorPictureBox_Click(sender, e);
+            statModFlexMagicResistPictureBox_Click(sender, e);
+        }
+
+        private void statModFlexArmorPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModFlexArmorPictureBox")
+            {
+                return;
+            }
+
+            statModFlexSelection.Location = new Point(statModFlexArmorPictureBox.Location.X, statModFlexArmorPictureBox.Location.Y);
+            statModFlexSelection.Size = new Size(statModFlexArmorPictureBox.Size.Width, statModFlexArmorPictureBox.Size.Height);
+            this.Controls.Add(statModFlexSelection);
+
+            statModFlexAdaptiveForcePictureBox_Click(sender, e);
+            statModFlexMagicResistPictureBox_Click(sender, e);
+        }
+
+        private void statModFlexMagicResistPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModFlexMagicResistPictureBox")
+            {
+                return;
+            }
+
+            statModFlexSelection.Location = new Point(statModFlexMagicResistPictureBox.Location.X, statModFlexMagicResistPictureBox.Location.Y);
+            statModFlexSelection.Size = new Size(statModFlexMagicResistPictureBox.Size.Width, statModFlexMagicResistPictureBox.Size.Height);
+            this.Controls.Add(statModFlexSelection);
+
+            statModFlexAdaptiveForcePictureBox_Click(sender, e);
+            statModFlexArmorPictureBox_Click(sender, e);
+        }
+
+        private void statModDefenseHealthPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModDefenseHealthPictureBox")
+            {
+                return;
+            }
+
+            statModDefenseSelection.Location = new Point(statModDefenseHealthPictureBox.Location.X, statModDefenseHealthPictureBox.Location.Y);
+            statModDefenseSelection.Size = new Size(statModDefenseHealthPictureBox.Size.Width, statModDefenseHealthPictureBox.Size.Height);
+            this.Controls.Add(statModDefenseSelection);
+
+            statModDefenseArmorPictureBox_Click(sender, e);
+            statModDefenseMagicResistPictureBox_Click(sender, e);
+        }
+
+        private void statModDefenseArmorPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModDefenseArmorPictureBox")
+            {
+                return;
+            }
+
+            statModDefenseSelection.Location = new Point(statModDefenseArmorPictureBox.Location.X, statModDefenseArmorPictureBox.Location.Y);
+            statModDefenseSelection.Size = new Size(statModDefenseArmorPictureBox.Size.Width, statModDefenseArmorPictureBox.Size.Height);
+            this.Controls.Add(statModDefenseSelection);
+
+            statModDefenseHealthPictureBox_Click(sender, e);
+            statModDefenseMagicResistPictureBox_Click(sender, e);
+        }
+
+        private void statModDefenseMagicResistPictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "statModDefenseMagicResistPictureBox")
+            {
+                return;
+            }
+
+            statModDefenseSelection.Location = new Point(statModDefenseMagicResistPictureBox.Location.X, statModDefenseMagicResistPictureBox.Location.Y);
+            statModDefenseSelection.Size = new Size(statModDefenseMagicResistPictureBox.Size.Width, statModDefenseMagicResistPictureBox.Size.Height);
+            this.Controls.Add(statModDefenseSelection);
+
+            statModDefenseHealthPictureBox_Click(sender, e);
+            statModDefenseArmorPictureBox_Click(sender, e);
         }
     }
 }

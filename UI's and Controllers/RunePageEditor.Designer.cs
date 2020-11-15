@@ -50,7 +50,7 @@
             this.secondaryRunePictureBox = new Farsight.RoundPictureBox();
             this.primaryRunePictureBox = new Farsight.RoundPictureBox();
             this.inspirationPictureBox = new Farsight.RoundPictureBox();
-            this.statModFlexArmorForcePictureBox = new Farsight.RoundPictureBox();
+            this.statModFlexArmorPictureBox = new Farsight.RoundPictureBox();
             this.statModFlexMagicResistPictureBox = new Farsight.RoundPictureBox();
             this.statModFlexAdaptiveForcePictureBox = new Farsight.RoundPictureBox();
             this.statModDefenseArmorPictureBox = new Farsight.RoundPictureBox();
@@ -97,7 +97,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.secondaryRunePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspirationPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorForcePictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModFlexMagicResistPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModFlexAdaptiveForcePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModDefenseArmorPictureBox)).BeginInit();
@@ -322,6 +322,7 @@
             this.primaryRunesTier3PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier3PictureBox4.TabIndex = 44;
             this.primaryRunesTier3PictureBox4.TabStop = false;
+            this.primaryRunesTier3PictureBox4.Click += new System.EventHandler(this.primaryRunesTier3PictureBox4_Click);
             // 
             // secondaryRunesTier3PictureBox4
             // 
@@ -335,6 +336,7 @@
             this.secondaryRunesTier3PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier3PictureBox4.TabIndex = 43;
             this.secondaryRunesTier3PictureBox4.TabStop = false;
+            this.secondaryRunesTier3PictureBox4.Click += new System.EventHandler(this.secondaryRunesTier3PictureBox4_Click);
             // 
             // primaryRuneKeystone4PictureBox
             // 
@@ -348,6 +350,7 @@
             this.primaryRuneKeystone4PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRuneKeystone4PictureBox.TabIndex = 42;
             this.primaryRuneKeystone4PictureBox.TabStop = false;
+            this.primaryRuneKeystone4PictureBox.Click += new System.EventHandler(this.primaryRuneKeystone4PictureBox_Click);
             // 
             // primaryRunesTier3PictureBox2
             // 
@@ -361,6 +364,7 @@
             this.primaryRunesTier3PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier3PictureBox2.TabIndex = 41;
             this.primaryRunesTier3PictureBox2.TabStop = false;
+            this.primaryRunesTier3PictureBox2.Click += new System.EventHandler(this.primaryRunesTier3PictureBox2_Click);
             // 
             // primaryRunesTier3PictureBox3
             // 
@@ -374,6 +378,7 @@
             this.primaryRunesTier3PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier3PictureBox3.TabIndex = 40;
             this.primaryRunesTier3PictureBox3.TabStop = false;
+            this.primaryRunesTier3PictureBox3.Click += new System.EventHandler(this.primaryRunesTier3PictureBox3_Click);
             // 
             // primaryRunesTier3PictureBox1
             // 
@@ -387,6 +392,7 @@
             this.primaryRunesTier3PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier3PictureBox1.TabIndex = 39;
             this.primaryRunesTier3PictureBox1.TabStop = false;
+            this.primaryRunesTier3PictureBox1.Click += new System.EventHandler(this.primaryRunesTier3PictureBox1_Click);
             // 
             // secondaryRunePictureBox
             // 
@@ -428,18 +434,19 @@
             this.inspirationPictureBox.TabStop = false;
             this.inspirationPictureBox.Click += new System.EventHandler(this.inspirationPictureBox_Click);
             // 
-            // statModFlexArmorForcePictureBox
+            // statModFlexArmorPictureBox
             // 
-            this.statModFlexArmorForcePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.statModFlexArmorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.statModFlexArmorForcePictureBox.BackColor = System.Drawing.Color.Black;
-            this.statModFlexArmorForcePictureBox.Location = new System.Drawing.Point(696, 328);
-            this.statModFlexArmorForcePictureBox.Name = "statModFlexArmorForcePictureBox";
-            this.statModFlexArmorForcePictureBox.Size = new System.Drawing.Size(32, 32);
-            this.statModFlexArmorForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.statModFlexArmorForcePictureBox.TabIndex = 35;
-            this.statModFlexArmorForcePictureBox.TabStop = false;
+            this.statModFlexArmorPictureBox.BackColor = System.Drawing.Color.Black;
+            this.statModFlexArmorPictureBox.Location = new System.Drawing.Point(696, 328);
+            this.statModFlexArmorPictureBox.Name = "statModFlexArmorPictureBox";
+            this.statModFlexArmorPictureBox.Size = new System.Drawing.Size(32, 32);
+            this.statModFlexArmorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.statModFlexArmorPictureBox.TabIndex = 35;
+            this.statModFlexArmorPictureBox.TabStop = false;
+            this.statModFlexArmorPictureBox.Click += new System.EventHandler(this.statModFlexArmorPictureBox_Click);
             // 
             // statModFlexMagicResistPictureBox
             // 
@@ -453,6 +460,7 @@
             this.statModFlexMagicResistPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModFlexMagicResistPictureBox.TabIndex = 34;
             this.statModFlexMagicResistPictureBox.TabStop = false;
+            this.statModFlexMagicResistPictureBox.Click += new System.EventHandler(this.statModFlexMagicResistPictureBox_Click);
             // 
             // statModFlexAdaptiveForcePictureBox
             // 
@@ -466,6 +474,7 @@
             this.statModFlexAdaptiveForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModFlexAdaptiveForcePictureBox.TabIndex = 33;
             this.statModFlexAdaptiveForcePictureBox.TabStop = false;
+            this.statModFlexAdaptiveForcePictureBox.Click += new System.EventHandler(this.statModFlexAdaptiveForcePictureBox_Click);
             // 
             // statModDefenseArmorPictureBox
             // 
@@ -479,6 +488,7 @@
             this.statModDefenseArmorPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModDefenseArmorPictureBox.TabIndex = 32;
             this.statModDefenseArmorPictureBox.TabStop = false;
+            this.statModDefenseArmorPictureBox.Click += new System.EventHandler(this.statModDefenseArmorPictureBox_Click);
             // 
             // statModDefenseMagicResistPictureBox
             // 
@@ -492,6 +502,7 @@
             this.statModDefenseMagicResistPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModDefenseMagicResistPictureBox.TabIndex = 31;
             this.statModDefenseMagicResistPictureBox.TabStop = false;
+            this.statModDefenseMagicResistPictureBox.Click += new System.EventHandler(this.statModDefenseMagicResistPictureBox_Click);
             // 
             // statModDefenseHealthPictureBox
             // 
@@ -505,6 +516,7 @@
             this.statModDefenseHealthPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModDefenseHealthPictureBox.TabIndex = 30;
             this.statModDefenseHealthPictureBox.TabStop = false;
+            this.statModDefenseHealthPictureBox.Click += new System.EventHandler(this.statModDefenseHealthPictureBox_Click);
             // 
             // statModOffenseAttackSpeedPictureBox
             // 
@@ -518,6 +530,7 @@
             this.statModOffenseAttackSpeedPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModOffenseAttackSpeedPictureBox.TabIndex = 29;
             this.statModOffenseAttackSpeedPictureBox.TabStop = false;
+            this.statModOffenseAttackSpeedPictureBox.Click += new System.EventHandler(this.statModOffenseAttackSpeedPictureBox_Click);
             // 
             // statModOffenseCDRPictureBox
             // 
@@ -531,6 +544,7 @@
             this.statModOffenseCDRPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModOffenseCDRPictureBox.TabIndex = 28;
             this.statModOffenseCDRPictureBox.TabStop = false;
+            this.statModOffenseCDRPictureBox.Click += new System.EventHandler(this.statModOffenseCDRPictureBox_Click);
             // 
             // statModOffenseAdaptiveForcePictureBox
             // 
@@ -544,6 +558,7 @@
             this.statModOffenseAdaptiveForcePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.statModOffenseAdaptiveForcePictureBox.TabIndex = 27;
             this.statModOffenseAdaptiveForcePictureBox.TabStop = false;
+            this.statModOffenseAdaptiveForcePictureBox.Click += new System.EventHandler(this.statModOffenseAdaptiveForcePictureBox_Click);
             // 
             // secondaryRunesTier2PictureBox2
             // 
@@ -557,6 +572,7 @@
             this.secondaryRunesTier2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier2PictureBox2.TabIndex = 26;
             this.secondaryRunesTier2PictureBox2.TabStop = false;
+            this.secondaryRunesTier2PictureBox2.Click += new System.EventHandler(this.secondaryRunesTier2PictureBox2_Click);
             // 
             // secondaryRunesTier2PictureBox3
             // 
@@ -570,6 +586,7 @@
             this.secondaryRunesTier2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier2PictureBox3.TabIndex = 25;
             this.secondaryRunesTier2PictureBox3.TabStop = false;
+            this.secondaryRunesTier2PictureBox3.Click += new System.EventHandler(this.secondaryRunesTier2PictureBox3_Click);
             // 
             // secondaryRunesTier2PictureBox1
             // 
@@ -583,6 +600,7 @@
             this.secondaryRunesTier2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier2PictureBox1.TabIndex = 24;
             this.secondaryRunesTier2PictureBox1.TabStop = false;
+            this.secondaryRunesTier2PictureBox1.Click += new System.EventHandler(this.secondaryRunesTier2PictureBox1_Click);
             // 
             // secondaryRunesTier3PictureBox2
             // 
@@ -596,6 +614,7 @@
             this.secondaryRunesTier3PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier3PictureBox2.TabIndex = 23;
             this.secondaryRunesTier3PictureBox2.TabStop = false;
+            this.secondaryRunesTier3PictureBox2.Click += new System.EventHandler(this.secondaryRunesTier3PictureBox2_Click);
             // 
             // secondaryRunesTier3PictureBox3
             // 
@@ -609,6 +628,7 @@
             this.secondaryRunesTier3PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier3PictureBox3.TabIndex = 22;
             this.secondaryRunesTier3PictureBox3.TabStop = false;
+            this.secondaryRunesTier3PictureBox3.Click += new System.EventHandler(this.secondaryRunesTier3PictureBox3_Click);
             // 
             // secondaryRunesTier3PictureBox1
             // 
@@ -622,6 +642,7 @@
             this.secondaryRunesTier3PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier3PictureBox1.TabIndex = 21;
             this.secondaryRunesTier3PictureBox1.TabStop = false;
+            this.secondaryRunesTier3PictureBox1.Click += new System.EventHandler(this.secondaryRunesTier3PictureBox1_Click);
             // 
             // secondaryRunesTier1PictureBox2
             // 
@@ -635,6 +656,7 @@
             this.secondaryRunesTier1PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier1PictureBox2.TabIndex = 20;
             this.secondaryRunesTier1PictureBox2.TabStop = false;
+            this.secondaryRunesTier1PictureBox2.Click += new System.EventHandler(this.secondaryRunesTier1PictureBox2_Click);
             // 
             // secondaryRunesTier1PictureBox3
             // 
@@ -648,6 +670,7 @@
             this.secondaryRunesTier1PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier1PictureBox3.TabIndex = 19;
             this.secondaryRunesTier1PictureBox3.TabStop = false;
+            this.secondaryRunesTier1PictureBox3.Click += new System.EventHandler(this.secondaryRunesTier1PictureBox3_Click);
             // 
             // secondaryRunesTier1PictureBox1
             // 
@@ -661,6 +684,7 @@
             this.secondaryRunesTier1PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.secondaryRunesTier1PictureBox1.TabIndex = 18;
             this.secondaryRunesTier1PictureBox1.TabStop = false;
+            this.secondaryRunesTier1PictureBox1.Click += new System.EventHandler(this.secondaryRunesTier1PictureBox1_Click);
             // 
             // primaryRunesTier1PictureBox2
             // 
@@ -674,6 +698,7 @@
             this.primaryRunesTier1PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier1PictureBox2.TabIndex = 17;
             this.primaryRunesTier1PictureBox2.TabStop = false;
+            this.primaryRunesTier1PictureBox2.Click += new System.EventHandler(this.primaryRunesTier1PictureBox2_Click);
             // 
             // primaryRunesTier1PictureBox3
             // 
@@ -687,6 +712,7 @@
             this.primaryRunesTier1PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier1PictureBox3.TabIndex = 16;
             this.primaryRunesTier1PictureBox3.TabStop = false;
+            this.primaryRunesTier1PictureBox3.Click += new System.EventHandler(this.primaryRunesTier1PictureBox3_Click);
             // 
             // primaryRunesTier1PictureBox1
             // 
@@ -700,6 +726,7 @@
             this.primaryRunesTier1PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier1PictureBox1.TabIndex = 15;
             this.primaryRunesTier1PictureBox1.TabStop = false;
+            this.primaryRunesTier1PictureBox1.Click += new System.EventHandler(this.primaryRunesTier1PictureBox1_Click);
             // 
             // primaryRunesTier2PictureBox2
             // 
@@ -713,6 +740,7 @@
             this.primaryRunesTier2PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier2PictureBox2.TabIndex = 14;
             this.primaryRunesTier2PictureBox2.TabStop = false;
+            this.primaryRunesTier2PictureBox2.Click += new System.EventHandler(this.primaryRunesTier2PictureBox2_Click);
             // 
             // primaryRunesTier2PictureBox3
             // 
@@ -726,6 +754,7 @@
             this.primaryRunesTier2PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier2PictureBox3.TabIndex = 13;
             this.primaryRunesTier2PictureBox3.TabStop = false;
+            this.primaryRunesTier2PictureBox3.Click += new System.EventHandler(this.primaryRunesTier2PictureBox3_Click);
             // 
             // primaryRunesTier2PictureBox1
             // 
@@ -739,6 +768,7 @@
             this.primaryRunesTier2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRunesTier2PictureBox1.TabIndex = 12;
             this.primaryRunesTier2PictureBox1.TabStop = false;
+            this.primaryRunesTier2PictureBox1.Click += new System.EventHandler(this.primaryRunesTier2PictureBox1_Click);
             // 
             // secondaryRune4PictureBox
             // 
@@ -808,6 +838,7 @@
             this.primaryRuneKeystone2PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRuneKeystone2PictureBox.TabIndex = 7;
             this.primaryRuneKeystone2PictureBox.TabStop = false;
+            this.primaryRuneKeystone2PictureBox.Click += new System.EventHandler(this.primaryRuneKeystone2PictureBox_Click);
             // 
             // primaryRuneKeystone3PictureBox
             // 
@@ -821,6 +852,7 @@
             this.primaryRuneKeystone3PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRuneKeystone3PictureBox.TabIndex = 6;
             this.primaryRuneKeystone3PictureBox.TabStop = false;
+            this.primaryRuneKeystone3PictureBox.Click += new System.EventHandler(this.primaryRuneKeystone3PictureBox_Click);
             // 
             // resolvePictureBox
             // 
@@ -890,6 +922,7 @@
             this.primaryRuneKeystone1PictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.primaryRuneKeystone1PictureBox.TabIndex = 0;
             this.primaryRuneKeystone1PictureBox.TabStop = false;
+            this.primaryRuneKeystone1PictureBox.Click += new System.EventHandler(this.primaryRuneKeystone1PictureBox_Click);
             // 
             // RunePageEditor
             // 
@@ -916,7 +949,7 @@
             this.Controls.Add(this.secondaryRunePictureBox);
             this.Controls.Add(this.primaryRunePictureBox);
             this.Controls.Add(this.inspirationPictureBox);
-            this.Controls.Add(this.statModFlexArmorForcePictureBox);
+            this.Controls.Add(this.statModFlexArmorPictureBox);
             this.Controls.Add(this.statModFlexMagicResistPictureBox);
             this.Controls.Add(this.statModFlexAdaptiveForcePictureBox);
             this.Controls.Add(this.statModDefenseArmorPictureBox);
@@ -969,7 +1002,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.secondaryRunePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primaryRunePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.inspirationPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorForcePictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.statModFlexArmorPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModFlexMagicResistPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModFlexAdaptiveForcePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.statModDefenseArmorPictureBox)).EndInit();
@@ -1037,7 +1070,7 @@
         private RoundPictureBox secondaryRunesTier1PictureBox2;
         private RoundPictureBox secondaryRunesTier1PictureBox3;
         private RoundPictureBox secondaryRunesTier1PictureBox1;
-        private RoundPictureBox statModFlexArmorForcePictureBox;
+        private RoundPictureBox statModFlexArmorPictureBox;
         private RoundPictureBox statModFlexMagicResistPictureBox;
         private RoundPictureBox statModFlexAdaptiveForcePictureBox;
         private RoundPictureBox statModDefenseArmorPictureBox;
