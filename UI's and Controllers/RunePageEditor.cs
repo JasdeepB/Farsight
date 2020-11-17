@@ -15,6 +15,7 @@ namespace Farsight.UI_s_and_Controllers
         List<int> secondaryRuneTree = new List<int>();
         int currentPrimaryTree = 0;
         int currentSecondaryTree = 0;
+        int lastRowSelected = 0;
         bool primaryTreeIsDomination = false;
         Button primaryTreeKeystoneSelection = new Button();
         Button primaryTreeRowOneSelection = new Button();
@@ -27,10 +28,8 @@ namespace Farsight.UI_s_and_Controllers
         Button statModFlexSelection = new Button();
         Button statModDefenseSelection = new Button();
         RunePage runePage = new RunePage();
-        Queue<int> secondaryRunes = new Queue<int>();
         Queue<int> rows = new Queue<int>();
-        Dictionary<int, int> secondaryRunes2 = new Dictionary<int, int>();
-        int lastRowSelected = 0;
+        Dictionary<int, int> secondaryRunes = new Dictionary<int, int>();
         #endregion
 
         public RunePageEditor()
@@ -1156,24 +1155,24 @@ namespace Farsight.UI_s_and_Controllers
                                                                    //It's when we have 2 runes selected in different rows, and then a 3rd is selected from a different row
                                                                    //We need to deselect the last selected rune from the UI and select the new one
         {
-            if (secondaryRunes2.ContainsKey(rowOfOrigin))
+            if (secondaryRunes.ContainsKey(rowOfOrigin))
             {
-                secondaryRunes2.Remove(rowOfOrigin);
-                secondaryRunes2.Add(rowOfOrigin, runeId);
+                secondaryRunes.Remove(rowOfOrigin);
+                secondaryRunes.Add(rowOfOrigin, runeId);
             }
-            else if (secondaryRunes2.Count == 2 && secondaryRunes2.ContainsKey(rowOfOrigin) == false)
+            else if (secondaryRunes.Count == 2 && secondaryRunes.ContainsKey(rowOfOrigin) == false)
             {
-                secondaryRunes2.Remove(lastRowSelected);
-                secondaryRunes2.Add(rowOfOrigin, runeId);
+                secondaryRunes.Remove(lastRowSelected);
+                secondaryRunes.Add(rowOfOrigin, runeId);
             }
             else
             {
-                secondaryRunes2.Add(rowOfOrigin, runeId);
+                secondaryRunes.Add(rowOfOrigin, runeId);
             }
 
-            if (secondaryRunes2.Count == 2)
+            if (secondaryRunes.Count == 2)
             {
-                var selectedRunes = secondaryRunes2.Values.ToArray();
+                var selectedRunes = secondaryRunes.Values.ToArray();
                 runePage.selectedPerkIds[4] = selectedRunes[0];
                 runePage.selectedPerkIds[5] = selectedRunes[1];
             }
