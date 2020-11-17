@@ -1,15 +1,19 @@
 ﻿using Farsight.Deserializable_Objects.Perks;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Farsight.UI_s_and_Controllers
 {
     public partial class RunePageEditor : Form
     {
+
+        #region Global Variables
         List<AllRunes> allRuneTrees = JSONParser.Runes();
         int[] runesTrees = { 8000, 8100, 8200, 8400, 8300 }; //Pricision, Domination, Sorcery, Resolve, Inspiration
         List<int> secondaryRuneTree = new List<int>();
+        int currentPrimaryTree = 0;
         int currentSecondaryTree = 0;
         bool primaryTreeIsDomination = false;
         Button primaryTreeKeystoneSelection = new Button();
@@ -22,9 +26,12 @@ namespace Farsight.UI_s_and_Controllers
         Button statModOffenseSelection = new Button();
         Button statModFlexSelection = new Button();
         Button statModDefenseSelection = new Button();
-
-        //Maybe create a builder object to store user selections
-        //Create a button programatically to show what rune has been selected, doing it this way means you can generate multiple ones from a single source
+        RunePage runePage = new RunePage();
+        Queue<int> secondaryRunes = new Queue<int>();
+        Queue<int> rows = new Queue<int>();
+        Dictionary<int, int> secondaryRunes2 = new Dictionary<int, int>();
+        int lastRowSelected = 0;
+        #endregion
 
         public RunePageEditor()
         {
@@ -52,9 +59,12 @@ namespace Farsight.UI_s_and_Controllers
             statModDefenseMagicResistPictureBox.Image = Images.StatMods("MagicResist");
         }
 
+        #region Primary Tree
         private void precisionPictureBox_Click(object sender, System.EventArgs e)
         {
             ClearPrimaryRuneSelections();
+            currentPrimaryTree = 8000;
+            runePage.primaryStyleId = currentPrimaryTree;
 
             if (currentSecondaryTree == 8000)
             {
@@ -106,6 +116,9 @@ namespace Farsight.UI_s_and_Controllers
 
         private void dominationPictureBox_Click(object sender, System.EventArgs e)
         {
+            currentPrimaryTree = 8100;
+            runePage.primaryStyleId = currentPrimaryTree;
+
             if (currentSecondaryTree == 8100)
             {
                 ResetSecondaryTree();
@@ -157,6 +170,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void sorceryPictureBox_Click(object sender, System.EventArgs e)
         {
+            currentPrimaryTree = 8200;
+            runePage.primaryStyleId = currentPrimaryTree;
             ClearPrimaryRuneSelections();
 
             if (currentSecondaryTree == 8200)
@@ -212,6 +227,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void resolvePictureBox_Click(object sender, System.EventArgs e)
         {
+            currentPrimaryTree = 8400;
+            runePage.primaryStyleId = currentPrimaryTree;
             ClearPrimaryRuneSelections();
 
             if (currentSecondaryTree == 8400)
@@ -267,6 +284,8 @@ namespace Farsight.UI_s_and_Controllers
 
         private void inspirationPictureBox_Click(object sender, System.EventArgs e)
         {
+            currentPrimaryTree = 8300;
+            runePage.primaryStyleId = currentPrimaryTree;
             ClearPrimaryRuneSelections();
 
             if (currentSecondaryTree == 8300)
@@ -320,6 +339,294 @@ namespace Farsight.UI_s_and_Controllers
             LoadSecondaryTreeOptions(8300);
         }
 
+        private void primaryRuneKeystone1PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone1PictureBox")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 0);
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone1PictureBox.Location.X, primaryRuneKeystone1PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone1PictureBox.Size.Width, primaryRuneKeystone1PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone2PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone2PictureBox")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 1);
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone2PictureBox.Location.X, primaryRuneKeystone2PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone2PictureBox.Size.Width, primaryRuneKeystone2PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone3PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone3PictureBox")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 2);
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone3PictureBox.Location.X, primaryRuneKeystone3PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone3PictureBox.Size.Width, primaryRuneKeystone3PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone4PictureBox_Click(sender, e);
+        }
+
+        private void primaryRuneKeystone4PictureBox_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone4PictureBox")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 3);
+            }
+
+            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone4PictureBox.Location.X, primaryRuneKeystone4PictureBox.Location.Y);
+            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone4PictureBox.Size.Width, primaryRuneKeystone4PictureBox.Height);
+            this.Controls.Add(primaryTreeKeystoneSelection);
+
+            primaryRuneKeystone1PictureBox_Click(sender, e);
+            primaryRuneKeystone2PictureBox_Click(sender, e);
+            primaryRuneKeystone3PictureBox_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox1")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 0);
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox1.Location.X, primaryRunesTier1PictureBox1.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox1.Size.Width, primaryRunesTier1PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox2_Click(sender, e);
+            primaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox2")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 1);
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox2.Location.X, primaryRunesTier1PictureBox2.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox2.Size.Width, primaryRunesTier1PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox1_Click(sender, e);
+            primaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox3")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 2);
+            }
+
+            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox3.Location.X, primaryRunesTier1PictureBox3.Location.Y);
+            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox3.Size.Width, primaryRunesTier1PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowOneSelection);
+
+            primaryRunesTier1PictureBox1_Click(sender, e);
+            primaryRunesTier1PictureBox2_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox1")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 0);
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox1.Location.X, primaryRunesTier2PictureBox1.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox1.Size.Width, primaryRunesTier2PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox2_Click(sender, e);
+            primaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox2")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 1);
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox2.Location.X, primaryRunesTier2PictureBox2.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox2.Size.Width, primaryRunesTier2PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox1_Click(sender, e);
+            primaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void primaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox3")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 2);
+            }
+
+            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox3.Location.X, primaryRunesTier2PictureBox3.Location.Y);
+            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox3.Size.Width, primaryRunesTier2PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowTwoSelection);
+
+            primaryRunesTier2PictureBox1_Click(sender, e);
+            primaryRunesTier2PictureBox2_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox1")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 0);
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox1.Location.X, primaryRunesTier3PictureBox1.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox1.Size.Width, primaryRunesTier3PictureBox1.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox2")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 1);
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox2.Location.X, primaryRunesTier3PictureBox2.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox2.Size.Width, primaryRunesTier3PictureBox2.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox3")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 2);
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox3.Location.X, primaryRunesTier3PictureBox3.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox3.Size.Width, primaryRunesTier3PictureBox3.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void primaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox4")
+            {
+                return;
+            }
+
+            if (currentPrimaryTree != 0)
+            {
+                runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 3);
+            }
+
+            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox4.Location.X, primaryRunesTier3PictureBox4.Location.Y);
+            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox4.Size.Width, primaryRunesTier3PictureBox4.Size.Height);
+            this.Controls.Add(primaryTreeRowThreeSelection);
+
+            primaryRunesTier3PictureBox1_Click(sender, e);
+            primaryRunesTier3PictureBox2_Click(sender, e);
+            primaryRunesTier3PictureBox3_Click(sender, e);
+        }
+
         private void ClearPrimaryRuneSelections()
         {
             this.Controls.Remove(primaryTreeKeystoneSelection);
@@ -327,36 +634,9 @@ namespace Farsight.UI_s_and_Controllers
             this.Controls.Remove(primaryTreeRowTwoSelection);
             this.Controls.Remove(primaryTreeRowThreeSelection);
         }
+        #endregion
 
-        private void ClearSecondaryRuneSelections()
-        {
-            this.Controls.Remove(secondaryTreeRowOneSelection);
-            this.Controls.Remove(secondaryTreeRowTwoSelection);
-            this.Controls.Remove(secondaryTreeRowThreeSelection);
-        }
-
-        private void LoadSecondaryTreeOptions(int primaryTreeChoice) //Loads secondary tree selection based on the first tree's choice
-        {
-            if (secondaryRuneTree != null)
-            {
-                secondaryRuneTree = null;
-                secondaryRuneTree = new List<int>();
-            }
-
-            for (int i = 0; i < runesTrees.Length; i++)
-            {
-                if (runesTrees[i] != primaryTreeChoice)
-                {
-                    secondaryRuneTree.Add(runesTrees[i]);
-                }
-            }
-
-            secondaryRune1PictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
-            secondaryRune2PictureBox.Image = Images.RuneTree(secondaryRuneTree[1]);
-            secondaryRune3PictureBox.Image = Images.RuneTree(secondaryRuneTree[2]);
-            secondaryRune4PictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
-        }
-
+        #region Secondary Tree
         private void secondaryRune1PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
@@ -383,6 +663,331 @@ namespace Farsight.UI_s_and_Controllers
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
             SetSecondaryTreeRunes(secondaryRuneTree[3]);
             ClearSecondaryRuneSelections();
+        }
+
+        //All secondary tree don't use keystones
+        private void secondaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox1")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 1, 0);
+
+                if (ThirdRuneSelectedDetector(1))
+                {
+                    SetSecondaryRune(runeId, 1);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 1);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow1CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox1.Location.X, secondaryRunesTier1PictureBox1.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox1.Size.Width, secondaryRunesTier1PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox2_Click(sender, e);
+            secondaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox2")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 1, 1);
+
+                if (ThirdRuneSelectedDetector(1))
+                {
+                    SetSecondaryRune(runeId, 1);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 1);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow1CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox2.Location.X, secondaryRunesTier1PictureBox2.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox2.Size.Width, secondaryRunesTier1PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox1_Click(sender, e);
+            secondaryRunesTier1PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox3")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 1, 2);
+
+                if (ThirdRuneSelectedDetector(1))
+                {
+                    SetSecondaryRune(runeId, 1);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 1);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow1CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox3.Location.X, secondaryRunesTier1PictureBox3.Location.Y);
+            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox3.Size.Width, secondaryRunesTier1PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowOneSelection);
+
+            secondaryRunesTier1PictureBox1_Click(sender, e);
+            secondaryRunesTier1PictureBox2_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox1")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 2, 0);
+
+                if (ThirdRuneSelectedDetector(2))
+                {
+                    SetSecondaryRune(runeId, 2);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 2);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow2CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox1.Location.X, secondaryRunesTier2PictureBox1.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox1.Size.Width, secondaryRunesTier2PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox2_Click(sender, e);
+            secondaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox2")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 2, 1);
+
+                if (ThirdRuneSelectedDetector(2))
+                {
+                    SetSecondaryRune(runeId, 2);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 2);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow2CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox2.Location.X, secondaryRunesTier2PictureBox2.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox2.Size.Width, secondaryRunesTier2PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox1_Click(sender, e);
+            secondaryRunesTier2PictureBox3_Click(sender, e);
+        }
+
+        private void secondaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox3")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 2, 2);
+
+                if (ThirdRuneSelectedDetector(2))
+                {
+                    SetSecondaryRune(runeId, 2);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 2);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow2CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox3.Location.X, secondaryRunesTier2PictureBox3.Location.Y);
+            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox3.Size.Width, secondaryRunesTier2PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowTwoSelection);
+
+            secondaryRunesTier2PictureBox1_Click(sender, e);
+            secondaryRunesTier2PictureBox2_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox1")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 3, 0);
+
+                if (ThirdRuneSelectedDetector(3))
+                {
+                    SetSecondaryRune(runeId, 3);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 3);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow3CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox1.Location.X, secondaryRunesTier3PictureBox1.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox1.Size.Width, secondaryRunesTier3PictureBox1.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox2")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 3, 1);
+
+                if (ThirdRuneSelectedDetector(3))
+                {
+                    SetSecondaryRune(runeId, 3);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 3);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow3CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox2.Location.X, secondaryRunesTier3PictureBox2.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox2.Size.Width, secondaryRunesTier3PictureBox2.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox3")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 3, 2);
+
+                if (ThirdRuneSelectedDetector(3))
+                {
+                    SetSecondaryRune(runeId, 3);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 3);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow3CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox3.Location.X, secondaryRunesTier3PictureBox3.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox3.Size.Width, secondaryRunesTier3PictureBox3.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox4_Click(sender, e);
+        }
+
+        private void secondaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
+        {
+            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox4")
+            {
+                return;
+            }
+
+            if (currentSecondaryTree != 0)
+            {
+                int runeId = GetRuneID(currentSecondaryTree, 3, 3);
+
+                if (ThirdRuneSelectedDetector(3))
+                {
+                    SetSecondaryRune(runeId, 3);
+                }
+                else
+                {
+                    SetSecondaryRune(runeId, 3);
+                    ResetSecondaryRuneSelection(lastRowSelected);
+                }
+
+                secondaryTreeRow3CheckBox.Checked = true;
+            }
+
+            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox4.Location.X, secondaryRunesTier3PictureBox4.Location.Y);
+            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox4.Size.Width, secondaryRunesTier3PictureBox4.Size.Height);
+            this.Controls.Add(secondaryTreeRowThreeSelection);
+
+            secondaryRunesTier3PictureBox1_Click(sender, e);
+            secondaryRunesTier3PictureBox2_Click(sender, e);
+            secondaryRunesTier3PictureBox3_Click(sender, e);
         }
 
         private void SetSecondaryTreeRunes(int runeTree)
@@ -492,61 +1097,33 @@ namespace Farsight.UI_s_and_Controllers
             }
         }
 
-        private void SetRuneSelectionLineColor(int runeTree, bool isPrimaryTree)
+        private void ClearSecondaryRuneSelections()
         {
-            switch (runeTree)
+            this.Controls.Remove(secondaryTreeRowOneSelection);
+            this.Controls.Remove(secondaryTreeRowTwoSelection);
+            this.Controls.Remove(secondaryTreeRowThreeSelection);
+        }
+
+        private void LoadSecondaryTreeOptions(int primaryTreeChoice) //Loads secondary tree selection based on the first tree's choice
+        {
+            if (secondaryRuneTree != null)
             {
-                case 8000:
-                    if (isPrimaryTree)
-                    {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
-                    }
-                    else
-                    {
-                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
-                    }
-                    break;
-                case 8100:
-                    if (isPrimaryTree)
-                    {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
-                    }
-                    else
-                    {
-                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
-                    }
-                    break;
-                case 8200:
-                    if (isPrimaryTree)
-                    {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
-                    }
-                    else
-                    {
-                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
-                    }
-                    break;
-                case 8400:
-                    if (isPrimaryTree)
-                    {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
-                    }
-                    else
-                    {
-                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
-                    }
-                    break;
-                case 8300:
-                    if (isPrimaryTree)
-                    {
-                        primaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
-                    }
-                    else
-                    {
-                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
-                    }
-                    break;
+                secondaryRuneTree = null;
+                secondaryRuneTree = new List<int>();
             }
+
+            for (int i = 0; i < runesTrees.Length; i++)
+            {
+                if (runesTrees[i] != primaryTreeChoice)
+                {
+                    secondaryRuneTree.Add(runesTrees[i]);
+                }
+            }
+
+            secondaryRune1PictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
+            secondaryRune2PictureBox.Image = Images.RuneTree(secondaryRuneTree[1]);
+            secondaryRune3PictureBox.Image = Images.RuneTree(secondaryRuneTree[2]);
+            secondaryRune4PictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
         }
 
         private void ResetSecondaryTree()
@@ -575,378 +1152,81 @@ namespace Farsight.UI_s_and_Controllers
             }
         }
 
-        private void primaryRuneKeystone1PictureBox_Click(object sender, System.EventArgs e)
+        private void SetSecondaryRune(int runeId, int rowOfOrigin) //So, we can pick any rune from a row as many times as we want
+                                                                   //It's when we have 2 runes selected in different rows, and then a 3rd is selected from a different row
+                                                                   //We need to deselect the last selected rune from the UI and select the new one
         {
-            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone1PictureBox")
+            if (secondaryRunes2.ContainsKey(rowOfOrigin))
             {
-                return;
+                secondaryRunes2.Remove(rowOfOrigin);
+                secondaryRunes2.Add(rowOfOrigin, runeId);
+            }
+            else if (secondaryRunes2.Count == 2 && secondaryRunes2.ContainsKey(rowOfOrigin) == false)
+            {
+                secondaryRunes2.Remove(lastRowSelected);
+                secondaryRunes2.Add(rowOfOrigin, runeId);
+            }
+            else
+            {
+                secondaryRunes2.Add(rowOfOrigin, runeId);
             }
 
-            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone1PictureBox.Location.X, primaryRuneKeystone1PictureBox.Location.Y);
-            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone1PictureBox.Size.Width, primaryRuneKeystone1PictureBox.Height);
-            this.Controls.Add(primaryTreeKeystoneSelection);
-
-            primaryRuneKeystone2PictureBox_Click(sender, e);
-            primaryRuneKeystone3PictureBox_Click(sender, e);
-            primaryRuneKeystone4PictureBox_Click(sender, e);
+            if (secondaryRunes2.Count == 2)
+            {
+                var selectedRunes = secondaryRunes2.Values.ToArray();
+                runePage.selectedPerkIds[4] = selectedRunes[0];
+                runePage.selectedPerkIds[5] = selectedRunes[1];
+            }
         }
 
-        private void primaryRuneKeystone2PictureBox_Click(object sender, System.EventArgs e)
+        private bool ThirdRuneSelectedDetector(int row)
         {
-            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone2PictureBox")
+            if (rows.Count < 2 && rows.Contains(row) == false)
             {
-                return;
+                rows.Enqueue(row);
+                return true;
+            }
+            else if (rows.Count < 2 && rows.Contains(row) == true)
+            {
+                return true;
             }
 
-            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone2PictureBox.Location.X, primaryRuneKeystone2PictureBox.Location.Y);
-            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone2PictureBox.Size.Width, primaryRuneKeystone2PictureBox.Height);
-            this.Controls.Add(primaryTreeKeystoneSelection);
-
-            primaryRuneKeystone1PictureBox_Click(sender, e);
-            primaryRuneKeystone3PictureBox_Click(sender, e);
-            primaryRuneKeystone4PictureBox_Click(sender, e);
-        }
-
-        private void primaryRuneKeystone3PictureBox_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone3PictureBox")
+            if (rows.Count == 2 && rows.Contains(row) == false)
             {
-                return;
+                lastRowSelected = rows.Peek();
+                rows.Dequeue();
+                rows.Enqueue(row);
+                return false;
+            }
+            else if (rows.Count == 2 && rows.Contains(row) == true)
+            {
+                return true;
             }
 
-            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone3PictureBox.Location.X, primaryRuneKeystone3PictureBox.Location.Y);
-            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone3PictureBox.Size.Width, primaryRuneKeystone3PictureBox.Height);
-            this.Controls.Add(primaryTreeKeystoneSelection);
-
-            primaryRuneKeystone1PictureBox_Click(sender, e);
-            primaryRuneKeystone2PictureBox_Click(sender, e);
-            primaryRuneKeystone4PictureBox_Click(sender, e);
+            return false;
         }
 
-        private void primaryRuneKeystone4PictureBox_Click(object sender, System.EventArgs e)
+        private void ResetSecondaryRuneSelection(int row)
         {
-            if (((RoundPictureBox)sender).Name != "primaryRuneKeystone4PictureBox")
+            switch (row)
             {
-                return;
+                case 1:
+                    this.Controls.Remove(secondaryTreeRowOneSelection);
+                    secondaryTreeRow1CheckBox.Checked = false;
+                    break;
+                case 2:
+                    this.Controls.Remove(secondaryTreeRowTwoSelection);
+                    secondaryTreeRow2CheckBox.Checked = false;
+                    break;
+                case 3:
+                    this.Controls.Remove(secondaryTreeRowThreeSelection);
+                    secondaryTreeRow3CheckBox.Checked = false;
+                    break;
             }
-
-            primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone4PictureBox.Location.X, primaryRuneKeystone4PictureBox.Location.Y);
-            primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone4PictureBox.Size.Width, primaryRuneKeystone4PictureBox.Height);
-            this.Controls.Add(primaryTreeKeystoneSelection);
-
-            primaryRuneKeystone1PictureBox_Click(sender, e);
-            primaryRuneKeystone2PictureBox_Click(sender, e);
-            primaryRuneKeystone3PictureBox_Click(sender, e);
         }
+        #endregion
 
-        private void primaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox1")
-            {
-                return;
-            }
-
-            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox1.Location.X, primaryRunesTier1PictureBox1.Location.Y);
-            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox1.Size.Width, primaryRunesTier1PictureBox1.Size.Height);
-            this.Controls.Add(primaryTreeRowOneSelection);
-
-            primaryRunesTier1PictureBox2_Click(sender, e);
-            primaryRunesTier1PictureBox3_Click(sender, e);
-        }
-
-        private void primaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox2")
-            {
-                return;
-            }
-
-            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox2.Location.X, primaryRunesTier1PictureBox2.Location.Y);
-            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox2.Size.Width, primaryRunesTier1PictureBox2.Size.Height);
-            this.Controls.Add(primaryTreeRowOneSelection);
-
-            primaryRunesTier1PictureBox1_Click(sender, e);
-            primaryRunesTier1PictureBox3_Click(sender, e);
-        }
-
-        private void primaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier1PictureBox3")
-            {
-                return;
-            }
-
-            primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox3.Location.X, primaryRunesTier1PictureBox3.Location.Y);
-            primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox3.Size.Width, primaryRunesTier1PictureBox3.Size.Height);
-            this.Controls.Add(primaryTreeRowOneSelection);
-
-            primaryRunesTier1PictureBox1_Click(sender, e);
-            primaryRunesTier1PictureBox2_Click(sender, e);
-        }
-
-        private void primaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox1")
-            {
-                return;
-            }
-
-            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox1.Location.X, primaryRunesTier2PictureBox1.Location.Y);
-            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox1.Size.Width, primaryRunesTier2PictureBox1.Size.Height);
-            this.Controls.Add(primaryTreeRowTwoSelection);
-
-            primaryRunesTier2PictureBox2_Click(sender, e);
-            primaryRunesTier2PictureBox3_Click(sender, e);
-        }
-
-        private void primaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox2")
-            {
-                return;
-            }
-
-            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox2.Location.X, primaryRunesTier2PictureBox2.Location.Y);
-            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox2.Size.Width, primaryRunesTier2PictureBox2.Size.Height);
-            this.Controls.Add(primaryTreeRowTwoSelection);
-
-            primaryRunesTier2PictureBox1_Click(sender, e);
-            primaryRunesTier2PictureBox3_Click(sender, e);
-        }
-
-        private void primaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier2PictureBox3")
-            {
-                return;
-            }
-
-            primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox3.Location.X, primaryRunesTier2PictureBox3.Location.Y);
-            primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox3.Size.Width, primaryRunesTier2PictureBox3.Size.Height);
-            this.Controls.Add(primaryTreeRowTwoSelection);
-
-            primaryRunesTier2PictureBox1_Click(sender, e);
-            primaryRunesTier2PictureBox2_Click(sender, e);
-        }
-
-        private void primaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox1")
-            {
-                return;
-            }
-
-            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox1.Location.X, primaryRunesTier3PictureBox1.Location.Y);
-            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox1.Size.Width, primaryRunesTier3PictureBox1.Size.Height);
-            this.Controls.Add(primaryTreeRowThreeSelection);
-
-            primaryRunesTier3PictureBox2_Click(sender, e);
-            primaryRunesTier3PictureBox3_Click(sender, e);
-            primaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void primaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox2")
-            {
-                return;
-            }
-
-            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox2.Location.X, primaryRunesTier3PictureBox2.Location.Y);
-            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox2.Size.Width, primaryRunesTier3PictureBox2.Size.Height);
-            this.Controls.Add(primaryTreeRowThreeSelection);
-
-            primaryRunesTier3PictureBox1_Click(sender, e);
-            primaryRunesTier3PictureBox3_Click(sender, e);
-            primaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void primaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox3")
-            {
-                return;
-            }
-
-            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox3.Location.X, primaryRunesTier3PictureBox3.Location.Y);
-            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox3.Size.Width, primaryRunesTier3PictureBox3.Size.Height);
-            this.Controls.Add(primaryTreeRowThreeSelection);
-
-            primaryRunesTier3PictureBox1_Click(sender, e);
-            primaryRunesTier3PictureBox2_Click(sender, e);
-            primaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void primaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "primaryRunesTier3PictureBox4")
-            {
-                return;
-            }
-
-            primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox4.Location.X, primaryRunesTier3PictureBox4.Location.Y);
-            primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox4.Size.Width, primaryRunesTier3PictureBox4.Size.Height);
-            this.Controls.Add(primaryTreeRowThreeSelection);
-
-            primaryRunesTier3PictureBox1_Click(sender, e);
-            primaryRunesTier3PictureBox2_Click(sender, e);
-            primaryRunesTier3PictureBox3_Click(sender, e);
-        }
-
-        private void secondaryRunesTier1PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox1")
-            {
-                return;
-            }
-
-            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox1.Location.X, secondaryRunesTier1PictureBox1.Location.Y);
-            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox1.Size.Width, secondaryRunesTier1PictureBox1.Size.Height);
-            this.Controls.Add(secondaryTreeRowOneSelection);
-
-            secondaryRunesTier1PictureBox2_Click(sender, e);
-            secondaryRunesTier1PictureBox3_Click(sender, e);
-        }
-
-        private void secondaryRunesTier1PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox2")
-            {
-                return;
-            }
-
-            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox2.Location.X, secondaryRunesTier1PictureBox2.Location.Y);
-            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox2.Size.Width, secondaryRunesTier1PictureBox2.Size.Height);
-            this.Controls.Add(secondaryTreeRowOneSelection);
-
-            secondaryRunesTier1PictureBox1_Click(sender, e);
-            secondaryRunesTier1PictureBox3_Click(sender, e);
-        }
-
-        private void secondaryRunesTier1PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier1PictureBox3")
-            {
-                return;
-            }
-
-            secondaryTreeRowOneSelection.Location = new Point(secondaryRunesTier1PictureBox3.Location.X, secondaryRunesTier1PictureBox3.Location.Y);
-            secondaryTreeRowOneSelection.Size = new Size(secondaryRunesTier1PictureBox3.Size.Width, secondaryRunesTier1PictureBox3.Size.Height);
-            this.Controls.Add(secondaryTreeRowOneSelection);
-
-            secondaryRunesTier1PictureBox1_Click(sender, e);
-            secondaryRunesTier1PictureBox2_Click(sender, e);
-        }
-
-        private void secondaryRunesTier2PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox1")
-            {
-                return;
-            }
-
-            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox1.Location.X, secondaryRunesTier2PictureBox1.Location.Y);
-            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox1.Size.Width, secondaryRunesTier2PictureBox1.Size.Height);
-            this.Controls.Add(secondaryTreeRowTwoSelection);
-
-            secondaryRunesTier2PictureBox2_Click(sender, e);
-            secondaryRunesTier2PictureBox3_Click(sender, e);
-        }
-
-        private void secondaryRunesTier2PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox2")
-            {
-                return;
-            }
-
-            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox2.Location.X, secondaryRunesTier2PictureBox2.Location.Y);
-            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox2.Size.Width, secondaryRunesTier2PictureBox2.Size.Height);
-            this.Controls.Add(secondaryTreeRowTwoSelection);
-
-            secondaryRunesTier2PictureBox1_Click(sender, e);
-            secondaryRunesTier2PictureBox3_Click(sender, e);
-        }
-
-        private void secondaryRunesTier2PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier2PictureBox3")
-            {
-                return;
-            }
-
-            secondaryTreeRowTwoSelection.Location = new Point(secondaryRunesTier2PictureBox3.Location.X, secondaryRunesTier2PictureBox3.Location.Y);
-            secondaryTreeRowTwoSelection.Size = new Size(secondaryRunesTier2PictureBox3.Size.Width, secondaryRunesTier2PictureBox3.Size.Height);
-            this.Controls.Add(secondaryTreeRowTwoSelection);
-
-            secondaryRunesTier2PictureBox1_Click(sender, e);
-            secondaryRunesTier2PictureBox2_Click(sender, e);
-        }
-
-        private void secondaryRunesTier3PictureBox1_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox1")
-            {
-                return;
-            }
-
-            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox1.Location.X, secondaryRunesTier3PictureBox1.Location.Y);
-            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox1.Size.Width, secondaryRunesTier3PictureBox1.Size.Height);
-            this.Controls.Add(secondaryTreeRowThreeSelection);
-
-            secondaryRunesTier3PictureBox2_Click(sender, e);
-            secondaryRunesTier3PictureBox3_Click(sender, e);
-            secondaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void secondaryRunesTier3PictureBox2_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox2")
-            {
-                return;
-            }
-
-            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox2.Location.X, secondaryRunesTier3PictureBox2.Location.Y);
-            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox2.Size.Width, secondaryRunesTier3PictureBox2.Size.Height);
-            this.Controls.Add(secondaryTreeRowThreeSelection);
-
-            secondaryRunesTier3PictureBox1_Click(sender, e);
-            secondaryRunesTier3PictureBox3_Click(sender, e);
-            secondaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void secondaryRunesTier3PictureBox3_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox3")
-            {
-                return;
-            }
-
-            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox3.Location.X, secondaryRunesTier3PictureBox3.Location.Y);
-            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox3.Size.Width, secondaryRunesTier3PictureBox3.Size.Height);
-            this.Controls.Add(secondaryTreeRowThreeSelection);
-
-            secondaryRunesTier3PictureBox1_Click(sender, e);
-            secondaryRunesTier3PictureBox2_Click(sender, e);
-            secondaryRunesTier3PictureBox4_Click(sender, e);
-        }
-
-        private void secondaryRunesTier3PictureBox4_Click(object sender, System.EventArgs e)
-        {
-            if (((RoundPictureBox)sender).Name != "secondaryRunesTier3PictureBox4")
-            {
-                return;
-            }
-
-            secondaryTreeRowThreeSelection.Location = new Point(secondaryRunesTier3PictureBox4.Location.X, secondaryRunesTier3PictureBox4.Location.Y);
-            secondaryTreeRowThreeSelection.Size = new Size(secondaryRunesTier3PictureBox4.Size.Width, secondaryRunesTier3PictureBox4.Size.Height);
-            this.Controls.Add(secondaryTreeRowThreeSelection);
-
-            secondaryRunesTier3PictureBox1_Click(sender, e);
-            secondaryRunesTier3PictureBox2_Click(sender, e);
-            secondaryRunesTier3PictureBox3_Click(sender, e);
-        }
-
+        #region Statmods
         private void statModOffenseAdaptiveForcePictureBox_Click(object sender, System.EventArgs e)
         {
             if (((RoundPictureBox)sender).Name != "statModOffenseAdaptiveForcePictureBox")
@@ -1081,5 +1361,98 @@ namespace Farsight.UI_s_and_Controllers
             statModDefenseHealthPictureBox_Click(sender, e);
             statModDefenseArmorPictureBox_Click(sender, e);
         }
+        #endregion
+
+        #region Helper Methods
+        private int GetRuneID(int currentTree, int slot, int rune)
+        {
+            int id = 0;
+
+            switch (currentTree)
+            {
+                case 8000: //Pricision
+                    id = allRuneTrees[2].slots[slot].runes[rune].id;
+                    break;
+                case 8100: //Domination
+                    id = allRuneTrees[0].slots[slot].runes[rune].id;
+                    break;
+                case 8200: //Sorcery
+                    id = allRuneTrees[4].slots[slot].runes[rune].id;
+                    break;
+                case 8400: //Resolve
+                    id = allRuneTrees[2].slots[slot].runes[rune].id;
+                    break;
+                case 8300: //Inspiration
+                    id = allRuneTrees[3].slots[slot].runes[rune].id;
+                    break;
+            }
+
+            return id;
+        }
+        private void SetRuneSelectionLineColor(int runeTree, bool isPrimaryTree)
+        {
+            switch (runeTree)
+            {
+                case 8000:
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(174, 167, 137);
+                    }
+                    break;
+                case 8100:
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(212, 66, 66);
+                    }
+                    break;
+                case 8200:
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(159, 170, 252);
+                    }
+                    break;
+                case 8400:
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(161, 213, 134);
+                    }
+                    break;
+                case 8300:
+                    if (isPrimaryTree)
+                    {
+                        primaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
+                    }
+                    else
+                    {
+                        secondaryRuneSelectionLine.BackColor = Color.FromArgb(73, 170, 185);
+                    }
+                    break;
+            }
+        }
+        #endregion
+
+        #region Notes
+        //If we have a queue of rows, then our first choice will always be at the front
+        //When a 3rd rune is requested we keep the value of the first thing in the queue somewhere safe
+        //We then remove it from the queue and add the 3rd rune to the rows queue and the runes queue
+        //From here maybe make a method (with a switch statement) that will look at that value we saved
+        //and based off that value we can then clear the proper row of any selection
+        #endregion
     }
 }

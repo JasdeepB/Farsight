@@ -64,6 +64,7 @@
     <Compile Include="Images.cs" />
     <Compile Include="LCU\LCUInterface.cs" />
     <Compile Include="LCU\Plugin lol-summoner\GetLolSummonerV1CurrentSummoner.cs" />
+    <Compile Include="RunePage.cs" />
     <Compile Include="UI%27s and Controllers\matchUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>

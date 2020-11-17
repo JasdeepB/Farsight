@@ -32,9 +32,9 @@
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.secondaryTreeRow1CheckBox = new System.Windows.Forms.CheckBox();
+            this.secondaryTreeRow2CheckBox = new System.Windows.Forms.CheckBox();
+            this.secondaryTreeRow3CheckBox = new System.Windows.Forms.CheckBox();
             this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.checkBox10 = new System.Windows.Forms.CheckBox();
@@ -136,9 +136,7 @@
             // 
             // checkBox1
             // 
-            this.checkBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox1.AutoSize = true;
             this.checkBox1.BackColor = System.Drawing.Color.Transparent;
             this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -150,9 +148,7 @@
             // 
             // checkBox2
             // 
-            this.checkBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox2.AutoSize = true;
             this.checkBox2.BackColor = System.Drawing.Color.Transparent;
             this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -164,9 +160,7 @@
             // 
             // checkBox3
             // 
-            this.checkBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox3.AutoSize = true;
             this.checkBox3.BackColor = System.Drawing.Color.Transparent;
             this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -178,9 +172,7 @@
             // 
             // checkBox4
             // 
-            this.checkBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox4.AutoSize = true;
             this.checkBox4.BackColor = System.Drawing.Color.Transparent;
             this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -190,53 +182,45 @@
             this.checkBox4.TabIndex = 48;
             this.checkBox4.UseVisualStyleBackColor = false;
             // 
-            // checkBox5
+            // secondaryTreeRow1CheckBox
             // 
-            this.checkBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox5.Location = new System.Drawing.Point(536, 104);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 49;
-            this.checkBox5.UseVisualStyleBackColor = false;
+            this.secondaryTreeRow1CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.secondaryTreeRow1CheckBox.AutoSize = true;
+            this.secondaryTreeRow1CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.secondaryTreeRow1CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondaryTreeRow1CheckBox.Location = new System.Drawing.Point(536, 104);
+            this.secondaryTreeRow1CheckBox.Name = "secondaryTreeRow1CheckBox";
+            this.secondaryTreeRow1CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.secondaryTreeRow1CheckBox.TabIndex = 49;
+            this.secondaryTreeRow1CheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox6
+            // secondaryTreeRow2CheckBox
             // 
-            this.checkBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox6.Location = new System.Drawing.Point(536, 168);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 50;
-            this.checkBox6.UseVisualStyleBackColor = false;
+            this.secondaryTreeRow2CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.secondaryTreeRow2CheckBox.AutoSize = true;
+            this.secondaryTreeRow2CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.secondaryTreeRow2CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondaryTreeRow2CheckBox.Location = new System.Drawing.Point(536, 168);
+            this.secondaryTreeRow2CheckBox.Name = "secondaryTreeRow2CheckBox";
+            this.secondaryTreeRow2CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.secondaryTreeRow2CheckBox.TabIndex = 50;
+            this.secondaryTreeRow2CheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox7
+            // secondaryTreeRow3CheckBox
             // 
-            this.checkBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox7.Location = new System.Drawing.Point(536, 232);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 51;
-            this.checkBox7.UseVisualStyleBackColor = false;
+            this.secondaryTreeRow3CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.secondaryTreeRow3CheckBox.AutoSize = true;
+            this.secondaryTreeRow3CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.secondaryTreeRow3CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.secondaryTreeRow3CheckBox.Location = new System.Drawing.Point(536, 232);
+            this.secondaryTreeRow3CheckBox.Name = "secondaryTreeRow3CheckBox";
+            this.secondaryTreeRow3CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.secondaryTreeRow3CheckBox.TabIndex = 51;
+            this.secondaryTreeRow3CheckBox.UseVisualStyleBackColor = false;
             // 
             // checkBox8
             // 
-            this.checkBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox8.AutoSize = true;
             this.checkBox8.BackColor = System.Drawing.Color.Transparent;
             this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -248,9 +232,7 @@
             // 
             // checkBox9
             // 
-            this.checkBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox9.AutoSize = true;
             this.checkBox9.BackColor = System.Drawing.Color.Transparent;
             this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -262,9 +244,7 @@
             // 
             // checkBox10
             // 
-            this.checkBox10.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.checkBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.checkBox10.AutoSize = true;
             this.checkBox10.BackColor = System.Drawing.Color.Transparent;
             this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -276,9 +256,7 @@
             // 
             // primaryRuneSelectionLine
             // 
-            this.primaryRuneSelectionLine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRuneSelectionLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.primaryRuneSelectionLine.Location = new System.Drawing.Point(82, 72);
             this.primaryRuneSelectionLine.Name = "primaryRuneSelectionLine";
@@ -288,9 +266,7 @@
             // 
             // secondaryRuneSelectionLine
             // 
-            this.secondaryRuneSelectionLine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRuneSelectionLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.secondaryRuneSelectionLine.Location = new System.Drawing.Point(537, 72);
             this.secondaryRuneSelectionLine.Name = "secondaryRuneSelectionLine";
@@ -300,9 +276,7 @@
             // 
             // statmodRuneSelectionLine
             // 
-            this.statmodRuneSelectionLine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statmodRuneSelectionLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statmodRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
             this.statmodRuneSelectionLine.Location = new System.Drawing.Point(537, 296);
             this.statmodRuneSelectionLine.Name = "statmodRuneSelectionLine";
@@ -312,9 +286,7 @@
             // 
             // primaryRunesTier3PictureBox4
             // 
-            this.primaryRunesTier3PictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier3PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier3PictureBox4.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier3PictureBox4.Location = new System.Drawing.Point(408, 344);
             this.primaryRunesTier3PictureBox4.Name = "primaryRunesTier3PictureBox4";
@@ -326,9 +298,7 @@
             // 
             // secondaryRunesTier3PictureBox4
             // 
-            this.secondaryRunesTier3PictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier3PictureBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier3PictureBox4.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier3PictureBox4.Location = new System.Drawing.Point(800, 216);
             this.secondaryRunesTier3PictureBox4.Name = "secondaryRunesTier3PictureBox4";
@@ -340,9 +310,7 @@
             // 
             // primaryRuneKeystone4PictureBox
             // 
-            this.primaryRuneKeystone4PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRuneKeystone4PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRuneKeystone4PictureBox.BackColor = System.Drawing.Color.Black;
             this.primaryRuneKeystone4PictureBox.Location = new System.Drawing.Point(408, 112);
             this.primaryRuneKeystone4PictureBox.Name = "primaryRuneKeystone4PictureBox";
@@ -354,9 +322,7 @@
             // 
             // primaryRunesTier3PictureBox2
             // 
-            this.primaryRunesTier3PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier3PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier3PictureBox2.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier3PictureBox2.Location = new System.Drawing.Point(272, 344);
             this.primaryRunesTier3PictureBox2.Name = "primaryRunesTier3PictureBox2";
@@ -368,9 +334,7 @@
             // 
             // primaryRunesTier3PictureBox3
             // 
-            this.primaryRunesTier3PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier3PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier3PictureBox3.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier3PictureBox3.Location = new System.Drawing.Point(344, 344);
             this.primaryRunesTier3PictureBox3.Name = "primaryRunesTier3PictureBox3";
@@ -382,9 +346,7 @@
             // 
             // primaryRunesTier3PictureBox1
             // 
-            this.primaryRunesTier3PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier3PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier3PictureBox1.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier3PictureBox1.Location = new System.Drawing.Point(200, 344);
             this.primaryRunesTier3PictureBox1.Name = "primaryRunesTier3PictureBox1";
@@ -396,9 +358,7 @@
             // 
             // secondaryRunePictureBox
             // 
-            this.secondaryRunePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunePictureBox.BackColor = System.Drawing.Color.Black;
             this.secondaryRunePictureBox.Location = new System.Drawing.Point(512, 8);
             this.secondaryRunePictureBox.Name = "secondaryRunePictureBox";
@@ -409,9 +369,7 @@
             // 
             // primaryRunePictureBox
             // 
-            this.primaryRunePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunePictureBox.BackColor = System.Drawing.Color.Black;
             this.primaryRunePictureBox.Location = new System.Drawing.Point(56, 8);
             this.primaryRunePictureBox.Name = "primaryRunePictureBox";
@@ -422,9 +380,7 @@
             // 
             // inspirationPictureBox
             // 
-            this.inspirationPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.inspirationPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.inspirationPictureBox.BackColor = System.Drawing.Color.Black;
             this.inspirationPictureBox.Location = new System.Drawing.Point(400, 16);
             this.inspirationPictureBox.Name = "inspirationPictureBox";
@@ -436,9 +392,7 @@
             // 
             // statModFlexArmorPictureBox
             // 
-            this.statModFlexArmorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModFlexArmorPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModFlexArmorPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModFlexArmorPictureBox.Location = new System.Drawing.Point(696, 328);
             this.statModFlexArmorPictureBox.Name = "statModFlexArmorPictureBox";
@@ -450,9 +404,7 @@
             // 
             // statModFlexMagicResistPictureBox
             // 
-            this.statModFlexMagicResistPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModFlexMagicResistPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModFlexMagicResistPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModFlexMagicResistPictureBox.Location = new System.Drawing.Point(752, 328);
             this.statModFlexMagicResistPictureBox.Name = "statModFlexMagicResistPictureBox";
@@ -464,9 +416,7 @@
             // 
             // statModFlexAdaptiveForcePictureBox
             // 
-            this.statModFlexAdaptiveForcePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModFlexAdaptiveForcePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModFlexAdaptiveForcePictureBox.BackColor = System.Drawing.Color.Black;
             this.statModFlexAdaptiveForcePictureBox.Location = new System.Drawing.Point(640, 328);
             this.statModFlexAdaptiveForcePictureBox.Name = "statModFlexAdaptiveForcePictureBox";
@@ -478,9 +428,7 @@
             // 
             // statModDefenseArmorPictureBox
             // 
-            this.statModDefenseArmorPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModDefenseArmorPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModDefenseArmorPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModDefenseArmorPictureBox.Location = new System.Drawing.Point(696, 368);
             this.statModDefenseArmorPictureBox.Name = "statModDefenseArmorPictureBox";
@@ -492,9 +440,7 @@
             // 
             // statModDefenseMagicResistPictureBox
             // 
-            this.statModDefenseMagicResistPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModDefenseMagicResistPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModDefenseMagicResistPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModDefenseMagicResistPictureBox.Location = new System.Drawing.Point(752, 368);
             this.statModDefenseMagicResistPictureBox.Name = "statModDefenseMagicResistPictureBox";
@@ -506,9 +452,7 @@
             // 
             // statModDefenseHealthPictureBox
             // 
-            this.statModDefenseHealthPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModDefenseHealthPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModDefenseHealthPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModDefenseHealthPictureBox.Location = new System.Drawing.Point(640, 368);
             this.statModDefenseHealthPictureBox.Name = "statModDefenseHealthPictureBox";
@@ -520,9 +464,7 @@
             // 
             // statModOffenseAttackSpeedPictureBox
             // 
-            this.statModOffenseAttackSpeedPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModOffenseAttackSpeedPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModOffenseAttackSpeedPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModOffenseAttackSpeedPictureBox.Location = new System.Drawing.Point(696, 288);
             this.statModOffenseAttackSpeedPictureBox.Name = "statModOffenseAttackSpeedPictureBox";
@@ -534,9 +476,7 @@
             // 
             // statModOffenseCDRPictureBox
             // 
-            this.statModOffenseCDRPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModOffenseCDRPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModOffenseCDRPictureBox.BackColor = System.Drawing.Color.Black;
             this.statModOffenseCDRPictureBox.Location = new System.Drawing.Point(752, 288);
             this.statModOffenseCDRPictureBox.Name = "statModOffenseCDRPictureBox";
@@ -548,9 +488,7 @@
             // 
             // statModOffenseAdaptiveForcePictureBox
             // 
-            this.statModOffenseAdaptiveForcePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.statModOffenseAdaptiveForcePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statModOffenseAdaptiveForcePictureBox.BackColor = System.Drawing.Color.Black;
             this.statModOffenseAdaptiveForcePictureBox.Location = new System.Drawing.Point(640, 288);
             this.statModOffenseAdaptiveForcePictureBox.Name = "statModOffenseAdaptiveForcePictureBox";
@@ -562,9 +500,7 @@
             // 
             // secondaryRunesTier2PictureBox2
             // 
-            this.secondaryRunesTier2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier2PictureBox2.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier2PictureBox2.Location = new System.Drawing.Point(688, 152);
             this.secondaryRunesTier2PictureBox2.Name = "secondaryRunesTier2PictureBox2";
@@ -576,9 +512,7 @@
             // 
             // secondaryRunesTier2PictureBox3
             // 
-            this.secondaryRunesTier2PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier2PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier2PictureBox3.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier2PictureBox3.Location = new System.Drawing.Point(744, 152);
             this.secondaryRunesTier2PictureBox3.Name = "secondaryRunesTier2PictureBox3";
@@ -590,9 +524,7 @@
             // 
             // secondaryRunesTier2PictureBox1
             // 
-            this.secondaryRunesTier2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier2PictureBox1.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier2PictureBox1.Location = new System.Drawing.Point(632, 152);
             this.secondaryRunesTier2PictureBox1.Name = "secondaryRunesTier2PictureBox1";
@@ -604,9 +536,7 @@
             // 
             // secondaryRunesTier3PictureBox2
             // 
-            this.secondaryRunesTier3PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier3PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier3PictureBox2.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier3PictureBox2.Location = new System.Drawing.Point(688, 216);
             this.secondaryRunesTier3PictureBox2.Name = "secondaryRunesTier3PictureBox2";
@@ -618,9 +548,7 @@
             // 
             // secondaryRunesTier3PictureBox3
             // 
-            this.secondaryRunesTier3PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier3PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier3PictureBox3.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier3PictureBox3.Location = new System.Drawing.Point(744, 216);
             this.secondaryRunesTier3PictureBox3.Name = "secondaryRunesTier3PictureBox3";
@@ -632,9 +560,7 @@
             // 
             // secondaryRunesTier3PictureBox1
             // 
-            this.secondaryRunesTier3PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier3PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier3PictureBox1.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier3PictureBox1.Location = new System.Drawing.Point(632, 216);
             this.secondaryRunesTier3PictureBox1.Name = "secondaryRunesTier3PictureBox1";
@@ -646,9 +572,7 @@
             // 
             // secondaryRunesTier1PictureBox2
             // 
-            this.secondaryRunesTier1PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier1PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier1PictureBox2.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier1PictureBox2.Location = new System.Drawing.Point(688, 88);
             this.secondaryRunesTier1PictureBox2.Name = "secondaryRunesTier1PictureBox2";
@@ -660,9 +584,7 @@
             // 
             // secondaryRunesTier1PictureBox3
             // 
-            this.secondaryRunesTier1PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier1PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier1PictureBox3.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier1PictureBox3.Location = new System.Drawing.Point(744, 88);
             this.secondaryRunesTier1PictureBox3.Name = "secondaryRunesTier1PictureBox3";
@@ -674,9 +596,7 @@
             // 
             // secondaryRunesTier1PictureBox1
             // 
-            this.secondaryRunesTier1PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRunesTier1PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRunesTier1PictureBox1.BackColor = System.Drawing.Color.Black;
             this.secondaryRunesTier1PictureBox1.Location = new System.Drawing.Point(632, 88);
             this.secondaryRunesTier1PictureBox1.Name = "secondaryRunesTier1PictureBox1";
@@ -688,9 +608,7 @@
             // 
             // primaryRunesTier1PictureBox2
             // 
-            this.primaryRunesTier1PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier1PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier1PictureBox2.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier1PictureBox2.Location = new System.Drawing.Point(272, 200);
             this.primaryRunesTier1PictureBox2.Name = "primaryRunesTier1PictureBox2";
@@ -702,9 +620,7 @@
             // 
             // primaryRunesTier1PictureBox3
             // 
-            this.primaryRunesTier1PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier1PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier1PictureBox3.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier1PictureBox3.Location = new System.Drawing.Point(344, 200);
             this.primaryRunesTier1PictureBox3.Name = "primaryRunesTier1PictureBox3";
@@ -716,9 +632,7 @@
             // 
             // primaryRunesTier1PictureBox1
             // 
-            this.primaryRunesTier1PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier1PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier1PictureBox1.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier1PictureBox1.Location = new System.Drawing.Point(200, 200);
             this.primaryRunesTier1PictureBox1.Name = "primaryRunesTier1PictureBox1";
@@ -730,9 +644,7 @@
             // 
             // primaryRunesTier2PictureBox2
             // 
-            this.primaryRunesTier2PictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier2PictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier2PictureBox2.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier2PictureBox2.Location = new System.Drawing.Point(272, 272);
             this.primaryRunesTier2PictureBox2.Name = "primaryRunesTier2PictureBox2";
@@ -744,9 +656,7 @@
             // 
             // primaryRunesTier2PictureBox3
             // 
-            this.primaryRunesTier2PictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier2PictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier2PictureBox3.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier2PictureBox3.Location = new System.Drawing.Point(344, 272);
             this.primaryRunesTier2PictureBox3.Name = "primaryRunesTier2PictureBox3";
@@ -758,9 +668,7 @@
             // 
             // primaryRunesTier2PictureBox1
             // 
-            this.primaryRunesTier2PictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRunesTier2PictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRunesTier2PictureBox1.BackColor = System.Drawing.Color.Black;
             this.primaryRunesTier2PictureBox1.Location = new System.Drawing.Point(200, 272);
             this.primaryRunesTier2PictureBox1.Name = "primaryRunesTier2PictureBox1";
@@ -772,9 +680,7 @@
             // 
             // secondaryRune4PictureBox
             // 
-            this.secondaryRune4PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRune4PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRune4PictureBox.BackColor = System.Drawing.Color.Black;
             this.secondaryRune4PictureBox.Location = new System.Drawing.Point(784, 16);
             this.secondaryRune4PictureBox.Name = "secondaryRune4PictureBox";
@@ -786,9 +692,7 @@
             // 
             // secondaryRune3PictureBox
             // 
-            this.secondaryRune3PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRune3PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRune3PictureBox.BackColor = System.Drawing.Color.Black;
             this.secondaryRune3PictureBox.Location = new System.Drawing.Point(720, 16);
             this.secondaryRune3PictureBox.Name = "secondaryRune3PictureBox";
@@ -800,9 +704,7 @@
             // 
             // secondaryRune2PictureBox
             // 
-            this.secondaryRune2PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRune2PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRune2PictureBox.BackColor = System.Drawing.Color.Black;
             this.secondaryRune2PictureBox.Location = new System.Drawing.Point(664, 16);
             this.secondaryRune2PictureBox.Name = "secondaryRune2PictureBox";
@@ -814,9 +716,7 @@
             // 
             // secondaryRune1PictureBox
             // 
-            this.secondaryRune1PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.secondaryRune1PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.secondaryRune1PictureBox.BackColor = System.Drawing.Color.Black;
             this.secondaryRune1PictureBox.Location = new System.Drawing.Point(600, 16);
             this.secondaryRune1PictureBox.Name = "secondaryRune1PictureBox";
@@ -828,9 +728,7 @@
             // 
             // primaryRuneKeystone2PictureBox
             // 
-            this.primaryRuneKeystone2PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRuneKeystone2PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRuneKeystone2PictureBox.BackColor = System.Drawing.Color.Black;
             this.primaryRuneKeystone2PictureBox.Location = new System.Drawing.Point(264, 112);
             this.primaryRuneKeystone2PictureBox.Name = "primaryRuneKeystone2PictureBox";
@@ -842,9 +740,7 @@
             // 
             // primaryRuneKeystone3PictureBox
             // 
-            this.primaryRuneKeystone3PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRuneKeystone3PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRuneKeystone3PictureBox.BackColor = System.Drawing.Color.Black;
             this.primaryRuneKeystone3PictureBox.Location = new System.Drawing.Point(336, 112);
             this.primaryRuneKeystone3PictureBox.Name = "primaryRuneKeystone3PictureBox";
@@ -856,9 +752,7 @@
             // 
             // resolvePictureBox
             // 
-            this.resolvePictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.resolvePictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.resolvePictureBox.BackColor = System.Drawing.Color.Black;
             this.resolvePictureBox.Location = new System.Drawing.Point(336, 16);
             this.resolvePictureBox.Name = "resolvePictureBox";
@@ -870,9 +764,7 @@
             // 
             // sorceryPictureBox
             // 
-            this.sorceryPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.sorceryPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sorceryPictureBox.BackColor = System.Drawing.Color.Black;
             this.sorceryPictureBox.Location = new System.Drawing.Point(272, 16);
             this.sorceryPictureBox.Name = "sorceryPictureBox";
@@ -884,9 +776,7 @@
             // 
             // dominationPictureBox
             // 
-            this.dominationPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dominationPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dominationPictureBox.BackColor = System.Drawing.Color.Black;
             this.dominationPictureBox.Location = new System.Drawing.Point(208, 16);
             this.dominationPictureBox.Name = "dominationPictureBox";
@@ -898,9 +788,7 @@
             // 
             // precisionPictureBox
             // 
-            this.precisionPictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.precisionPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.precisionPictureBox.BackColor = System.Drawing.Color.Black;
             this.precisionPictureBox.Location = new System.Drawing.Point(144, 16);
             this.precisionPictureBox.Name = "precisionPictureBox";
@@ -912,9 +800,7 @@
             // 
             // primaryRuneKeystone1PictureBox
             // 
-            this.primaryRuneKeystone1PictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.primaryRuneKeystone1PictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.primaryRuneKeystone1PictureBox.BackColor = System.Drawing.Color.Black;
             this.primaryRuneKeystone1PictureBox.Location = new System.Drawing.Point(192, 112);
             this.primaryRuneKeystone1PictureBox.Name = "primaryRuneKeystone1PictureBox";
@@ -933,9 +819,9 @@
             this.Controls.Add(this.checkBox10);
             this.Controls.Add(this.checkBox9);
             this.Controls.Add(this.checkBox8);
-            this.Controls.Add(this.checkBox7);
-            this.Controls.Add(this.checkBox6);
-            this.Controls.Add(this.checkBox5);
+            this.Controls.Add(this.secondaryTreeRow3CheckBox);
+            this.Controls.Add(this.secondaryTreeRow2CheckBox);
+            this.Controls.Add(this.secondaryTreeRow1CheckBox);
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.checkBox2);
@@ -1092,9 +978,9 @@
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox5;
-        private System.Windows.Forms.CheckBox checkBox6;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox secondaryTreeRow1CheckBox;
+        private System.Windows.Forms.CheckBox secondaryTreeRow2CheckBox;
+        private System.Windows.Forms.CheckBox secondaryTreeRow3CheckBox;
         private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.CheckBox checkBox10;
