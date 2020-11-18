@@ -1,4 +1,5 @@
 ﻿using Farsight.Deserializable_Objects.Perks;
+using Farsight.LCU.Plugin_lol_perks;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -56,6 +57,17 @@ namespace Farsight.UI_s_and_Controllers
             statModDefenseHealthPictureBox.Image = Images.StatMods("Health");
             statModDefenseArmorPictureBox.Image = Images.StatMods("Armor");
             statModDefenseMagicResistPictureBox.Image = Images.StatMods("MagicResist");
+
+            primaryTreeKeystoneCheckBox.AutoCheck = false;
+            primaryTreeRow1CheckBox.AutoCheck = false;
+            primaryTreeRow2CheckBox.AutoCheck = false;
+            primaryTreeRow3CheckBox.AutoCheck = false;
+            secondaryTreeRow1CheckBox.AutoCheck = false;
+            secondaryTreeRow2CheckBox.AutoCheck = false;
+            secondaryTreeRow3CheckBox.AutoCheck = false;
+            offenseCheckBox.AutoCheck = false;
+            flexCheckBox.AutoCheck = false;
+            defenseCheckBox.AutoCheck = false;
         }
 
         #region Primary Tree
@@ -68,6 +80,7 @@ namespace Farsight.UI_s_and_Controllers
             if (currentSecondaryTree == 8000)
             {
                 ResetSecondaryTree();//If the user selects the same primary tree as the secondary tree, reset the secondary tree
+                ResetPrimaryTreeCheckBoxs();
                 secondaryRunePictureBox.Image = null;
             }
 
@@ -121,6 +134,7 @@ namespace Farsight.UI_s_and_Controllers
             if (currentSecondaryTree == 8100)
             {
                 ResetSecondaryTree();
+                ResetPrimaryTreeCheckBoxs();
                 secondaryRunePictureBox.Image = null;
             }
 
@@ -176,6 +190,7 @@ namespace Farsight.UI_s_and_Controllers
             if (currentSecondaryTree == 8200)
             {
                 ResetSecondaryTree();
+                ResetPrimaryTreeCheckBoxs();
                 secondaryRunePictureBox.Image = null;
             }
 
@@ -233,6 +248,7 @@ namespace Farsight.UI_s_and_Controllers
             if (currentSecondaryTree == 8400)
             {
                 ResetSecondaryTree();
+                ResetPrimaryTreeCheckBoxs();
                 secondaryRunePictureBox.Image = null;
             }
 
@@ -350,6 +366,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 0);
             }
 
+            primaryTreeKeystoneCheckBox.Checked = true;
             primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone1PictureBox.Location.X, primaryRuneKeystone1PictureBox.Location.Y);
             primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone1PictureBox.Size.Width, primaryRuneKeystone1PictureBox.Height);
             this.Controls.Add(primaryTreeKeystoneSelection);
@@ -371,6 +388,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 1);
             }
 
+            primaryTreeKeystoneCheckBox.Checked = true;
             primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone2PictureBox.Location.X, primaryRuneKeystone2PictureBox.Location.Y);
             primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone2PictureBox.Size.Width, primaryRuneKeystone2PictureBox.Height);
             this.Controls.Add(primaryTreeKeystoneSelection);
@@ -392,6 +410,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 2);
             }
 
+            primaryTreeKeystoneCheckBox.Checked = true;
             primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone3PictureBox.Location.X, primaryRuneKeystone3PictureBox.Location.Y);
             primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone3PictureBox.Size.Width, primaryRuneKeystone3PictureBox.Height);
             this.Controls.Add(primaryTreeKeystoneSelection);
@@ -413,6 +432,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[0] = GetRuneID(currentPrimaryTree, 0, 3);
             }
 
+            primaryTreeKeystoneCheckBox.Checked = true;
             primaryTreeKeystoneSelection.Location = new Point(primaryRuneKeystone4PictureBox.Location.X, primaryRuneKeystone4PictureBox.Location.Y);
             primaryTreeKeystoneSelection.Size = new Size(primaryRuneKeystone4PictureBox.Size.Width, primaryRuneKeystone4PictureBox.Height);
             this.Controls.Add(primaryTreeKeystoneSelection);
@@ -434,6 +454,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 0);
             }
 
+            primaryTreeRow1CheckBox.Checked = true;
             primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox1.Location.X, primaryRunesTier1PictureBox1.Location.Y);
             primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox1.Size.Width, primaryRunesTier1PictureBox1.Size.Height);
             this.Controls.Add(primaryTreeRowOneSelection);
@@ -454,6 +475,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 1);
             }
 
+            primaryTreeRow1CheckBox.Checked = true;
             primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox2.Location.X, primaryRunesTier1PictureBox2.Location.Y);
             primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox2.Size.Width, primaryRunesTier1PictureBox2.Size.Height);
             this.Controls.Add(primaryTreeRowOneSelection);
@@ -474,6 +496,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[1] = GetRuneID(currentPrimaryTree, 1, 2);
             }
 
+            primaryTreeRow1CheckBox.Checked = true;
             primaryTreeRowOneSelection.Location = new Point(primaryRunesTier1PictureBox3.Location.X, primaryRunesTier1PictureBox3.Location.Y);
             primaryTreeRowOneSelection.Size = new Size(primaryRunesTier1PictureBox3.Size.Width, primaryRunesTier1PictureBox3.Size.Height);
             this.Controls.Add(primaryTreeRowOneSelection);
@@ -494,6 +517,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 0);
             }
 
+            primaryTreeRow2CheckBox.Checked = true;
             primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox1.Location.X, primaryRunesTier2PictureBox1.Location.Y);
             primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox1.Size.Width, primaryRunesTier2PictureBox1.Size.Height);
             this.Controls.Add(primaryTreeRowTwoSelection);
@@ -514,6 +538,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 1);
             }
 
+            primaryTreeRow2CheckBox.Checked = true;
             primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox2.Location.X, primaryRunesTier2PictureBox2.Location.Y);
             primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox2.Size.Width, primaryRunesTier2PictureBox2.Size.Height);
             this.Controls.Add(primaryTreeRowTwoSelection);
@@ -534,6 +559,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[2] = GetRuneID(currentPrimaryTree, 2, 2);
             }
 
+            primaryTreeRow2CheckBox.Checked = true;
             primaryTreeRowTwoSelection.Location = new Point(primaryRunesTier2PictureBox3.Location.X, primaryRunesTier2PictureBox3.Location.Y);
             primaryTreeRowTwoSelection.Size = new Size(primaryRunesTier2PictureBox3.Size.Width, primaryRunesTier2PictureBox3.Size.Height);
             this.Controls.Add(primaryTreeRowTwoSelection);
@@ -554,6 +580,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 0);
             }
 
+            primaryTreeRow3CheckBox.Checked = true;
             primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox1.Location.X, primaryRunesTier3PictureBox1.Location.Y);
             primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox1.Size.Width, primaryRunesTier3PictureBox1.Size.Height);
             this.Controls.Add(primaryTreeRowThreeSelection);
@@ -575,6 +602,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 1);
             }
 
+            primaryTreeRow3CheckBox.Checked = true;
             primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox2.Location.X, primaryRunesTier3PictureBox2.Location.Y);
             primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox2.Size.Width, primaryRunesTier3PictureBox2.Size.Height);
             this.Controls.Add(primaryTreeRowThreeSelection);
@@ -596,6 +624,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 2);
             }
 
+            primaryTreeRow3CheckBox.Checked = true;
             primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox3.Location.X, primaryRunesTier3PictureBox3.Location.Y);
             primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox3.Size.Width, primaryRunesTier3PictureBox3.Size.Height);
             this.Controls.Add(primaryTreeRowThreeSelection);
@@ -617,6 +646,7 @@ namespace Farsight.UI_s_and_Controllers
                 runePage.selectedPerkIds[3] = GetRuneID(currentPrimaryTree, 3, 3);
             }
 
+            primaryTreeRow3CheckBox.Checked = true;
             primaryTreeRowThreeSelection.Location = new Point(primaryRunesTier3PictureBox4.Location.X, primaryRunesTier3PictureBox4.Location.Y);
             primaryTreeRowThreeSelection.Size = new Size(primaryRunesTier3PictureBox4.Size.Width, primaryRunesTier3PictureBox4.Size.Height);
             this.Controls.Add(primaryTreeRowThreeSelection);
@@ -633,34 +663,50 @@ namespace Farsight.UI_s_and_Controllers
             this.Controls.Remove(primaryTreeRowTwoSelection);
             this.Controls.Remove(primaryTreeRowThreeSelection);
         }
+
+        private void ResetPrimaryTreeCheckBoxs()
+        {
+            primaryTreeKeystoneCheckBox.Checked = false;
+            primaryTreeRow1CheckBox.Checked = false;
+            primaryTreeRow2CheckBox.Checked = false;
+            primaryTreeRow3CheckBox.Checked = false;
+        }
         #endregion
 
         #region Secondary Tree
         private void secondaryRune1PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[0]);
+            runePage.subStyleId = secondaryRuneTree[0];
             SetSecondaryTreeRunes(secondaryRuneTree[0]);
+            ResetSecondaryTreeCheckBoxs();
             ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune2PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[1]);
+            runePage.subStyleId = secondaryRuneTree[1];
             SetSecondaryTreeRunes(secondaryRuneTree[1]);
+            ResetSecondaryTreeCheckBoxs();
             ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune3PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[2]);
+            runePage.subStyleId = secondaryRuneTree[2];
             SetSecondaryTreeRunes(secondaryRuneTree[2]);
+            ResetSecondaryTreeCheckBoxs();
             ClearSecondaryRuneSelections();
         }
 
         private void secondaryRune4PictureBox_Click(object sender, System.EventArgs e)
         {
             secondaryRunePictureBox.Image = Images.RuneTree(secondaryRuneTree[3]);
+            runePage.subStyleId = secondaryRuneTree[3];
             SetSecondaryTreeRunes(secondaryRuneTree[3]);
+            ResetSecondaryTreeCheckBoxs();
             ClearSecondaryRuneSelections();
         }
 
@@ -1151,6 +1197,13 @@ namespace Farsight.UI_s_and_Controllers
             }
         }
 
+        private void ResetSecondaryTreeCheckBoxs()
+        {
+            secondaryTreeRow1CheckBox.Checked = false;
+            secondaryTreeRow2CheckBox.Checked = false;
+            secondaryTreeRow3CheckBox.Checked = false;
+        }
+
         private void SetSecondaryRune(int runeId, int rowOfOrigin) //So, we can pick any rune from a row as many times as we want
                                                                    //It's when we have 2 runes selected in different rows, and then a 3rd is selected from a different row
                                                                    //We need to deselect the last selected rune from the UI and select the new one
@@ -1233,6 +1286,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[6] = 5008;
+
+            offenseCheckBox.Checked = true;
             statModOffenseSelection.Location = new Point(statModOffenseAdaptiveForcePictureBox.Location.X, statModOffenseAdaptiveForcePictureBox.Location.Y);
             statModOffenseSelection.Size = new Size(statModOffenseAdaptiveForcePictureBox.Size.Width, statModOffenseAdaptiveForcePictureBox.Size.Height);
             this.Controls.Add(statModOffenseSelection);
@@ -1248,6 +1304,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[6] = 5005;
+
+            offenseCheckBox.Checked = true;
             statModOffenseSelection.Location = new Point(statModOffenseAttackSpeedPictureBox.Location.X, statModOffenseAttackSpeedPictureBox.Location.Y);
             statModOffenseSelection.Size = new Size(statModOffenseAttackSpeedPictureBox.Size.Width, statModOffenseAttackSpeedPictureBox.Size.Height);
             this.Controls.Add(statModOffenseSelection);
@@ -1263,6 +1322,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[6] = 5007;
+
+            offenseCheckBox.Checked = true;
             statModOffenseSelection.Location = new Point(statModOffenseCDRPictureBox.Location.X, statModOffenseCDRPictureBox.Location.Y);
             statModOffenseSelection.Size = new Size(statModOffenseCDRPictureBox.Size.Width, statModOffenseCDRPictureBox.Size.Height);
             this.Controls.Add(statModOffenseSelection);
@@ -1278,6 +1340,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[7] = 5008;
+
+            flexCheckBox.Checked = true;
             statModFlexSelection.Location = new Point(statModFlexAdaptiveForcePictureBox.Location.X, statModFlexAdaptiveForcePictureBox.Location.Y);
             statModFlexSelection.Size = new Size(statModFlexAdaptiveForcePictureBox.Size.Width, statModFlexAdaptiveForcePictureBox.Size.Height);
             this.Controls.Add(statModFlexSelection);
@@ -1293,6 +1358,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[7] = 5002;
+
+            flexCheckBox.Checked = true;
             statModFlexSelection.Location = new Point(statModFlexArmorPictureBox.Location.X, statModFlexArmorPictureBox.Location.Y);
             statModFlexSelection.Size = new Size(statModFlexArmorPictureBox.Size.Width, statModFlexArmorPictureBox.Size.Height);
             this.Controls.Add(statModFlexSelection);
@@ -1308,6 +1376,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[7] = 5003;
+
+            flexCheckBox.Checked = true;
             statModFlexSelection.Location = new Point(statModFlexMagicResistPictureBox.Location.X, statModFlexMagicResistPictureBox.Location.Y);
             statModFlexSelection.Size = new Size(statModFlexMagicResistPictureBox.Size.Width, statModFlexMagicResistPictureBox.Size.Height);
             this.Controls.Add(statModFlexSelection);
@@ -1323,6 +1394,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[8] = 5001;
+
+            defenseCheckBox.Checked = true;
             statModDefenseSelection.Location = new Point(statModDefenseHealthPictureBox.Location.X, statModDefenseHealthPictureBox.Location.Y);
             statModDefenseSelection.Size = new Size(statModDefenseHealthPictureBox.Size.Width, statModDefenseHealthPictureBox.Size.Height);
             this.Controls.Add(statModDefenseSelection);
@@ -1338,6 +1412,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[8] = 5002;
+
+            defenseCheckBox.Checked = true;
             statModDefenseSelection.Location = new Point(statModDefenseArmorPictureBox.Location.X, statModDefenseArmorPictureBox.Location.Y);
             statModDefenseSelection.Size = new Size(statModDefenseArmorPictureBox.Size.Width, statModDefenseArmorPictureBox.Size.Height);
             this.Controls.Add(statModDefenseSelection);
@@ -1353,6 +1430,9 @@ namespace Farsight.UI_s_and_Controllers
                 return;
             }
 
+            runePage.selectedPerkIds[8] = 5003;
+
+            defenseCheckBox.Checked = true;
             statModDefenseSelection.Location = new Point(statModDefenseMagicResistPictureBox.Location.X, statModDefenseMagicResistPictureBox.Location.Y);
             statModDefenseSelection.Size = new Size(statModDefenseMagicResistPictureBox.Size.Width, statModDefenseMagicResistPictureBox.Size.Height);
             this.Controls.Add(statModDefenseSelection);
@@ -1379,10 +1459,10 @@ namespace Farsight.UI_s_and_Controllers
                     id = allRuneTrees[4].slots[slot].runes[rune].id;
                     break;
                 case 8400: //Resolve
-                    id = allRuneTrees[2].slots[slot].runes[rune].id;
+                    id = allRuneTrees[3].slots[slot].runes[rune].id;
                     break;
                 case 8300: //Inspiration
-                    id = allRuneTrees[3].slots[slot].runes[rune].id;
+                    id = allRuneTrees[1].slots[slot].runes[rune].id;
                     break;
             }
 
@@ -1453,5 +1533,10 @@ namespace Farsight.UI_s_and_Controllers
         //From here maybe make a method (with a switch statement) that will look at that value we saved
         //and based off that value we can then clear the proper row of any selection
         #endregion
+
+        private void sendToClientButton_Click(object sender, System.EventArgs e)
+        {
+            LolPerksV1.CreateNewRunePage(runePage);
+        }
     }
 }

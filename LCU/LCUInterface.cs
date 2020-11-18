@@ -90,7 +90,21 @@ namespace Farsight
             mainScreen.clientStatusLabel.Text = "Client Offline";
         }
 
-        private string GetProcessListScript()
+        public static string[] GetClientAccessInfo()
+        {
+            string[] info = null;
+
+            if (IsLCUActive())
+            {
+                info = new string[2];
+                info[0] = GetClientPort(GetProcessListScript());
+                info[1] = GetRemotingAuthToken(GetProcessListScript());
+            }
+
+            return info;
+        }
+
+        public static string GetProcessListScript()
         {
             string output = "";
 
@@ -112,7 +126,7 @@ namespace Farsight
             return output;
         }
 
-        private string GetClientPort(string input)
+        public static string GetClientPort(string input)
         {
             string appPortPattern = @"--app-port=[0-9]*";
 
@@ -123,7 +137,7 @@ namespace Farsight
             return resultString.Substring(resultString.IndexOf("=") + 1);
         }
 
-        private string GetRemotingAuthToken(string input)
+        public static string GetRemotingAuthToken(string input)
         {
             string remotingAuthTokenPattern = @"--remoting-auth-token=[\w-_]*";
 

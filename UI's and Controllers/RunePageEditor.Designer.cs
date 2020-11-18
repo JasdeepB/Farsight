@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RunePageEditor));
+            this.primaryTreeKeystoneCheckBox = new System.Windows.Forms.CheckBox();
+            this.primaryTreeRow1CheckBox = new System.Windows.Forms.CheckBox();
+            this.primaryTreeRow2CheckBox = new System.Windows.Forms.CheckBox();
+            this.primaryTreeRow3CheckBox = new System.Windows.Forms.CheckBox();
             this.secondaryTreeRow1CheckBox = new System.Windows.Forms.CheckBox();
             this.secondaryTreeRow2CheckBox = new System.Windows.Forms.CheckBox();
             this.secondaryTreeRow3CheckBox = new System.Windows.Forms.CheckBox();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
-            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.offenseCheckBox = new System.Windows.Forms.CheckBox();
+            this.defenseCheckBox = new System.Windows.Forms.CheckBox();
+            this.flexCheckBox = new System.Windows.Forms.CheckBox();
             this.primaryRuneSelectionLine = new System.Windows.Forms.PictureBox();
             this.secondaryRuneSelectionLine = new System.Windows.Forms.PictureBox();
             this.statmodRuneSelectionLine = new System.Windows.Forms.PictureBox();
+            this.sendToClientButton = new System.Windows.Forms.Button();
             this.primaryRunesTier3PictureBox4 = new Farsight.RoundPictureBox();
             this.secondaryRunesTier3PictureBox4 = new Farsight.RoundPictureBox();
             this.primaryRuneKeystone4PictureBox = new Farsight.RoundPictureBox();
@@ -134,53 +136,53 @@
             ((System.ComponentModel.ISupportInitialize)(this.primaryRuneKeystone1PictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // checkBox1
+            // primaryTreeKeystoneCheckBox
             // 
-            this.checkBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(82, 128);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(15, 14);
-            this.checkBox1.TabIndex = 45;
-            this.checkBox1.UseVisualStyleBackColor = false;
+            this.primaryTreeKeystoneCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.primaryTreeKeystoneCheckBox.AutoSize = true;
+            this.primaryTreeKeystoneCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.primaryTreeKeystoneCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryTreeKeystoneCheckBox.Location = new System.Drawing.Point(82, 138);
+            this.primaryTreeKeystoneCheckBox.Name = "primaryTreeKeystoneCheckBox";
+            this.primaryTreeKeystoneCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.primaryTreeKeystoneCheckBox.TabIndex = 45;
+            this.primaryTreeKeystoneCheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox2
+            // primaryTreeRow1CheckBox
             // 
-            this.checkBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(82, 216);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(15, 14);
-            this.checkBox2.TabIndex = 46;
-            this.checkBox2.UseVisualStyleBackColor = false;
+            this.primaryTreeRow1CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.primaryTreeRow1CheckBox.AutoSize = true;
+            this.primaryTreeRow1CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.primaryTreeRow1CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryTreeRow1CheckBox.Location = new System.Drawing.Point(82, 216);
+            this.primaryTreeRow1CheckBox.Name = "primaryTreeRow1CheckBox";
+            this.primaryTreeRow1CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.primaryTreeRow1CheckBox.TabIndex = 46;
+            this.primaryTreeRow1CheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox3
+            // primaryTreeRow2CheckBox
             // 
-            this.checkBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(82, 288);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 47;
-            this.checkBox3.UseVisualStyleBackColor = false;
+            this.primaryTreeRow2CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.primaryTreeRow2CheckBox.AutoSize = true;
+            this.primaryTreeRow2CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.primaryTreeRow2CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryTreeRow2CheckBox.Location = new System.Drawing.Point(82, 288);
+            this.primaryTreeRow2CheckBox.Name = "primaryTreeRow2CheckBox";
+            this.primaryTreeRow2CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.primaryTreeRow2CheckBox.TabIndex = 47;
+            this.primaryTreeRow2CheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox4
+            // primaryTreeRow3CheckBox
             // 
-            this.checkBox4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(82, 360);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 48;
-            this.checkBox4.UseVisualStyleBackColor = false;
+            this.primaryTreeRow3CheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.primaryTreeRow3CheckBox.AutoSize = true;
+            this.primaryTreeRow3CheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.primaryTreeRow3CheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.primaryTreeRow3CheckBox.Location = new System.Drawing.Point(82, 360);
+            this.primaryTreeRow3CheckBox.Name = "primaryTreeRow3CheckBox";
+            this.primaryTreeRow3CheckBox.Size = new System.Drawing.Size(15, 14);
+            this.primaryTreeRow3CheckBox.TabIndex = 48;
+            this.primaryTreeRow3CheckBox.UseVisualStyleBackColor = false;
             // 
             // secondaryTreeRow1CheckBox
             // 
@@ -218,41 +220,41 @@
             this.secondaryTreeRow3CheckBox.TabIndex = 51;
             this.secondaryTreeRow3CheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox8
+            // offenseCheckBox
             // 
-            this.checkBox8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox8.Location = new System.Drawing.Point(536, 296);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(15, 14);
-            this.checkBox8.TabIndex = 52;
-            this.checkBox8.UseVisualStyleBackColor = false;
+            this.offenseCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.offenseCheckBox.AutoSize = true;
+            this.offenseCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.offenseCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.offenseCheckBox.Location = new System.Drawing.Point(536, 298);
+            this.offenseCheckBox.Name = "offenseCheckBox";
+            this.offenseCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.offenseCheckBox.TabIndex = 52;
+            this.offenseCheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox9
+            // defenseCheckBox
             // 
-            this.checkBox9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox9.Location = new System.Drawing.Point(536, 376);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(15, 14);
-            this.checkBox9.TabIndex = 53;
-            this.checkBox9.UseVisualStyleBackColor = false;
+            this.defenseCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.defenseCheckBox.AutoSize = true;
+            this.defenseCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.defenseCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.defenseCheckBox.Location = new System.Drawing.Point(536, 376);
+            this.defenseCheckBox.Name = "defenseCheckBox";
+            this.defenseCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.defenseCheckBox.TabIndex = 53;
+            this.defenseCheckBox.UseVisualStyleBackColor = false;
             // 
-            // checkBox10
+            // flexCheckBox
             // 
-            this.checkBox10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.checkBox10.AutoSize = true;
-            this.checkBox10.BackColor = System.Drawing.Color.Transparent;
-            this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox10.Location = new System.Drawing.Point(536, 336);
-            this.checkBox10.Name = "checkBox10";
-            this.checkBox10.Size = new System.Drawing.Size(15, 14);
-            this.checkBox10.TabIndex = 54;
-            this.checkBox10.UseVisualStyleBackColor = false;
+            this.flexCheckBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.flexCheckBox.AutoSize = true;
+            this.flexCheckBox.BackColor = System.Drawing.Color.Transparent;
+            this.flexCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 35F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.flexCheckBox.Location = new System.Drawing.Point(536, 336);
+            this.flexCheckBox.Name = "flexCheckBox";
+            this.flexCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.flexCheckBox.TabIndex = 54;
+            this.flexCheckBox.UseVisualStyleBackColor = false;
             // 
             // primaryRuneSelectionLine
             // 
@@ -278,11 +280,22 @@
             // 
             this.statmodRuneSelectionLine.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.statmodRuneSelectionLine.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.statmodRuneSelectionLine.Location = new System.Drawing.Point(537, 296);
+            this.statmodRuneSelectionLine.Location = new System.Drawing.Point(537, 298);
             this.statmodRuneSelectionLine.Name = "statmodRuneSelectionLine";
-            this.statmodRuneSelectionLine.Size = new System.Drawing.Size(12, 94);
+            this.statmodRuneSelectionLine.Size = new System.Drawing.Size(12, 92);
             this.statmodRuneSelectionLine.TabIndex = 57;
             this.statmodRuneSelectionLine.TabStop = false;
+            // 
+            // sendToClientButton
+            // 
+            this.sendToClientButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sendToClientButton.Location = new System.Drawing.Point(808, 368);
+            this.sendToClientButton.Name = "sendToClientButton";
+            this.sendToClientButton.Size = new System.Drawing.Size(83, 31);
+            this.sendToClientButton.TabIndex = 58;
+            this.sendToClientButton.Text = "Send";
+            this.sendToClientButton.UseVisualStyleBackColor = true;
+            this.sendToClientButton.Click += new System.EventHandler(this.sendToClientButton_Click);
             // 
             // primaryRunesTier3PictureBox4
             // 
@@ -816,16 +829,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(7)))), ((int)(((byte)(17)))));
             this.ClientSize = new System.Drawing.Size(902, 410);
-            this.Controls.Add(this.checkBox10);
-            this.Controls.Add(this.checkBox9);
-            this.Controls.Add(this.checkBox8);
+            this.Controls.Add(this.sendToClientButton);
+            this.Controls.Add(this.flexCheckBox);
+            this.Controls.Add(this.defenseCheckBox);
+            this.Controls.Add(this.offenseCheckBox);
             this.Controls.Add(this.secondaryTreeRow3CheckBox);
             this.Controls.Add(this.secondaryTreeRow2CheckBox);
             this.Controls.Add(this.secondaryTreeRow1CheckBox);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
-            this.Controls.Add(this.checkBox2);
-            this.Controls.Add(this.checkBox1);
+            this.Controls.Add(this.primaryTreeRow3CheckBox);
+            this.Controls.Add(this.primaryTreeRow2CheckBox);
+            this.Controls.Add(this.primaryTreeRow1CheckBox);
+            this.Controls.Add(this.primaryTreeKeystoneCheckBox);
             this.Controls.Add(this.primaryRunesTier3PictureBox4);
             this.Controls.Add(this.secondaryRunesTier3PictureBox4);
             this.Controls.Add(this.primaryRuneKeystone4PictureBox);
@@ -873,6 +887,7 @@
             this.Controls.Add(this.primaryRuneSelectionLine);
             this.Controls.Add(this.secondaryRuneSelectionLine);
             this.Controls.Add(this.statmodRuneSelectionLine);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RunePageEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Rune Page Editor";
@@ -974,18 +989,19 @@
         private RoundPictureBox primaryRuneKeystone4PictureBox;
         private RoundPictureBox secondaryRunesTier3PictureBox4;
         private RoundPictureBox primaryRunesTier3PictureBox4;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox primaryTreeKeystoneCheckBox;
+        private System.Windows.Forms.CheckBox primaryTreeRow1CheckBox;
+        private System.Windows.Forms.CheckBox primaryTreeRow2CheckBox;
+        private System.Windows.Forms.CheckBox primaryTreeRow3CheckBox;
         private System.Windows.Forms.CheckBox secondaryTreeRow1CheckBox;
         private System.Windows.Forms.CheckBox secondaryTreeRow2CheckBox;
         private System.Windows.Forms.CheckBox secondaryTreeRow3CheckBox;
-        private System.Windows.Forms.CheckBox checkBox8;
-        private System.Windows.Forms.CheckBox checkBox9;
-        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox offenseCheckBox;
+        private System.Windows.Forms.CheckBox defenseCheckBox;
+        private System.Windows.Forms.CheckBox flexCheckBox;
         private System.Windows.Forms.PictureBox primaryRuneSelectionLine;
         private System.Windows.Forms.PictureBox secondaryRuneSelectionLine;
         private System.Windows.Forms.PictureBox statmodRuneSelectionLine;
+        private System.Windows.Forms.Button sendToClientButton;
     }
 }
